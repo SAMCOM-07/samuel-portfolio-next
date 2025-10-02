@@ -1,17 +1,13 @@
 "use client";
 
 import {
-  Contact,
   Github,
-  Home,
   Menu,
-  Projector,
   Twitter,
-  User,
   X,
 } from "lucide-react";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import ThemeToggle from "./ThemeToggle";
 import HamburgerMenu from "./HamburgerMenu";
 import { useAppContext } from "@/context/AppContext";
