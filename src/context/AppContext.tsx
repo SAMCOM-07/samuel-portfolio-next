@@ -1,11 +1,15 @@
 "use client";
 
-import React from 'react'
+import React from "react";
 import { Contact, Home, Projector, User } from "lucide-react";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 
 interface AppContextType {
-  navPages: any[];
+  navPages: {
+    page: string;
+    url: string;
+    icon: React.JSX.Element;
+  }[];
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   open: boolean;
@@ -15,34 +19,37 @@ interface AppContextType {
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-export const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
-
+export const AppContextProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const navPages = [
     {
-      page: 'Home',
-      url: '/',
-      icon: <Home size={18} />
+      page: "Home",
+      url: "/",
+      icon: <Home size={18} />,
     },
     {
-      page: 'About',
-      url: '#',
-      icon: <User size={18} />
+      page: "About",
+      url: "#",
+      icon: <User size={18} />,
     },
     {
-      page: 'Projects',
-      url: '#',
-      icon: <Projector size={18} />
+      page: "Projects",
+      url: "#",
+      icon: <Projector size={18} />,
     },
     {
-      page: 'Contact',
-      url: '#',
-      icon: <Contact size={18} />
+      page: "Contact",
+      url: "#",
+      icon: <Contact size={18} />,
     },
-  ]
+  ];
 
-  const [isOpen, setIsOpen] = useState(false)
-  const [open, setOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -54,20 +61,21 @@ export const AppContextProvider = ({ children }: { children: React.ReactNode }) 
         setOpen(false);
       }
     }
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => document.removeEventListener("mousedown", handleClickOutside)
-  }, [])
-
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
-    <AppContext.Provider value={{
-      navPages,
-      isOpen,
-      setIsOpen,
-      dropdownRef,
-      open,
-      setOpen,
-    }}>
+    <AppContext.Provider
+      value={{
+        navPages,
+        isOpen,
+        setIsOpen,
+        dropdownRef,
+        open,
+        setOpen,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
