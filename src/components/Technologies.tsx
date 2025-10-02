@@ -2,8 +2,9 @@ import React from 'react'
 
 const Technologies = () => {
   return (
-    <div>
-      Technologies Used
+    <div className='conpad mt-18'>
+      <h1 className='mb-8'>Technologies & Tools</h1>
+      
     </div>
   )
 }

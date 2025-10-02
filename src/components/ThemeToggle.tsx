@@ -20,7 +20,7 @@ export default function ThemeToggle() {
       >
         {current === "dark" && <Moon className="w-4 h-4" />}
         {current === "light" && <Sun className="w-4 h-4" />}
-        {current === "system" && <Laptop className="w-4 h-4" />}
+        {current === "system" && <Sun className="w-4 h-4" />}
       </button>
 
       {/* Dropdown */}
