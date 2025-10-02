@@ -3,11 +3,11 @@ import Card from "./Card";
 
 const Technologies = () => {
   return (
-    <div className="conpad mt-22">
+    <div className="conpad mt-22 pb-56">
       <h1 className="mb-8 text-center">Technologies & Tools</h1>
-      <div className="flex items-center gap-2 max-w-5xl mx-auto overflow-x-hidden relative">
-        <div className="absolute w-4 h-12 bg-background blur-3xl left-0 top-0"></div>
-        <div className="absolute w-4 h-12 bg-background blur-3xl right-0 top-0"></div>
+      <div className="flex items-center gap-2 max-w-5xl mx-auto overflow-hidden relative">
+        <div className="absolute w-16 h-36 bg-background blur-md z-30 -left-6 -top-6"></div>
+        <div className="absolute w-16 h-36 bg-background blur-md z-30 -right-6 -top-6"></div>
         <Card>CODING</Card>
         <Card>CODING</Card>
         <Card>CODING</Card>
