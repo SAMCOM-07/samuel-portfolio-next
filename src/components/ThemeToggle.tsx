@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
 import { useTheme } from "next-themes"
 import { Sun, Moon, Laptop } from "lucide-react"
 import { useAppContext } from "@/context/AppContext"
