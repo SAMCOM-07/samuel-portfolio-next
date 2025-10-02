@@ -62,7 +62,7 @@
   --border: oklch(0.9 0 0);
   --input: oklch(0.9 0 0);
   --ring: oklch(0.7 0 0);
-  --mainbg: oklch(0.98 0 0);
+  --mainbg: oklch(96.644% 0.01074 286.053);
   --gradient1: oklch(0.25 0.08 260) 0%;
   --gradient2: oklch(0.3 0.1 320) 25%;
   --gradient3: oklch(0.32 0.08 20) 50%;
@@ -131,12 +131,12 @@ body {
       linear-gradient(
         to right,
         var(--color-accent-foreground) 2px,
-        transparent 
+        transparent 1px
       ),
       linear-gradient(
         to bottom,
         var(--color-accent-foreground) 2px,
-        transparent 
+        transparent 1px
       );
     background-size: 100% 100%, 160px 160px, 160px 160px;
   }
