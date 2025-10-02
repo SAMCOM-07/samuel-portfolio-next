@@ -31,6 +31,11 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-mainbg: var(--mainbg);
+  --color-gradient1: var(--gradient1);
+  --color-gradient2: var(--gradient2);
+  --color-gradient3: var(--gradient3);
+  --color-gradient4: var(--gradient4);
+  --color-gradient5: var(--gradient5);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -58,6 +63,11 @@
   --input: oklch(0.9 0 0);
   --ring: oklch(0.7 0 0);
   --mainbg: oklch(0.98 0 0);
+  --gradient1: oklch(0.25 0.08 260) 0%;
+  --gradient2: oklch(0.3 0.1 320) 25%;
+  --gradient3: oklch(0.32 0.08 20) 50%;
+  --gradient4: oklch(0.28 0.08 180) 75%;
+  --gradient5: oklch(0.25 0.08 260) 100%;
 }
 
 .dark {
@@ -81,6 +91,11 @@
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.6 0 0);
   --mainbg: oklch(23.116% 0.00193 286.052);
+  --gradient1: oklch(0.25 0.08 260) 0%;
+  --gradient2: oklch(0.3 0.1 320) 25%;
+  --gradient3: oklch(0.32 0.08 20) 50%;
+  --gradient4: oklch(0.28 0.08 180) 75%;
+  --gradient5: oklch(0.25 0.08 260) 100%;
 }
 
 body {
@@ -107,21 +122,21 @@ body {
     background-blend-mode: overlay;
     background-image: linear-gradient(
         135deg,
-        oklch(0.25 0.08 260) 0%,
-        oklch(0.3 0.1 320) 25%,
-        oklch(0.32 0.08 20) 50%,
-        oklch(0.28 0.08 180) 75%,
-        oklch(0.25 0.08 260) 100%
+        var(--color-gradient1),
+        var(--color-gradient2),
+        var(--color-gradient3),
+        var(--color-gradient4),
+        var(--color-gradient5)
       ),
       linear-gradient(
         to right,
         var(--color-accent-foreground) 2px,
-        transparent 1px
+        transparent 
       ),
       linear-gradient(
         to bottom,
         var(--color-accent-foreground) 2px,
-        transparent 1px
+        transparent 
       );
     background-size: 100% 100%, 160px 160px, 160px 160px;
   }
