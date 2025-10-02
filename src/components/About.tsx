@@ -5,7 +5,7 @@ const About = () => {
     <div className="px-6 mt-18 mx-auto max-w-5xl relative">
       <div className="absolute items-center bg-purple-900/50 w-46 h-46 blur-[120px] right-4 top-4"></div>
       <div className="absolute items-center bg-blue-900/50 w-46 h-46 blur-[120px] bottom-4 left-4"></div>
-      <h1 className="mb-8">About Me</h1>
+      <h1 className="mb-8 text-center">About Me</h1>
       <Card>
         <p className="p-4 flex flex-col gap-6">
           <span className='text-foreground/60 font-medium leading-6'>
