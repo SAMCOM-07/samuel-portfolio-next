@@ -123,7 +123,7 @@ body {
         var(--color-accent-foreground) 2px,
         transparent 1px
       );
-    background-size: 100% 100%, 200px 200px, 200px 200px;
+    background-size: 100% 100%, 160px 160px, 160px 160px;
   }
 }
 
