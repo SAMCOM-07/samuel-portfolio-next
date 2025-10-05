@@ -8,8 +8,9 @@ import Technologies from "@/components/Technologies";
 import { useEffect, useRef } from "react";
 
 export default function HomePage() {
+  
   return (
-    <div ref={scrollRef}>
+    <div>
       <Home />
       <About />
       <Technologies />
