@@ -212,11 +212,9 @@ button {
 
 @keyframes fade-up {
   from {
-    top: 128px;
     opacity: 0;
   }
   to {
-    top: 64px;
     opacity: 1;
   }
 }
