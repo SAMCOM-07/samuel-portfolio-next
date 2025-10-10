@@ -45,7 +45,7 @@ const Connect = () => {
           <Link
             key={d.title}
             href={d.href}
-            className="flex items-center gap-4 p-4 rounded-md bg-transparent border border-border hover:shadow-[0_0_7px] shadow-purpple hover:translate-x-3 transition-transform duration-500 group"
+            className="flex items-center gap-4 p-4 rounded-md bg-transparent border border-border focus:shadow-[0_0_7px] hover:shadow-[0_0_7px] shadow-purpple focus:translate-x-3 hover:translate-x-3 transition-transform duration-500 group"
           >
             <span className="p-2 rounded-full bg-purpple group-hover:shadow-[0_0_10px] shadow-purpple group-hover:scale-105 transition-all duration-300 text-white">
               {d.icon}

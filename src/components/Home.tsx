@@ -5,11 +5,30 @@ const Home = () => {
   return (
     <>
       <main className="h-[500px] md:h-screen overflow-hidden w-full grid place-content-center place-items-center text-center max-w-[90%] mx-auto px-6 z-40">
+
+        {/* background */}
+        <div className="mainbg h-[500px] md:h-screen w-full -z-20 absolute inset-0 top-18"></div>
+
+
+
+
+
         {/* First animation group */}
         <div className="flex flex-col items-center slide-up-animation">
-          <div className="flex gap-2 items-center px-3 -z-10 py-1 rounded-full border-2 border-border bg-background">
-            <span className="block w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            <h3 className="font-bold text-sm w-fit">Available for work</h3>
+          <div className="group relative grid w-max overflow-hidden  rounded-full px-3 py-1 transition-colors duration-400">
+            {/* Rotating light ring */}
+            <span className="absolute inset-0 rounded-full overflow-hidden">
+              <span className="absolute inset-0 before:absolute before:inset-0 before:w-[200%] before:aspect-square before:bg-[conic-gradient(from_0deg,transparent_0deg,var(--foreground)_45deg,transparent_360deg)] before:content-[''] before:translate-x-[-25%] before:translate-y-[-25%] before:animate-spin-slow"></span>
+            </span>
+
+            {/* Background layer */}
+            <span className="absolute inset-px rounded-full bg-background transition-colors duration-200 group-hover:bg-background/90"></span>
+
+            {/* Text */}
+            <span className="z-10 flex items-center gap-2 text-sm font-medium">
+              <span className="block w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              <h3 className="font-bold text-sm w-fit">Available for work</h3>
+            </span>
           </div>
           <h1 className="font-bold text-5xl md:text-7xl mt-6">Shonde Samuel</h1>
           <span className="font-bold text-5xl md:text-6xl mt-2">
@@ -40,8 +59,6 @@ const Home = () => {
           </Link>
         </div>
       </main>
-
-      <div className="mainbg h-[500px] md:h-screen w-full -z-20 absolute inset-0 top-18"></div>
     </>
   );
 };
