@@ -9,20 +9,16 @@ const Home = () => {
         {/* background */}
         <div className="mainbg h-[500px] md:h-screen w-full -z-20 absolute inset-0 top-18"></div>
 
-
-
-
-
         {/* First animation group */}
         <div className="flex flex-col items-center slide-up-animation">
-          <div className="group relative grid w-max overflow-hidden  rounded-full px-3 py-1 transition-colors duration-400">
+          <div className="group relative grid w-max overflow-hidden rounded-full px-3 py-1 transition-colors duration-400">
             {/* Rotating light ring */}
             <span className="absolute inset-0 rounded-full overflow-hidden">
               <span className="absolute inset-0 before:absolute before:inset-0 before:w-[200%] before:aspect-square before:bg-[conic-gradient(from_0deg,transparent_0deg,var(--foreground)_45deg,transparent_360deg)] before:content-[''] before:translate-x-[-25%] before:translate-y-[-25%] before:animate-spin-slow"></span>
             </span>
 
             {/* Background layer */}
-            <span className="absolute inset-px rounded-full bg-background transition-colors duration-200 group-hover:bg-background/90"></span>
+            <span className="absolute inset-0.5 rounded-full bg-background transition-colors duration-200 group-hover:bg-background/90"></span>
 
             {/* Text */}
             <span className="z-10 flex items-center gap-2 text-sm font-medium">
