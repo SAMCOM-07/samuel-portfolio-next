@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Clock, Github, Linkedin, LocationEdit, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 
 interface DataType {
@@ -58,6 +58,14 @@ const Connect = () => {
             </span>
           </Link>
         ))}
+      </div>
+      <div className="flex gap-2 items-center mt-6 text-muted-foreground">
+        <LocationEdit size={18}/>
+        <span>Based in Nigeria, Available Worldwide</span>
+      </div>
+      <div className="flex gap-2 items-center mt-4 text-muted-foreground">
+        <Clock size={18}/>
+        <span>Usually responds within 24 hours</span>
       </div>
     </div>
   );

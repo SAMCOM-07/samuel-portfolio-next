@@ -166,11 +166,11 @@ body {
   }
 
   .blurpurple {
-    @apply absolute items-center bg-purple-900/50 w-46 h-46 blur-[120px] right-4 top-4;
+    @apply absolute -z-30 items-center bg-purple-900/50 w-46 h-46 blur-[120px] right-4 top-4;
   }
 
   .blurblue {
-    @apply absolute items-center bg-blue-900/50 w-46 h-46 blur-[120px] bottom-4 left-4;
+    @apply absolute -z-30 items-center bg-blue-900/50 w-46 h-46 blur-[120px] bottom-4 left-4;
   }
 
   .slide-up-animation {
