@@ -1,47 +1,59 @@
+import nextLogo from "@/assets/stack-images/next-logo.png";
+import reactLogo from "@/assets/stack-images/react-logo.png";
+import tailwindLogo from "@/assets/stack-images/tailwind-logo.png";
+import firebaseLogo from "@/assets/stack-images/firebase-logo.png";
+import javascriptLogo from "@/assets/stack-images/javascript-logo.png";
+import typescriptLogo from "@/assets/stack-images/typescript-logo.png";
+import shadcnLogo from "@/assets/stack-images/shadcn-logo.png";
+import htmlLogo from "@/assets/stack-images/html-logo.png";
+import cssLogo from "@/assets/stack-images/css-logo.png";
+import gitLogo from "@/assets/stack-images/git-logo.png";
+import githubLogo from "@/assets/stack-images/github-logo.png";
+
 export const stackData = [
   {
     name: "Next.js",
-    img: "/stack-images/next-logo.png",
+    img: nextLogo,
   },
   {
     name: "React.js",
-    img: "/stack-images/react-logo.png",
+    img: reactLogo,
   },
   {
     name: "Tailwind CSS",
-    img: "/stack-images/tailwind-logo.png",
+    img: tailwindLogo,
   },
   {
     name: "Firebase",
-    img: "/stack-images/firebase-logo.png",
+    img: firebaseLogo,
   },
   {
     name: "JavaScript",
-    img: "/stack-images/javascript-logo.png",
+    img: javascriptLogo,
   },
   {
     name: "TypeScript",
-    img: "/stack-images/typescript-logo.png",
+    img: typescriptLogo,
   },
   {
     name: "Shadcn UI",
-    img: "/stack-images/shadcn-logo.png",
+    img: shadcnLogo,
   },
   {
     name: "HTML5",
-    img: "/stack-images/html-logo.png",
+    img: htmlLogo,
   },
   {
     name: "CSS3",
-    img: "/stack-images/css-logo.png",
+    img: cssLogo,
   },
   {
     name: "Git",
-    img: "/stack-images/git-logo.png",
+    img: gitLogo,
   },
   {
     name: "GitHub",
-    img: "/stack-images/github-logo.png",
+    img: githubLogo,
   },
 ];
 
@@ -61,23 +73,23 @@ export const projectsData = [
     stacks: [
       {
         name: "Next.js",
-        img: "/stack-images/next-logo.png",
+        img: nextLogo,
       },
       {
         name: "React.js",
-        img: "/stack-images/react-logo.png",
+        img: reactLogo,
       },
       {
         name: "Shadcn UI",
-        img: "/stack-images/shadcn-logo.png",
+        img: shadcnLogo,
       },
       {
         name: "TailwinCss",
-        img: "/stack-images/tailwind-logo.png",
+        img: tailwindLogo,
       },
       {
         name: "TypeScript",
-        img: "/stack-images/typescript-logo.png",
+        img: typescriptLogo,
       },
     ],
   },
@@ -93,11 +105,11 @@ export const projectsData = [
     stacks: [
       {
         name: "React.js",
-        img: "/stack-images/react-logo.png",
+        img: reactLogo,
       },
       {
         name: "TailwinCss",
-        img: "/stack-images/tailwind-logo.png",
+        img: tailwindLogo,
       },
     ],
   },
@@ -113,11 +125,11 @@ export const projectsData = [
     stacks: [
       {
         name: "HTML5",
-        img: "/stack-images/html-logo.png",
+        img: htmlLogo,
       },
       {
         name: "TailwinCss",
-        img: "/stack-images/tailwind-logo.png",
+        img: tailwindLogo,
       },
     ],
   },
@@ -144,15 +156,15 @@ export const projectsData = [
     stacks: [
       {
         name: "HTML5",
-        img: "/stack-images/html-logo.png",
+        img: htmlLogo,
       },
       {
         name: "Css3",
-        img: "/stack-images/css-logo.png",
+        img: cssLogo,
       },
       {
         name: "JavaScript",
-        img: "/stack-images/javascript-logo.png",
+        img: javascriptLogo,
       },
     ],
   },
@@ -171,15 +183,15 @@ export const projectsData = [
     stacks: [
       {
         name: "HTML5",
-        img: "/stack-images/html-logo.png",
+        img: htmlLogo,
       },
       {
         name: "TailwindCss",
-        img: "/stack-images/tailwind-logo.png",
+        img: tailwindLogo,
       },
       {
         name: "JavaScript",
-        img: "/stack-images/javascript-logo.png",
+        img: javascriptLogo,
       },
     ],
   },
@@ -198,15 +210,15 @@ export const projectsData = [
     stacks: [
       {
         name: "HTML5",
-        img: "/stack-images/html-logo.png",
+        img: htmlLogo,
       },
       {
         name: "TailwindCss",
-        img: "/stack-images/tailwind-logo.png",
+        img: tailwindLogo,
       },
       {
         name: "JavaScript",
-        img: "/stack-images/javascript-logo.png",
+        img: javascriptLogo,
       },
     ],
   },
@@ -222,16 +234,26 @@ export const projectsData = [
     stacks: [
       {
         name: "HTML5",
-        img: "/stack-images/html-logo.png",
+        img: htmlLogo,
       },
       {
         name: "TailwindCss",
-        img: "/stack-images/tailwind-logo.png",
+        img: tailwindLogo,
       },
       {
         name: "JavaScript",
-        img: "/stack-images/javascript-logo.png",
+        img: javascriptLogo,
       },
     ],
   },
 ];
+
+
+
+
+
+
+
+
+
+
