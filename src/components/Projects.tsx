@@ -13,7 +13,7 @@ const Projects = () => {
   const projectsDataSlice = projectsData.slice(0, 2)
 
   return (
-    <div className="projectbg w-full relative mt-22 pt-16 conpad">
+    <div className="projectbg w-full relative mt-22 pt-16 pb-6 conpad">
       {/* background */}
       <div className="projectbg w-full -z-20 absolute inset-0"></div>
       <h1 className="text-center">Featured Projects</h1>
@@ -48,7 +48,7 @@ const Projects = () => {
       </div>
       <Link
         href="/projects"
-        className="mt-4 text-primary text-center hover:underline flex items-center justify-center gap-1 font-medium group bg-secondary py-1 px-3 rounded-lg w-fit mx-auto mb-2"
+        className="mt-12 text-primary text-center hover:underline flex items-center justify-center gap-1 font-medium group bg-secondary py-1 px-3 rounded-lg w-fit mx-auto"
       >
         See more project
         <ArrowRight
