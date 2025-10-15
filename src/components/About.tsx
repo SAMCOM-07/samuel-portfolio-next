@@ -6,7 +6,6 @@ import Link from "next/link";
 const About = ({ showMore }: { showMore: string }) => {
   return (
     <div
-      id="about"
       className="px-6 mt-18 mx-auto max-w-5xl relative slide-up-animation"
     >
       <div className="blurpurple"></div>
