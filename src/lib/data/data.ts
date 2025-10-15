@@ -17,7 +17,7 @@ export const stackData = [
   },
   {
     name: "JavaScript",
-    img: "/stack-images/javascript-logo.png",
+    img: "/stack-images/Javascript-logo.png",
   },
   {
     name: "TypeScript",
