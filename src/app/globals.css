@@ -198,8 +198,6 @@ button {
   cursor: pointer;
 }
 
-
-
 @keyframes scrollAnimation {
   from {
     transform: translateX(100%);

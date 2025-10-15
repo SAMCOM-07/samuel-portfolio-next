@@ -38,14 +38,14 @@ const Connect = () => {
   ];
 
   return (
-    <div className="max-w-lg">
+    <div className="max-w-lg mb-8">
       <h1 className="text-lg font-bold">Let&#39;s Connect</h1>
       <div className="flex flex-col gap-3 mt-4">
         {data.map((d) => (
           <Link
             key={d.title}
             href={d.href}
-            className="flex items-center gap-4 p-4 rounded-md bg-transparent border border-border focus:shadow-[0_0_7px] hover:shadow-[0_0_7px] shadow-purpple focus:translate-x-3 hover:translate-x-3 transition-transform duration-500 group"
+            className="flex items-center gap-4 p-6 rounded-md bg-transparent border border-border focus:shadow-[0_0_7px] hover:shadow-[0_0_7px] shadow-purpple focus:translate-x-3 hover:translate-x-3 transition-transform duration-500 group"
           >
             <span className="p-2 rounded-full bg-purpple group-hover:shadow-[0_0_10px] shadow-purpple group-hover:scale-105 transition-all duration-300 text-white">
               {d.icon}
@@ -59,7 +59,7 @@ const Connect = () => {
           </Link>
         ))}
       </div>
-      <div className="flex gap-2 items-center mt-6 text-muted-foreground">
+      <div className="flex gap-2 items-center mt-8 text-muted-foreground">
         <LocationEdit size={18}/>
         <span>Based in Nigeria, Available Worldwide</span>
       </div>

@@ -32,17 +32,17 @@ export const AppContextProvider = ({
     },
     {
       page: "About",
-      url: "#about",
+      url: "/about",
       icon: <User size={18} />,
     },
     {
       page: "Projects",
-      url: "#projects",
+      url: "/projects",
       icon: <Projector size={18} />,
     },
     {
       page: "Contact",
-      url: "#contact",
+      url: "/contact",
       icon: <Contact size={18} />,
     },
   ];

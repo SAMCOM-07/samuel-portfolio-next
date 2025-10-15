@@ -1,15 +1,21 @@
+// import { Link } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Card from "./Card";
+import Link from "next/link";
 
-const About = () => {
+const About = ({ showMore }: { showMore: string }) => {
   return (
-    <div id="about" className="px-6 mt-18 mx-auto max-w-5xl relative slide-up-animation">
+    <div
+      id="about"
+      className="px-6 mt-18 mx-auto max-w-5xl relative slide-up-animation"
+    >
       <div className="blurpurple"></div>
       <div className="blurblue"></div>
       <h1 className="mb-8 text-center">About Me</h1>
       <Card>
         <p className="p-4 flex flex-col gap-6">
           <span className="text-muted-foreground font-medium leading-6">
-            I&#39;m Nathanael Omebele, a Computer Science graduate and full
+            I&#39;m Shonde Samuel, a Computer Engineering Undergraduate and full
             stack developer from Nigeria, passionate about solving complex
             problems and creating seamless digital experiences. My approach
             emphasizes minimalism.
@@ -28,6 +34,18 @@ const About = () => {
             should note that I don&#39;t always sound so serious.
           </span>
         </p>
+        {showMore ? (
+          <Link
+            href="/about"
+            className="mt-4 text-primary text-center hover:underline flex items-center justify-center gap-1 font-medium group bg-secondary py-1 px-3 rounded-lg w-fit mx-auto mb-2"
+          >
+            {showMore}
+            <ArrowRight
+              size={18}
+              className="group-hover:translate-x-1 transition-transform duration-300"
+            />
+          </Link>
+        ) : null}
       </Card>
     </div>
   );
