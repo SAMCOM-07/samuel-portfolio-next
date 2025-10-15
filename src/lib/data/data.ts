@@ -52,8 +52,8 @@ export const projectsData = [
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
     img: [
-      "public/projects-images/shadcn-dashboard-lightmode.jpg",
-      "public/projects-images/shadcn-dashboard-dark-mode.jpg",
+      "/projects-images/shadcn-dashboard-lightmode.jpg",
+      "/projects-images/shadcn-dashboard-dark-mode.jpg",
     ],
     githubUrl: "https://github.com/SAMCOM-07/shadcn-dashboard",
     liveUrl: "https://shadcn-dashboard-hazel.vercel.app/",
@@ -86,7 +86,7 @@ export const projectsData = [
     name: "Music Desk",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
-    img: ["public/projects-images/music-app.jpg"],
+    img: ["/projects-images/music-app.jpg"],
     githubUrl: "https://github.com/SAMCOM-07/music-app",
     liveUrl: "https://music-app-zeta-ebon.vercel.app/",
     status: "Completed",
@@ -106,7 +106,7 @@ export const projectsData = [
     name: "Anon Website",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
-    img: ["public/projects-images/anon-website.jpg"],
+    img: ["/projects-images/anon.jpg"],
     githubUrl: "https://github.com/SAMCOM-07/anon",
     liveUrl: "https://anon-black.vercel.app/",
     status: "Completed",
@@ -126,7 +126,7 @@ export const projectsData = [
     name: "Ecommerce Website",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
-    img: ["public/projects-images/ecommerce.jpg"],
+    img: ["/projects-images/ecommerce.jpg"],
     githubUrl: "",
     liveUrl: "",
     status: "In Progress",
@@ -137,7 +137,7 @@ export const projectsData = [
     name: "Product Filtering",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
-    img: ["public/projects-images/product-filter.jpg"],
+    img: ["/projects-images/product-filter.jpg"],
     githubUrl: "https://github.com/SAMCOM-07/product-filtering",
     liveUrl: "https://product-filtering-red.vercel.app/",
     status: "Completed",
@@ -162,8 +162,8 @@ export const projectsData = [
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
     img: [
-      "public/projects-images/extension-light-mode.jpg",
-      "public/projects-images/extension-dark-mode.jpg",
+      "/projects-images/extension-light-mode.jpg",
+      "/projects-images/extension-dark-mode.jpg",
     ],
     githubUrl: "https://github.com/SAMCOM-07/browser-extension",
     liveUrl: "https://browser-extension-nine.vercel.app/",
@@ -189,8 +189,8 @@ export const projectsData = [
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
     img: [
-      "public/projects-images/fylo-light-mode.jpg",
-      "public/projects-images/fylo-dark-mode.jpg",
+      "/projects-images/fylo-light-mode.jpg",
+      "/projects-images/fylo-dark-mode.jpg",
     ],
     githubUrl: "https://github.com/SAMCOM-07/fylo",
     liveUrl: "https://fylo-nu-seven.vercel.app/",
@@ -215,7 +215,7 @@ export const projectsData = [
     name: "Shortly",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
-    img: ["public/projects-images/shortly.jpg"],
+    img: ["/projects-images/shortly.jpg"],
     githubUrl: "https://github.com/SAMCOM-07/Shortly",
     liveUrl: "https://shortly-mu-ten.vercel.app/",
     status: "",

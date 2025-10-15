@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <div>
       <Home />
-      <About showMore='Show More'/>
+      <About showMore='See More'/>
       <Technologies />
       <Projects />
       <Contact />

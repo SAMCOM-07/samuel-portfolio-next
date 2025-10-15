@@ -1,4 +1,3 @@
-// import { Link } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import Card from "./Card";
 import Link from "next/link";
