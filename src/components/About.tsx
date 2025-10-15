@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import Card from "./Card";
 import Link from "next/link";
 
-const About = ({ showMore }: { showMore: string }) => {
+const About = ({ showMore }: { showMore?: string }) => {
   return (
     <div
       className="px-6 mt-18 mx-auto max-w-5xl relative slide-up-animation"
