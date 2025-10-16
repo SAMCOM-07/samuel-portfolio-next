@@ -17,7 +17,7 @@ export const stackData = [
   },
   {
     name: "JavaScript",
-    img: "/stack-images/Javascript-logo.png",
+    img: "/stack-images/javascript-logo.png",
   },
   {
     name: "TypeScript",
@@ -86,7 +86,7 @@ export const projectsData = [
     name: "Music Desk",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
-    img: ["/projects-images/music-app.jpg"],
+    img: ["/projects-images/music-app-lightmode.jpg", "/projects-images/music-app-darkmode.jpg"],
     githubUrl: "https://github.com/SAMCOM-07/music-app",
     liveUrl: "https://music-app-zeta-ebon.vercel.app/",
     status: "Completed",

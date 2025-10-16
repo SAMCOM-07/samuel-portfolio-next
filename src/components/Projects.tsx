@@ -7,7 +7,6 @@ import { ArrowRight } from "lucide-react";
 
 const Projects = () => {
   const { theme, systemTheme } = useTheme();
-  console.log(theme);
 
   const current = theme === "system" ? systemTheme : theme
   const projectsDataSlice = projectsData.slice(0, 2)
