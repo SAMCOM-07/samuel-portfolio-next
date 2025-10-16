@@ -47,7 +47,7 @@ const Projects = () => {
           )
         }
       </div>
-      <ShowMoreButton text='See more project' />
+      <ShowMoreButton href="/projects" text='See more project' />
     </div >
   );
 };

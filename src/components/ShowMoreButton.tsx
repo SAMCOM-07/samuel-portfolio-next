@@ -9,7 +9,7 @@ const ShowMoreButton = ({ text, href }: {
     return (
         <div>
             <Link
-                href={`${href}`}
+                href={href}
                 className="mt-8 text-primary text-center hover:underline flex items-center justify-center gap-1 font-medium group bg-secondary py-1 px-3 rounded-lg w-fit mx-auto"
             >
                 {text}
