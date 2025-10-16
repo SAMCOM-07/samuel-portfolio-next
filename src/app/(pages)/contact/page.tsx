@@ -1,4 +1,3 @@
-import Card from '@/components/Card';
 import Connect from '@/components/Connect';
 import Contact from '@/components/Contact';
 import React from 'react'

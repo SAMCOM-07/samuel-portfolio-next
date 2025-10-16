@@ -1,6 +1,4 @@
-import { ArrowRight } from "lucide-react";
 import Card from "./Card";
-import Link from "next/link";
 import ShowMoreButton from "./ShowMoreButton";
 
 const About = ({ showMore }: { showMore?: string }) => {
