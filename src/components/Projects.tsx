@@ -21,7 +21,7 @@ const Projects = () => {
 
       {/* projects */}
 
-      <div className='flex flex-col gap-16 container mx-auto mt-16 pb-6'>
+      <div className='flex flex-col gap-40 container mx-auto mt-16 pb-6'>
         {
           projectsDataSlice && projectsDataSlice.map((project) =>
             < div key={project.id} className={`flex flex-col ${project.id % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-6 lg:gap-12`}>
