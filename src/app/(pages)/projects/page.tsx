@@ -26,7 +26,7 @@ const ProjectsPage = () => {
 
         {
           projectsData && projectsData.map((project) =>
-            < div key={project.id} className={`flex flex-col ${project.id % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-6 lg:gap-12`}>
+            < div key={project.id} className={`flex flex-col ${project.id % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-6 lg:gap-12 border border-border rounded-lg p-4`}>
               {/* image */}
               <div className="relative w-full h-[300px] overflow-hidden rounded-lg">
                 <Image
