@@ -7,7 +7,7 @@ const Home = () => {
       <main className="h-[500px] md:h-screen overflow-hidden w-full grid place-content-center place-items-center text-center max-w-[90%] mx-auto px-6 z-40">
 
         {/* background */}
-        <div className="mainbg h-[500px] md:h-screen w-full -z-20 absolute inset-0 top-18"></div>
+        {/* <div className="mainbg h-[500px] md:h-screen w-full -z-20 absolute inset-0 top-18"></div> */}
 
         {/* First animation group */}
         <div className="flex flex-col items-center slide-up-animation">
