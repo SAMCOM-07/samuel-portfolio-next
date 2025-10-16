@@ -20,7 +20,7 @@ const ProjectsPage = () => {
 
       {/* projects */}
 
-      <div className='flex flex-col gap-16 container mx-auto mt-16'>
+      <div className='flex flex-col gap-20 lg:gap-40 container mx-auto mt-16'>
 
         {
           projectsData && projectsData.map((project) =>
@@ -33,14 +33,17 @@ const ProjectsPage = () => {
                   }
                   alt={project.name}
                   fill
-                  className="object-cover object-center rounded-lg aspect-square"
+                  className="object-cover object-center rounded-lg aspect-square hover:scale-105 transition-transform duration-300 "
                 />
               </div>
 
               {/* details */}
               <div>
-                <h1>{project.name}</h1>
-                <p>{project.description}</p>
+                <div className="flex justify-between items-center">
+                  <h1 className=''>{project.name}</h1>
+                  <span className={`text-white font-semibold text-sm ${project.status.includes('Progress') ? 'bg-blue-900 ' : 'bg-green-900'} py-1 px-3 rounded-sm`}>{project.status}</span>
+                </div>
+                <p className="text-muted-foreground mt-2">{project.description}</p>
               </div>
             </div >
           )

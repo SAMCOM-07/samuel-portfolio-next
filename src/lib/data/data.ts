@@ -57,7 +57,7 @@ export const projectsData = [
     ],
     githubUrl: "https://github.com/SAMCOM-07/shadcn-dashboard",
     liveUrl: "https://shadcn-dashboard-hazel.vercel.app/",
-    status: "Completed",
+    status: "Completed ✅",
     stacks: [
       {
         name: "Next.js",
@@ -89,7 +89,7 @@ export const projectsData = [
     img: ["/projects-images/music-app-lightmode.jpg", "/projects-images/music-app-darkmode.jpg"],
     githubUrl: "https://github.com/SAMCOM-07/music-app",
     liveUrl: "https://music-app-zeta-ebon.vercel.app/",
-    status: "Completed",
+    status: "Completed ✅",
     stacks: [
       {
         name: "React.js",
@@ -109,7 +109,7 @@ export const projectsData = [
     img: ["/projects-images/anon.jpg"],
     githubUrl: "https://github.com/SAMCOM-07/anon",
     liveUrl: "https://anon-black.vercel.app/",
-    status: "Completed",
+    status: "Completed ✅",
     stacks: [
       {
         name: "HTML5",
@@ -129,7 +129,7 @@ export const projectsData = [
     img: ["/projects-images/ecommerce.jpg"],
     githubUrl: "",
     liveUrl: "",
-    status: "In Progress",
+    status: "In Progress 📍",
     stacks: [],
   },
   {
@@ -140,7 +140,7 @@ export const projectsData = [
     img: ["/projects-images/product-filter.jpg"],
     githubUrl: "https://github.com/SAMCOM-07/product-filtering",
     liveUrl: "https://product-filtering-red.vercel.app/",
-    status: "Completed",
+    status: "Completed ✅",
     stacks: [
       {
         name: "HTML5",
@@ -167,7 +167,7 @@ export const projectsData = [
     ],
     githubUrl: "https://github.com/SAMCOM-07/browser-extension",
     liveUrl: "https://browser-extension-nine.vercel.app/",
-    status: "Completed",
+    status: "Completed ✅",
     stacks: [
       {
         name: "HTML5",
@@ -194,7 +194,7 @@ export const projectsData = [
     ],
     githubUrl: "https://github.com/SAMCOM-07/fylo",
     liveUrl: "https://fylo-nu-seven.vercel.app/",
-    status: "",
+    status: "Completed ✅",
     stacks: [
       {
         name: "HTML5",
@@ -218,7 +218,7 @@ export const projectsData = [
     img: ["/projects-images/shortly.jpg"],
     githubUrl: "https://github.com/SAMCOM-07/Shortly",
     liveUrl: "https://shortly-mu-ten.vercel.app/",
-    status: "",
+    status: "Completed ✅",
     stacks: [
       {
         name: "HTML5",

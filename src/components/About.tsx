@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Card from "./Card";
 import Link from "next/link";
+import ShowMoreButton from "./ShowMoreButton";
 
 const About = ({ showMore }: { showMore?: string }) => {
   return (
@@ -33,16 +34,7 @@ const About = ({ showMore }: { showMore?: string }) => {
           </span>
         </p>
         {showMore ? (
-          <Link
-            href="/about"
-            className="mt-4 text-primary text-center hover:underline flex items-center justify-center gap-1 font-medium group bg-secondary py-1 px-3 rounded-lg w-fit mx-auto mb-2"
-          >
-            {showMore}
-            <ArrowRight
-              size={18}
-              className="group-hover:translate-x-1 transition-transform duration-300"
-            />
-          </Link>
+          <ShowMoreButton text={showMore} />
         ) : null}
       </Card>
     </div>

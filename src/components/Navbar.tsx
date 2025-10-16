@@ -2,6 +2,7 @@
 
 import {
   Github,
+  Linkedin,
   Menu,
   Twitter,
   X,
@@ -59,16 +60,17 @@ const Navbar = () => {
       {isOpen && <HamburgerMenu />}
 
       <div className="md:flex gap-2 hidden">
-        <Link href={"#"}>
+        {/* Theme toggle */}
+        <ThemeToggle />
+        <Link href={"https://github.com/SAMCOM-07"}>
           <Github className="w-8 h-8 rounded-sm p-2 hover" />
         </Link>
-        <Link href={"#"}>
+        <Link href={"https://x.com/SammyShowed?t=CdJOVmklEH6ZYQi9sLimxA&s=09"}>
           <Twitter className="w-8 h-8 rounded-sm p-2 hover" />
         </Link>
-        {/* <button><Moon className='w-8 h-8 rounded-sm p-2 hover'/></button> */}
-
-        {/* THeme toggle */}
-        <ThemeToggle />
+        <Link href={"https://www.linkedin.com/in/samuel-shonde"}>
+          <Linkedin className="w-8 h-8 rounded-sm p-2 hover" />
+        </Link>
       </div>
     </div>
   );

@@ -2,8 +2,7 @@ import React from "react";
 import { projectsData } from './../lib/data/data';
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import ShowMoreButton from "./ShowMoreButton";
 
 const Projects = () => {
   const { theme, systemTheme } = useTheme();
@@ -25,36 +24,30 @@ const Projects = () => {
           projectsDataSlice && projectsDataSlice.map((project) =>
             < div key={project.id} className={`flex flex-col ${project.id % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-6 lg:gap-12`}>
               {/* image */}
-              <div className="relative w-full h-[300px] aspect-square">
+              <div className="relative w-full h-[300px]">
                 <Image
                   src={
                     current === 'light' ? project.img[0] : current === 'dark' && project.img.length > 1 ? project.img[1] : project.img[0]
                   }
                   alt={project.name}
                   fill
-                  className="object-cover object-center rounded-lg"
+                  className="object-cover object-center rounded-lg aspect-square"
                 />
               </div>
 
               {/* details */}
               <div>
-                <h1>{project.name}</h1>
-                <p>{project.description}</p>
+                <div className="flex justify-between items-center">
+                  <h1 className=''>{project.name}</h1>
+                  <span className={`font-semibold text-sm ${project.status.includes('Progress') ? 'bg-blue-900 text-white' : 'bg-secondary text-primary'} py-1 px-3 rounded-sm`}>{project.status}</span>
+                </div>
+                <p className="text-muted-foreground mt-2">{project.description}</p>
               </div>
             </div >
           )
         }
       </div>
-      <Link
-        href="/projects"
-        className="mt-12 text-primary text-center hover:underline flex items-center justify-center gap-1 font-medium group bg-secondary py-1 px-3 rounded-lg w-fit mx-auto"
-      >
-        See more project
-        <ArrowRight
-          size={18}
-          className="group-hover:translate-x-1 transition-transform duration-300"
-        />
-      </Link>
+      <ShowMoreButton text='See more project' />
     </div >
   );
 };

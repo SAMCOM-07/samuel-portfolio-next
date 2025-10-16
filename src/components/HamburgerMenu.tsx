@@ -1,5 +1,5 @@
 import { useAppContext } from "@/context/AppContext";
-import { Github, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
 const HamburgerMenu = () => {
@@ -22,17 +22,20 @@ const HamburgerMenu = () => {
           </Link>
         ))}
         <Link
-          href={"#"}
+          href={"/contact"}
           className="text-center bg-background border-2 w-full border-muted p-2 rounded-md hover:scale-105 transition-all"
         >
           Get In Touch
         </Link>
         <div className="flex gap-2 self-center">
-          <Link href={"#"}>
+          <Link href={"https://github.com/SAMCOM-07"}>
             <Github className="w-8 h-8 rounded-sm p-2 hover" />
           </Link>
-          <Link href={"#"}>
+          <Link href={"https://x.com/SammyShowed?t=CdJOVmklEH6ZYQi9sLimxA&s=09"}>
             <Twitter className="w-8 h-8 rounded-sm p-2 hover" />
+          </Link>
+          <Link href={"https://www.linkedin.com/in/samuel-shonde"}>
+            <Linkedin className="w-8 h-8 rounded-sm p-2 hover" />
           </Link>
         </div>
       </div>

@@ -15,7 +15,6 @@ export default function HomePage() {
       <About showMore='See More'/>
       <Technologies />
       <Projects />
-      <Contact />
     </div>
   );
 }
