@@ -47,7 +47,7 @@ const Home = () => {
             <span>My Resume</span>
           </Link>
           <Link
-            href={"#"}
+            href={"/projects"}
             className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-background/75 border border-border rounded-full flex items-center gap-2 text-sm"
           >
             <Projector size={18} />

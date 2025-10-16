@@ -34,7 +34,7 @@ const About = ({ showMore }: { showMore?: string }) => {
           </span>
         </p>
         {showMore ? (
-          <ShowMoreButton text={showMore} />
+          <ShowMoreButton text={showMore} href="/about" />
         ) : null}
       </Card>
     </div>

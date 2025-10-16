@@ -22,7 +22,7 @@ const ProjectsPage = () => {
 
       {/* projects */}
 
-      <div className='flex flex-col gap-20 lg:gap-40 container mx-auto mt-16'>
+      <div className='flex flex-col gap-40 container mx-auto mt-16'>
 
         {
           projectsData && projectsData.map((project) =>
@@ -43,14 +43,14 @@ const ProjectsPage = () => {
               <div>
                 <div className="flex justify-between items-center">
                   <h1 className=''>{project.name}</h1>
-                  <span className={`text-white font-semibold text-sm ${project.status.includes('Progress') ? 'bg-blue-900 ' : 'bg-green-900'} py-1 px-3 rounded-sm`}>{project.status}</span>
+                  <span className={`text-white font-semibold text-sm ${project.status.includes('Progress') ? 'bg-blue-900 ' : 'bg-green-900'} py-1 px-2 rounded-sm`}>{project.status}</span>
                 </div>
                 <p className="text-muted-foreground mt-4 text-sm lg:text-base">{project.description}</p>
                 {/* technologies used */}
                 <div className='flex items-center flex-wrap gap-2 mt-6'>
                   {
                     project.stacks && project.stacks.length > 0 && project.stacks.map((stack) =>
-                      <div key={stack.name} className="w-fit h-[35px] overflow-hidden bg-foreground/20 py-1 px-2 flex items-center gap-2 rounded-md">
+                      <div key={stack.name} className="w-fit h-[35px] overflow-hidden bg-muted py-1 px-2 flex items-center gap-2 rounded-md">
                         <Image src={stack.img} alt={stack.name} width={25} height={25} className="object-contain object-center" />
                         <span className="text-sm">{stack.name}</span>
                       </div>
@@ -59,11 +59,11 @@ const ProjectsPage = () => {
                 </div>
                 {/* links button */}
                 <div className='flex items-center gap-4 mt-6 text-sm'>
-                  <Link target="_blank" href={project.liveUrl} className='px-3 py-1 rounded-full bg-purpple text-white flex items-center gap-2'>
+                  <Link target="_blank" href={project.liveUrl} className='px-3 py-2 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 transition-all duration-300'>
                     <Eye size={18} />
                     <span>Preview</span>
                   </Link>
-                  <Link target="_blank" href={project.githubUrl} className='px-3 py-1 rounded-full bg-purpple text-white flex items-center gap-2'>
+                  <Link target="_blank" href={project.githubUrl} className='px-3 py-2 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 transition-all duration-300'>
                     <Github size={18} />
                     <span>Source Code</span>
                   </Link>
