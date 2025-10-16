@@ -14,7 +14,7 @@ const ProjectsPage = () => {
   const current = theme === "system" ? systemTheme : theme
 
   return (
-    <div className="projectbg w-full relative pt-16 conpad">
+    <div className="w-full relative pt-16 conpad">
       {/* background */}
       <div className="projectbg w-full -z-20 absolute inset-0"></div>
       <h1 className="text-center">Featured Projects</h1>
