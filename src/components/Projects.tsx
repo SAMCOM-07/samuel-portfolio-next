@@ -24,7 +24,7 @@ const Projects = () => {
       <div className='flex flex-col gap-32 container mx-auto mt-16 pb-6'>
         {
           projectsDataSlice && projectsDataSlice.map((project) =>
-            < div key={project.id} className={`flex flex-col ${project.id % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-6 lg:gap-12 border-2 border-accent rounded-xl p-6`}>
+            < div key={project.id} className={`flex flex-col ${project.id % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-6 lg:gap-12 border-2 border-border rounded-xl p-6`}>
               {/* image */}
               <div className="relative w-full h-[300px] overflow-hidden rounded-lg">
                 <Image
