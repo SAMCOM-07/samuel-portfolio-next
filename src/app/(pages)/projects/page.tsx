@@ -4,6 +4,8 @@ import React from "react";
 import { projectsData } from './../../../lib/data/data';
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import Link from "next/link";
+import { Eye, Github } from "lucide-react";
 
 const ProjectsPage = () => {
   const { theme, systemTheme } = useTheme();
@@ -24,16 +26,16 @@ const ProjectsPage = () => {
 
         {
           projectsData && projectsData.map((project) =>
-            < div key={project.id} className={`flex flex-col ${project.id % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-6 lg:gap-12`}>
+            < div key={project.id} className={`flex flex-col ${project.id % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-6 lg:gap-12`}>
               {/* image */}
-              <div className="relative w-full h-[300px]">
+              <div className="relative w-full h-[300px] overflow-hidden rounded-lg">
                 <Image
                   src={
                     current === 'light' ? project.img[0] : current === 'dark' && project.img.length > 1 ? project.img[1] : project.img[0]
                   }
                   alt={project.name}
                   fill
-                  className="object-cover object-center rounded-lg aspect-square hover:scale-105 transition-transform duration-300 "
+                  className="object-cover object-center rounded-lg aspect-square hover:scale-105 transition-all duration-300 "
                 />
               </div>
 
@@ -43,7 +45,29 @@ const ProjectsPage = () => {
                   <h1 className=''>{project.name}</h1>
                   <span className={`text-white font-semibold text-sm ${project.status.includes('Progress') ? 'bg-blue-900 ' : 'bg-green-900'} py-1 px-3 rounded-sm`}>{project.status}</span>
                 </div>
-                <p className="text-muted-foreground mt-2">{project.description}</p>
+                <p className="text-muted-foreground mt-4 text-sm lg:text-base">{project.description}</p>
+                {/* technologies used */}
+                <div className='flex items-center flex-wrap gap-2 mt-6'>
+                  {
+                    project.stacks && project.stacks.length > 0 && project.stacks.map((stack) =>
+                      <div key={stack.name} className="w-fit h-[35px] overflow-hidden bg-foreground/20 py-1 px-2 flex items-center gap-2 rounded-md">
+                        <Image src={stack.img} alt={stack.name} width={25} height={25} className="object-contain object-center" />
+                        <span className="text-sm">{stack.name}</span>
+                      </div>
+                    )
+                  }
+                </div>
+                {/* links button */}
+                <div className='flex items-center gap-4 mt-6 text-sm'>
+                  <Link target="_blank" href={project.liveUrl} className='px-3 py-1 rounded-full bg-purpple text-white flex items-center gap-2'>
+                    <Eye size={18} />
+                    <span>Preview</span>
+                  </Link>
+                  <Link target="_blank" href={project.githubUrl} className='px-3 py-1 rounded-full bg-purpple text-white flex items-center gap-2'>
+                    <Github size={18} />
+                    <span>Source Code</span>
+                  </Link>
+                </div>
               </div>
             </div >
           )

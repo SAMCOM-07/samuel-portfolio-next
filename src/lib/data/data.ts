@@ -8,7 +8,7 @@ export const stackData = [
     img: "/stack-images/react-logo.png",
   },
   {
-    name: "Tailwind CSS",
+    name: "TailwindCSS",
     img: "/stack-images/tailwind-logo.png",
   },
   {
@@ -72,7 +72,7 @@ export const projectsData = [
         img: "/stack-images/shadcn-logo.png",
       },
       {
-        name: "TailwinCss",
+        name: "TailwindCss",
         img: "/stack-images/tailwind-logo.png",
       },
       {
@@ -86,7 +86,10 @@ export const projectsData = [
     name: "Music Desk",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
-    img: ["/projects-images/music-app-lightmode.jpg", "/projects-images/music-app-darkmode.jpg"],
+    img: [
+      "/projects-images/music-app-lightmode.jpg",
+      "/projects-images/music-app-darkmode.jpg",
+    ],
     githubUrl: "https://github.com/SAMCOM-07/music-app",
     liveUrl: "https://music-app-zeta-ebon.vercel.app/",
     status: "Completed ✅",
@@ -96,7 +99,7 @@ export const projectsData = [
         img: "/stack-images/react-logo.png",
       },
       {
-        name: "TailwinCss",
+        name: "TailwindCss",
         img: "/stack-images/tailwind-logo.png",
       },
     ],
@@ -130,7 +133,28 @@ export const projectsData = [
     githubUrl: "",
     liveUrl: "",
     status: "In Progress 📍",
-    stacks: [],
+    stacks: [
+      {
+        name: "Next.js",
+        img: "/stack-images/next-logo.png",
+      },
+      {
+        name: "React.js",
+        img: "/stack-images/react-logo.png",
+      },
+      {
+        name: "Firebase",
+        img: "/stack-images/firebase-logo.png",
+      },
+      {
+        name: "TailwindCss",
+        img: "/stack-images/tailwind-logo.png",
+      },
+      {
+        name: "TypeScript",
+        img: "/stack-images/typescript-logo.png",
+      },
+    ],
   },
   {
     id: 5,
@@ -158,6 +182,30 @@ export const projectsData = [
   },
   {
     id: 6,
+    name: "User Record",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
+    img: ["/projects-images/user-record.jpg"],
+    githubUrl: "https://github.com/SAMCOM-07/user-record",
+    liveUrl: "https://user-record-amber.vercel.app/",
+    status: "Completed ✅",
+    stacks: [
+      {
+        name: "React.js",
+        img: "/stack-images/react-logo.png",
+      },
+      {
+        name: "MockApi",
+        img: "/stack-images/javascript-logo.png",
+      },
+      {
+        name: "TailwindCss",
+        img: "/stack-images/tailwind-logo.png",
+      },
+    ],
+  },
+  {
+    id: 7,
     name: "Browser Extension",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
@@ -184,7 +232,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     name: "Fylo",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
@@ -211,7 +259,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     name: "Shortly",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",

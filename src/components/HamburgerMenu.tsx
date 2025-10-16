@@ -28,13 +28,13 @@ const HamburgerMenu = () => {
           Get In Touch
         </Link>
         <div className="flex gap-2 self-center">
-          <Link href={"https://github.com/SAMCOM-07"}>
+          <Link target="_blank" href={"https://github.com/SAMCOM-07"}>
             <Github className="w-8 h-8 rounded-sm p-2 hover" />
           </Link>
-          <Link href={"https://x.com/SammyShowed?t=CdJOVmklEH6ZYQi9sLimxA&s=09"}>
+          <Link target="_blank" href={"https://x.com/SammyShowed?t=CdJOVmklEH6ZYQi9sLimxA&s=09"}>
             <Twitter className="w-8 h-8 rounded-sm p-2 hover" />
           </Link>
-          <Link href={"https://www.linkedin.com/in/samuel-shonde"}>
+          <Link target="_blank" href={"https://www.linkedin.com/in/samuel-shonde"}>
             <Linkedin className="w-8 h-8 rounded-sm p-2 hover" />
           </Link>
         </div>
