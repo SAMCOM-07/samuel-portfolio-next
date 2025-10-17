@@ -12,23 +12,15 @@ const About = ({ showMore }: { showMore?: string }) => {
       <Card>
         <p className="p-4 flex flex-col gap-6">
           <span className="text-muted-foreground font-medium leading-6">
-            I&#39;m Shonde Samuel, a Computer Engineering Undergraduate and full
-            stack developer from Nigeria, passionate about solving complex
-            problems and creating seamless digital experiences. My approach
-            emphasizes minimalism.
+            Hello, I&#39;m Samuel Shonde, a creative and detail-oriented Frontend Developer with a strong passion for crafting visually appealing and highly functional web experiences. I specialize in using Next.js, React, and Tailwind CSS to bring ideas to life on the web — from personal portfolios to dynamic business platforms.
+
           </span>
           <span className="text-muted-foreground font-medium leading-6">
-            Beyond crafting beautiful web applications, I bring a versatile
-            skill set and a business-first mindset to every project. I&#39;m
-            also constantly exploring new technologies, diving deep into system
-            architecture and performance optimization.
+            My development philosophy revolves around building solutions that are user-centered, scalable, and performance-driven. I believe that every website should not only look great but also serve a purpose — whether that&#39;s helping a brand grow, improving user engagement, or simplifying processes through technology.
           </span>
           <span className="text-muted-foreground font-medium leading-6">
-            I believe in the power of elegant code, thoughtful design, and
-            user-centered development. Let&#39;s build something amazing
-            together. I&#39;m currently available for collaborations,
-            freelancing, and full-time opportunities. Oh, before I forget, you
-            should note that I don&#39;t always sound so serious.
+            I&#39;m a developer who enjoys challenges, values continuous learning, and strives to stay updated with the latest trends in web technologies. My goal with every project is to blend creativity with technical precision to produce clean, impactful digital experiences.
+
           </span>
         </p>
         {showMore ? (

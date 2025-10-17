@@ -4,7 +4,7 @@ import Link from "next/link";
 const Home = () => {
   return (
     <>
-      <main className="h-[500px] md:h-screen overflow-hidden w-full grid place-content-center place-items-center text-center max-w-[90%] mx-auto px-6 z-40">
+      <main className="h-screen -mt-16 overflow-hidden w-full grid place-content-center place-items-center text-center max-w-[90%] mx-auto px-6 z-40">
 
         {/* background */}
         {/* <div className="mainbg h-[500px] md:h-screen w-full -z-20 absolute inset-0 top-18"></div> */}
@@ -21,7 +21,7 @@ const Home = () => {
             <span className="absolute inset-0.5 rounded-full bg-background transition-colors duration-200 group-hover:bg-background/90"></span>
 
             {/* Text */}
-            <span className="z-10 flex items-center gap-2 text-sm font-medium">
+            <span className="z-40 flex items-center gap-2 text-sm font-medium">
               <span className="block w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
               <h3 className="font-bold text-sm w-fit">Available for work</h3>
             </span>
