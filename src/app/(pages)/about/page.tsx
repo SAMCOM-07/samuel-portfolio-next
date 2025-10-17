@@ -5,7 +5,7 @@ import React from 'react'
 
 const AboutPage = () => {
   return (
-    <div className=''>
+    <div className='mb-16'>
       <About />
 
       {/* my tech journey */}

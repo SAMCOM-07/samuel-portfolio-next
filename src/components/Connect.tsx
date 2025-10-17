@@ -11,12 +11,12 @@ interface DataType {
 
 const Connect = () => {
   const data: DataType[] = [
-    // {
-    //   icon: <Mail size={18} />,
-    //   title: "Email",
-    //   href: "shondesamuel07@gmail.com",
-    //   text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, a.",
-    // },
+    {
+      icon: <Mail size={18} />,
+      title: "Email",
+      href: "mailto:yourname@example.com",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, a.",
+    },
     {
       icon: <Github size={18} />,
       title: "Github",
@@ -41,27 +41,12 @@ const Connect = () => {
     <div className="max-w-lg mb-8">
       <h1 className="text-lg font-bold">Let&#39;s Connect</h1>
       <div className="flex flex-col gap-3 mt-8">
-        <Link
-          href={'#'}
-          target="_blank"
-          className="flex items-center gap-4 p-6 rounded-md bg-transparent border border-border focus:shadow-[0_0_7px] hover:shadow-[0_0_7px] shadow-purpple focus:translate-x-3 hover:translate-x-3 transition-transform duration-500 group"
-        >
-          <span className="p-2 rounded-full bg-purpple group-hover:shadow-[0_0_10px] shadow-purpple group-hover:scale-105 transition-all duration-300 text-white">
-            <Mail size={18} />
-          </span>
-          <span className="">
-            <h2 className="font-semibold">Email</h2>
-            <p className="text-muted-foreground text-sm leading-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, a.
-            </p>
-          </span>
-        </Link>
         {data.map((d) => (
           <Link
             key={d.title}
             href={d.href}
             target="_blank"
-            className="flex items-center gap-4 p-6 rounded-md bg-transparent border border-border focus:shadow-[0_0_7px] hover:shadow-[0_0_7px] shadow-purpple focus:translate-x-3 hover:translate-x-3 transition-transform duration-500 group"
+            className="flex items-center gap-4 p-6 rounded-md bg-transparent border border-border focus:shadow-[0_0_7px] active:shadow-[0_0_7px] hover:shadow-[0_0_7px] shadow-purpple focus:translate-x-3 active:translate-x-3 hover:translate-x-3 transition-transform duration-500 group"
           >
             <span className="p-2 rounded-full bg-purpple group-hover:shadow-[0_0_10px] shadow-purpple group-hover:scale-105 transition-all duration-300 text-white">
               {d.icon}

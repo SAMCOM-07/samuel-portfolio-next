@@ -19,7 +19,7 @@ const Contact = () => {
             </label>
             <label className="flex flex-col gap-2">
               <span className="font-semibold">Email</span>
-              <input type="text" placeholder="Enter email address" required
+              <input type="email" placeholder="Enter email address" required
                 className="border border-border bg-background outline-0 p-3 py-4 rounded-md text-foreground/50"
               />
             </label>
