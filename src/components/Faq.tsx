@@ -31,8 +31,8 @@ const Faqs = () => {
 
                             <div
                                 className={`transition-all duration-500 overflow-hidden ${selected === faq.id
-                                        ? 'max-h-40 opacity-100 mt-3'
-                                        : 'max-h-0 opacity-0 mt-0'
+                                    ? 'max-h-40 opacity-100 mt-3'
+                                    : 'max-h-0 opacity-0 mt-0'
                                     }`}
                             >
                                 <p className='text-sm text-muted-foreground max-w-[90%]'>
