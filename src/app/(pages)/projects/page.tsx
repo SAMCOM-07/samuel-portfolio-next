@@ -9,12 +9,11 @@ import { Eye, Github } from "lucide-react";
 
 const ProjectsPage = () => {
   const { theme, systemTheme } = useTheme();
-  console.log(theme);
 
   const current = theme === "system" ? systemTheme : theme
 
   return (
-    <div className="w-full relative pt-16 conpad">
+    <div className="w-full relative py-16 conpad">
       {/* background */}
       <div className="projectbg w-full -z-20 absolute inset-0"></div>
 
@@ -36,7 +35,7 @@ const ProjectsPage = () => {
                   }
                   alt={project.name}
                   fill
-                  className="object-cover object-center rounded-lg aspect-square hover:scale-105 transition-all duration-300 "
+                  className="object-cover object-center rounded-lg aspect-square hover:scale-105 focus:scale-105 transition-all duration-300 "
                 />
               </div>
 
@@ -60,11 +59,11 @@ const ProjectsPage = () => {
                 </div>
                 {/* links button */}
                 <div className='flex items-center gap-4 mt-6 text-sm'>
-                  <Link target="_blank" href={project.liveUrl} className='px-3 py-2 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 transition-all duration-300'>
+                  <Link target="_blank" href={project.liveUrl} className='px-3 py-2 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300'>
                     <Eye size={18} />
                     <span>Preview</span>
                   </Link>
-                  <Link target="_blank" href={project.githubUrl} className='px-3 py-2 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 transition-all duration-300'>
+                  <Link target="_blank" href={project.githubUrl} className='px-3 py-2 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300'>
                     <Github size={18} />
                     <span>Source Code</span>
                   </Link>

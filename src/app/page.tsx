@@ -1,20 +1,21 @@
 "use client";
 
 import About from "@/components/About";
-import Contact from "@/components/Contact";
+import Faqs from "@/components/Faq";
 import Home from "@/components/Home";
 import Projects from "@/components/Projects";
 import Technologies from "@/components/Technologies";
 
 
 export default function HomePage() {
-  
+
   return (
-    <div>
+    <div className="pb-16">
       <Home />
-      <About showMore='See More'/>
+      <About showMore='See More' />
       <Technologies />
       <Projects />
+      <Faqs />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import About from '@/components/About'
 import Card from '@/components/Card'
+import Faqs from '@/components/Faq'
 import React from 'react'
 
 const AboutPage = () => {
@@ -46,23 +47,7 @@ const AboutPage = () => {
         </Card>
       </section>
 
-      {/* what i offer */}
-      {/* <section className='max-w-5xl mx-auto px-6'>
-        <h1 className="mb-8 mt-24 text-center">🎯 My Aim / Mission</h1>
-        <Card>
-          <p className="p-4 flex flex-col gap-6">
-            <span className="text-muted-foreground font-medium leading-6">
-              My mission as a developer goes beyond just writing code — it&#39;s about creating meaningful solutions that have real impact. I aim to grow into a well-rounded Software Developer with expertise in both frontend and backend technologies, capable of building complete systems and leading innovative projects.
-            </span>
-            <span className="text-muted-foreground font-medium leading-6">
-              I envision myself working in collaborative startup environments and cooperative organizations, where ideas are shared freely, creativity is encouraged, and growth is constant. I also plan to build and manage my own startup, focusing on developing tools, platforms, or services that simplify lives and empower others through technology.
-            </span>
-            <span className="text-muted-foreground font-medium leading-6">
-              In the long run, I want to be recognized not just for technical skills, but for problem-solving, creativity, and leadership. My journey is driven by passion, purpose, and the desire to make technology a force for good in every project I touch.
-            </span>
-          </p>
-        </Card>
-      </section> */}
+      <Faqs />
     </div>
   )
 }

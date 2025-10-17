@@ -12,7 +12,7 @@ const About = ({ showMore }: { showMore?: string }) => {
       <Card>
         <p className="p-4 flex flex-col gap-6">
           <span className="text-muted-foreground font-medium leading-6">
-            Hello, I&#39;m Samuel Shonde, a creative and detail-oriented Frontend Developer with a strong passion for crafting visually appealing and highly functional web experiences. I specialize in using Next.js, React, and Tailwind CSS to bring ideas to life on the web — from personal portfolios to dynamic business platforms.
+            Hello, I&#39;m Samuel Shonde, a 500 Level Computer Engineering Student and a creative & detail-oriented Frontend Developer with a strong passion for crafting visually appealing and highly functional web experiences. I specialize in using Next.js, React, and Tailwind CSS to bring ideas to life on the web — from personal portfolios to dynamic business platforms.
 
           </span>
           <span className="text-muted-foreground font-medium leading-6">

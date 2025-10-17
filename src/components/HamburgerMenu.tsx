@@ -15,7 +15,7 @@ const HamburgerMenu = () => {
           <Link
             href={page.url}
             key={index}
-            className="text-muted-foreground flex items-center gap-4 hover p-2 rounded-md cursor-pointer hover:ml-2 transition-all "
+            className="text-muted-foreground flex items-center gap-4 hover focus active p-2 rounded-md cursor-pointer hover:ml-2 transition-all "
           >
             <span>{page.icon}</span>
             {page.page}
@@ -29,13 +29,13 @@ const HamburgerMenu = () => {
         </Link>
         <div className="flex gap-2 self-center">
           <Link target="_blank" href={"https://github.com/SAMCOM-07"}>
-            <Github className="w-8 h-8 rounded-sm p-2 hover" />
+            <Github className="w-8 h-8 rounded-sm p-2 hover focus active" />
           </Link>
           <Link target="_blank" href={"https://x.com/SammyShowed?t=CdJOVmklEH6ZYQi9sLimxA&s=09"}>
-            <Twitter className="w-8 h-8 rounded-sm p-2 hover" />
+            <Twitter className="w-8 h-8 rounded-sm p-2 hover focus active" />
           </Link>
           <Link target="_blank" href={"https://www.linkedin.com/in/samuel-shonde"}>
-            <Linkedin className="w-8 h-8 rounded-sm p-2 hover" />
+            <Linkedin className="w-8 h-8 rounded-sm p-2 hover focus active" />
           </Link>
         </div>
       </div>

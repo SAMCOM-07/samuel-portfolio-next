@@ -127,6 +127,12 @@ body {
   .hover {
     @apply hover:bg-accent hover:text-accent-foreground transition-colors duration-500;
   }
+  .focus {
+    @apply focus:bg-accent focus:text-accent-foreground transition-colors duration-500;
+  }
+  .active {
+    @apply active:bg-accent active:text-accent-foreground transition-colors duration-500;
+  }
 
   .mainbg {
     background-color: var(--color-mainbg);

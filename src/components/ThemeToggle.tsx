@@ -5,8 +5,7 @@ import { Sun, Moon, Laptop } from "lucide-react"
 import { useAppContext } from "@/context/AppContext"
 
 export default function ThemeToggle() {
-  const { theme, setTheme, systemTheme } = useTheme()
-  
+  const { theme, setTheme, systemTheme } = useTheme();
 
   const { dropdownRef, open, setOpen } = useAppContext();
 
@@ -16,7 +15,7 @@ export default function ThemeToggle() {
       {/* Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 rounded-sm p-2 hover"
+        className="flex items-center gap-2 rounded-sm p-2 hover focus active"
       >
         {current === "dark" && <Moon className="w-4 h-4" />}
         {current === "light" && <Sun className="w-4 h-4" />}
@@ -31,7 +30,7 @@ export default function ThemeToggle() {
               setTheme("light");
               setOpen(false)
             }}
-            className="flex w-full items-center gap-2 p-2 rounded text-sm hover:bg-accent"
+            className="flex w-full items-center gap-2 p-2 rounded text-sm hover:bg-accent active:bg-accent focus:bg-accent"
           >
             <Sun className="w-4 h-4" /> Light
           </button>
@@ -40,7 +39,7 @@ export default function ThemeToggle() {
               setTheme("dark");
               setOpen(false)
             }}
-            className="flex w-full items-center gap-2 p-2 rounded text-sm hover:bg-accent"
+            className="flex w-full items-center gap-2 p-2 rounded text-sm hover:bg-accent active:bg-accent focus:bg-accent"
           >
             <Moon className="w-4 h-4" /> Dark
           </button>
@@ -49,7 +48,7 @@ export default function ThemeToggle() {
               setTheme("system");
               setOpen(false)
             }}
-            className="flex w-full items-center gap-2 p-2 rounded text-sm hover:bg-accent"
+            className="flex w-full items-center gap-2 p-2 rounded text-sm hover:bg-accent active:bg-accent focus:bg-accent"
           >
             <Laptop className="w-4 h-4" /> System
           </button>

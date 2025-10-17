@@ -32,9 +32,8 @@ const Navbar = () => {
           {navPages.map((page, index) => (
             <ul key={index}>
               <Link
-                target="_blank"
                 href={page.url}
-                className="text-muted-foreground font-medium rounded-full px-3 py-2 hover"
+                className={`text-muted-foreground font-medium rounded-full px-3 py-2 hover focus active`}
               >
                 {page.page}
               </Link>
@@ -51,7 +50,7 @@ const Navbar = () => {
         {/* trigger button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden hover rounded-md w-8 h-8 grid place-content-center"
+          className="md:hidden hover focus active rounded-md w-8 h-8 grid place-content-center"
         >
           {!isOpen ? <Menu size={18} /> : <X size={18} />}
         </button>
@@ -64,13 +63,13 @@ const Navbar = () => {
         {/* Theme toggle */}
         <ThemeToggle />
         <Link target="_blank" href={"https://github.com/SAMCOM-07"}>
-          <Github className="w-8 h-8 rounded-sm p-2 hover" />
+          <Github className="w-8 h-8 rounded-sm p-2 hover focus active" />
         </Link>
         <Link target="_blank" href={"https://x.com/SammyShowed?t=CdJOVmklEH6ZYQi9sLimxA&s=09"}>
-          <Twitter className="w-8 h-8 rounded-sm p-2 hover" />
+          <Twitter className="w-8 h-8 rounded-sm p-2 hover focus active" />
         </Link>
         <Link target="_blank" href={"https://www.linkedin.com/in/samuel-shonde"}>
-          <Linkedin className="w-8 h-8 rounded-sm p-2 hover" />
+          <Linkedin className="w-8 h-8 rounded-sm p-2 hover focus active" />
         </Link>
       </div>
     </div>

@@ -291,8 +291,12 @@ export const projectsData = [
 
 
 // FAQs
-
-export const faqs = [
+type FaqType = {
+    id: number;
+    question: string;
+    answer: string
+}
+export const faqs: FaqType[] = [
   {
     id: 1,
     question: "What technologies do you work with most often?",
@@ -303,7 +307,7 @@ export const faqs = [
     id: 2,
     question: "Do you work with clients or teams remotely?",
     answer:
-      "Yes, I do. I&#m flexible and can collaborate effectively through online communication and project management tools.",
+      "Yes, I do. I'm flexible and can collaborate effectively through online communication and project management tools.",
   },
   {
     id: 3,
@@ -315,7 +319,7 @@ export const faqs = [
     id: 4,
     question: "Are you open to full-time or freelance roles?",
     answer:
-      "Yes — I&#m open to freelance collaborations, contract roles, and startup projects where I can contribute and grow.",
+      "Yes — I'm open to freelance collaborations, contract roles, and startup projects where I can contribute and grow.",
   },
   {
     id: 5,
@@ -325,7 +329,7 @@ export const faqs = [
   },
   {
     id: 6,
-    question: "What&#s your long-term vision?",
+    question: "What's your long-term vision?",
     answer:
       "To become a top-tier software developer, contribute to innovative projects, and eventually build my own startup that focuses on technology-driven solutions.",
   },
