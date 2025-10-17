@@ -12,9 +12,11 @@ import React from "react";
 import ThemeToggle from "./ThemeToggle";
 import HamburgerMenu from "./HamburgerMenu";
 import { useAppContext } from "@/context/AppContext";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const { navPages, isOpen, setIsOpen, dropdownRef } = useAppContext();
+  const pathname = usePathname();
 
   return (
     <div
@@ -29,16 +31,21 @@ const Navbar = () => {
 
         {/* nav links */}
         <nav className="hidden md:flex items-center gap-4">
-          {navPages.map((page, index) => (
-            <ul key={index}>
-              <Link
-                href={page.url}
-                className={`text-muted-foreground font-medium rounded-full px-3 py-2 hover focus active`}
-              >
-                {page.page}
-              </Link>
-            </ul>
-          ))}
+          {navPages.map((page, index) => {
+
+            const isActive = pathname === page.url;
+
+            return (
+              <ul key={index}>
+                <Link
+                  href={page.url}
+                  className={`text-muted-foreground font-medium rounded-full px-3 py-2 hover focus active ${isActive && 'text-purpple'}`}
+                >
+                  {page.page}
+                </Link>
+              </ul>
+            )
+          })}
         </nav>
       </div>
 
