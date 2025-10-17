@@ -1,3 +1,5 @@
+// tech stacks
+
 export const stackData = [
   {
     name: "Next.js",
@@ -45,6 +47,8 @@ export const stackData = [
   },
 ];
 
+
+// projects data
 export const projectsData = [
   {
     id: 1,
@@ -281,5 +285,48 @@ export const projectsData = [
         img: "/stack-images/javascript-logo.png",
       },
     ],
+  },
+];
+
+
+
+// FAQs
+
+export const faqs = [
+  {
+    id: 1,
+    question: "What technologies do you work with most often?",
+    answer:
+      "I mainly use Next.js, React, Tailwind CSS, and TypeScript, along with tools like Git, Firebase, and Framer Motion for animations.",
+  },
+  {
+    id: 2,
+    question: "Do you work with clients or teams remotely?",
+    answer:
+      "Yes, I do. I&#m flexible and can collaborate effectively through online communication and project management tools.",
+  },
+  {
+    id: 3,
+    question: "Can you handle both design and development?",
+    answer:
+      "Absolutely. While my main strength is development, I pay close attention to visual design and UX, ensuring the websites I build look great and function smoothly.",
+  },
+  {
+    id: 4,
+    question: "Are you open to full-time or freelance roles?",
+    answer:
+      "Yes — I&#m open to freelance collaborations, contract roles, and startup projects where I can contribute and grow.",
+  },
+  {
+    id: 5,
+    question: "What inspires your work as a developer?",
+    answer:
+      "Seeing ideas come to life and knowing that something I built helps someone achieve their goal motivates me every day.",
+  },
+  {
+    id: 6,
+    question: "What&#s your long-term vision?",
+    answer:
+      "To become a top-tier software developer, contribute to innovative projects, and eventually build my own startup that focuses on technology-driven solutions.",
   },
 ];
