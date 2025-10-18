@@ -46,7 +46,7 @@ const Connect = () => {
 
   return (
     <section
-      className="max-w-lg w-full mb-8 mx-auto"
+      className="max-w-lg w-full mb-8 mx-auto px-6"
       aria-labelledby="connect-heading"
       role="region"
     >
