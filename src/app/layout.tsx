@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Samuel Shonde | Frontend Developer & Designer",
+    default: "Samuel Shonde | Frontend Developer",
     template: "%s | Samuel Shonde",
   },
   description:
@@ -64,11 +64,6 @@ export const metadata: Metadata = {
     // images: ["/og-image.png"],
   },
 };
-
-
-
-
-
 
 
 export default function RootLayout({

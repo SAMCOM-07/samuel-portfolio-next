@@ -29,7 +29,7 @@ const HamburgerMenu = () => {
               href={page.url}
               key={index}
               aria-current={isActive ? "page" : undefined}
-              aria-label={'Go to ${page.page} page'}
+              aria-label={`Go to ${page.page} page`}
               className={`text-muted-foreground flex items-center gap-4 hover focus active p-2 rounded-md cursor-pointer hover:ml-2 transition-all ${isActive && "bg-accent"
                 }`}
             >

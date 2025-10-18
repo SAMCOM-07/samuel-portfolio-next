@@ -334,3 +334,38 @@ export const faqs: FaqType[] = [
       "To become a top-tier software developer, contribute to innovative projects, and eventually build my own startup that focuses on technology-driven solutions.",
   },
 ];
+
+
+
+// services data
+
+export const services = [
+  {
+    id: 1,
+    title: "Frontend Development",
+    icon: "💻",
+    description:
+      "I craft responsive, high-performance interfaces using modern frameworks like Next.js, React, and Tailwind CSS to deliver fast and engaging user experiences.",
+  },
+  {
+    id: 2,
+    title: "UI Implementation",
+    icon: "🎨",
+    description:
+      "I bring beautiful designs to life with clean, scalable code — ensuring consistency, accessibility, and precision across all devices.",
+  },
+  {
+    id: 3,
+    title: "Website Optimization",
+    icon: "⚡",
+    description:
+      "I optimize websites for performance, SEO, and accessibility, making sure your brand reaches users efficiently and effectively.",
+  },
+  {
+    id: 4,
+    title: "Startup & Project Collaboration",
+    icon: "🚀",
+    description:
+      "I love collaborating with teams, agencies, and startups — helping transform ideas into real-world digital products.",
+  },
+];
