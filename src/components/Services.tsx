@@ -13,7 +13,7 @@ const Services = () => {
                 {services.map((service) => (
                     <div
                         key={service.id}
-                        className={`group border border-border rounded-lg p-6 bg-card/50 hover:bg-accent/50 transition-all hover:scale-[1.02] shadow-sm hover:shadow-md ${service.id === 1 || service.id === 4 ? 'md:col-span-2' : 'col-span-1'}`}
+                        className={`group border border-border rounded-lg p-6 bg-card/50 hover:bg-accent/50 focus:bg-accent/50 transition-all hover:scale-[1.02] focus:scale-[1.02] shadow-sm hover:shadow-md ${service.id === 1 || service.id === 4 ? 'md:col-span-2' : 'col-span-1'}`}
                     >
                         <div className="text-4xl mb-4">{service.icon}</div>
                         <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
