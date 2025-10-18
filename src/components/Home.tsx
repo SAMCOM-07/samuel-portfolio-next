@@ -9,8 +9,8 @@ const Home = () => {
         {/* background */}
         <div className="mainbg w-full -z-20 absolute inset-0 top-18"></div>
 
-        {/* First animation group */}
         <div className="flex flex-col items-center slide-up-animation">
+        {/* First animation group */}
           <div className="group relative grid w-max overflow-hidden rounded-full px-3 py-1 transition-colors duration-400">
             {/* Rotating light ring */}
             <span className="absolute inset-0 rounded-full overflow-hidden">
@@ -32,13 +32,12 @@ const Home = () => {
           </span>
         </div>
 
-        {/* Second animation - starts 1s later */}
-        <p className="text-muted-foreground max-w-xs mt-4">
+        <p className="text-muted-foreground max-w-xs mt-4 slide-up-animation delay-200">
           Passionate about building outstanding websites using the latest web
           technologies.
         </p>
 
-        <div className="flex gap-6 mt-6">
+        <div className="flex gap-6 mt-6 slide-up-animation">
           <Link
             href={"#"}
             className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-purpple/80 text-white rounded-full flex items-center gap-2 text-sm"

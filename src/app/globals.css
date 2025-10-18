@@ -183,6 +183,10 @@ body {
     animation: slide-up 1s ease-out forwards;
   }
 
+  .slide-down-animation {
+    animation: slide-down 1s 0.5s ease-out forwards;
+  }
+
   .animate-scroll-horizontal {
     animation: scrollAnimation 10s linear infinite;
   }
@@ -227,6 +231,22 @@ button {
 @keyframes slide-up {
   0% {
     transform: translateY(50px);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-50px);
     opacity: 0;
   }
 
