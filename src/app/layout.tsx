@@ -6,17 +6,16 @@ import Footer from "../components/Footer";
 import { ThemeProvider } from "next-themes";
 import { AppContextProvider } from "@/context/AppContext";
 
-import { Inter, Poppins } from "next/font/google";
-
-const inter = Inter({
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  variable: "--font-inter",
+  display: "swap",
 });
 
-const poppins = Poppins({
-  weight: ["400", "600", "700"],
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  variable: "--font-poppins",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -30,9 +29,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en">
       <body
-        className={`font-inter`}
+        className={`${geistSans.className} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <AppContextProvider>

@@ -54,7 +54,7 @@ export const projectsData = [
     id: 1,
     name: "Admin Dashboard",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
+      "This is a modern admin dashboard template built using Next.js and Shadcn UI. It features a sleek design, responsive layout, and a variety of components to help you get started quickly with your admin panel needs.",
     img: [
       "/projects-images/shadcn-dashboard-lightmode.jpg",
       "/projects-images/shadcn-dashboard-dark-mode.jpg",
@@ -89,7 +89,7 @@ export const projectsData = [
     id: 2,
     name: "Music Desk",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
+      "A music streaming web application that allows users to filter and play their favorite songs. Built with React and Tailwind CSS, it offers a sleek and responsive design for an optimal listening experience.",
     img: [
       "/projects-images/music-app-lightmode.jpg",
       "/projects-images/music-app-darkmode.jpg",
@@ -112,7 +112,7 @@ export const projectsData = [
     id: 3,
     name: "Anon Website",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
+      "A landing page for Anon, a fictional product or service. The design is clean and modern, focusing on user engagement and conversion.",
     img: ["/projects-images/anon.jpg"],
     githubUrl: "https://github.com/SAMCOM-07/anon",
     liveUrl: "https://anon-black.vercel.app/",
@@ -132,7 +132,7 @@ export const projectsData = [
     id: 4,
     name: "Ecommerce Website",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
+      "An ecommerce website template that provides a seamless shopping experience. It features product listings, filtering & sorting, a shopping cart, a checkout process, wishlist and order history. Built with Next.js and Tailwind CSS for optimal performance and responsiveness.",
     img: ["/projects-images/ecommerce.jpg"],
     githubUrl: "",
     liveUrl: "",
@@ -164,7 +164,7 @@ export const projectsData = [
     id: 5,
     name: "Product Filtering",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
+      "A product filtering web application that allows users to filter products based on various criteria such as category, with cart functionalities. Built with HTML, CSS, and JavaScript, it provides a user-friendly interface for an enhanced shopping experience.",
     img: ["/projects-images/product-filter.jpg"],
     githubUrl: "https://github.com/SAMCOM-07/product-filtering",
     liveUrl: "https://product-filtering-red.vercel.app/",
@@ -188,7 +188,7 @@ export const projectsData = [
     id: 6,
     name: "User Record",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
+      "A user record management application that allows users to add, view, edit, and delete user records. Built with React.js and Tailwind CSS, it offers a clean and intuitive interface for managing user information efficiently.",
     img: ["/projects-images/user-record.jpg"],
     githubUrl: "https://github.com/SAMCOM-07/user-record",
     liveUrl: "https://user-record-amber.vercel.app/",
@@ -212,7 +212,7 @@ export const projectsData = [
     id: 7,
     name: "Browser Extension",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
+      "A browser extension that enhances user productivity by providing quick access to useful tools and features. Built with HTML, CSS, and JavaScript, status can be filtered and changed.",
     img: [
       "/projects-images/extension-light-mode.jpg",
       "/projects-images/extension-dark-mode.jpg",
@@ -239,7 +239,7 @@ export const projectsData = [
     id: 8,
     name: "Fylo",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
+      "A landing page for Fylo, a fictional cloud storage service. The design is modern and responsive, focusing on user engagement and conversion.",
     img: [
       "/projects-images/fylo-light-mode.jpg",
       "/projects-images/fylo-dark-mode.jpg",
@@ -266,7 +266,7 @@ export const projectsData = [
     id: 9,
     name: "Shortly",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium libero, asperiores magni dicta repellendus eveniet temporibus cumque dolores. Cupiditate, ad?",
+      "A URL shortening service that allows users to shorten long URLs for easier sharing. Built with HTML, CSS, and JavaScript, it provides a simple and user-friendly interface for generating short links.",
     img: ["/projects-images/shortly.jpg"],
     githubUrl: "https://github.com/SAMCOM-07/Shortly",
     liveUrl: "https://shortly-mu-ten.vercel.app/",

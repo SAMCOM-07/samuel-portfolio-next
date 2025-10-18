@@ -25,7 +25,7 @@ const Footer = () => {
       <Link target="_blank" href={"https://wa.me/+2349061873560"}>
         <FaWhatsapp className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" />
       </Link>
-      <Link target="_blank" href={"phone:+2349061873560"}>
+      <Link target="_blank" href={"tel:+2349061873560"}>
         <Phone className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" />
       </Link>
     </div>

@@ -26,8 +26,8 @@ const Home = () => {
               <h3 className="font-bold text-sm w-fit">Available for work</h3>
             </span>
           </div>
-          <h1 className="font-bold text-5xl md:text-7xl mt-6 [font-family:var(--font-poppins)]">Shonde Samuel</h1>
-          <span className="font-bold text-5xl md:text-6xl mt-2 [font-family:var(--font-poppins)]">
+          <h1 className="font-bold text-5xl md:text-7xl mt-6">Shonde Samuel</h1>
+          <span className="font-bold text-5xl md:text-7xl mt-4">
             Website Developer
           </span>
         </div>

@@ -15,30 +15,30 @@ const Connect = () => {
       icon: <Mail size={18} />,
       title: "Email",
       href: "mailto:yourname@example.com",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, a.",
+      text: "Send me an email",
     },
     {
       icon: <Github size={18} />,
       title: "Github",
       href: "https://github.com/SAMCOM-07",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, a.",
+      text: "Let's collaborate on projects",
     },
     {
       icon: <Linkedin size={18} />,
       title: "LinkedIn",
       href: "https://www.linkedin.com/in/samuel-shonde",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, a.",
+      text: "Let's connect professionally",
     },
     {
       icon: <Twitter size={18} />,
       title: "Twitter",
       href: "https://x.com/SammyShowed?t=CdJOVmklEH6ZYQi9sLimxA&s=09",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, a.",
+      text: "Follow me for updates",
     },
   ];
 
   return (
-    <div className="max-w-lg mb-8 mx-auto">
+    <div className="max-w-lg w-full mb-8 mx-auto">
       <h1 className="text-lg font-bold">Let&#39;s Connect</h1>
       <div className="flex flex-col gap-3 mt-8">
         {data.map((d) => (
