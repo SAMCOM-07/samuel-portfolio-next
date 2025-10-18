@@ -4,7 +4,6 @@ import {
   Github,
   Linkedin,
   Menu,
-  Twitter,
   X,
 } from "lucide-react";
 import Link from "next/link";
@@ -13,6 +12,7 @@ import ThemeToggle from "./ThemeToggle";
 import HamburgerMenu from "./HamburgerMenu";
 import { useAppContext } from "@/context/AppContext";
 import { usePathname } from "next/navigation";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Navbar = () => {
   const { navPages, isOpen, setIsOpen, dropdownRef } = useAppContext();
@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <div
       ref={dropdownRef}
-      className="conpad flex items-center justify-between z-50 gap-4 py-4 bg-background/75 border-b border-b-muted sticky inset-0 backdrop-blur-xs"
+      className="conpad flex items-center justify-between z-50 gap-4 py-4 bg-background/50 border-b border-b-muted sticky inset-0 backdrop-blur-sm"
     >
       <div className="flex items-center gap-6">
         {/* logo */}
@@ -39,7 +39,7 @@ const Navbar = () => {
               <ul key={index}>
                 <Link
                   href={page.url}
-                  className={`text-muted-foreground font-medium rounded-full px-3 py-2 hover focus active ${isActive && 'text-purpple'}`}
+                  className={`text-sm rounded-full px-3 py-2 hover focus active ${isActive ? 'bg-accent text-foreground' : 'text-muted-foreground'}`}
                 >
                   {page.page}
                 </Link>
@@ -73,7 +73,7 @@ const Navbar = () => {
           <Github className="w-8 h-8 rounded-sm p-2 hover focus active" />
         </Link>
         <Link target="_blank" href={"https://x.com/SammyShowed?t=CdJOVmklEH6ZYQi9sLimxA&s=09"}>
-          <Twitter className="w-8 h-8 rounded-sm p-2 hover focus active" />
+          <FaXTwitter className="w-8 h-8 rounded-sm p-2 hover focus active" />
         </Link>
         <Link target="_blank" href={"https://www.linkedin.com/in/samuel-shonde"}>
           <Linkedin className="w-8 h-8 rounded-sm p-2 hover focus active" />

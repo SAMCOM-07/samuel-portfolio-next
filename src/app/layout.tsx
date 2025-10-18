@@ -6,19 +6,22 @@ import Footer from "../components/Footer";
 import { ThemeProvider } from "next-themes";
 import { AppContextProvider } from "@/context/AppContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import { Inter, Poppins } from "next/font/google";
+
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
+  weight: ["400", "600", "700"],
   subsets: ["latin"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
-  title: "Samuel Portfolio",
-  description: "Shonde Samuel Portfolio Website",
+  title: "Samuel Shonde Portfolio",
+  description: "Frontend Developer Portfolio Website",
 };
 
 export default function RootLayout({
@@ -27,9 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`font-inter`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <AppContextProvider>

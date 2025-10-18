@@ -1,7 +1,8 @@
 import { useAppContext } from "@/context/AppContext";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FaXTwitter } from "react-icons/fa6";
 
 const HamburgerMenu = () => {
   const { navPages, setIsOpen } = useAppContext();
@@ -40,7 +41,7 @@ const HamburgerMenu = () => {
             <Github className="w-8 h-8 rounded-sm p-2 hover focus active" />
           </Link>
           <Link target="_blank" href={"https://x.com/SammyShowed?t=CdJOVmklEH6ZYQi9sLimxA&s=09"}>
-            <Twitter className="w-8 h-8 rounded-sm p-2 hover focus active" />
+            <FaXTwitter className="w-8 h-8 rounded-sm p-2 hover focus active" />
           </Link>
           <Link target="_blank" href={"https://www.linkedin.com/in/samuel-shonde"}>
             <Linkedin className="w-8 h-8 rounded-sm p-2 hover focus active" />

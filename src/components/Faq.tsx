@@ -9,7 +9,7 @@ const Faqs = () => {
     const [selected, setSelected] = useState<number | null>(null);
 
     return (
-        <section className='p-6 max-w-xl mx-auto'>
+        <section className='p-6 max-w-xl mx-auto mb-16'>
             <h1 className='mb-8 mt-24 text-center'>Frequently Asked Questions</h1>
             <div className='space-y-4'>
                 {faqs.map((faq) => (

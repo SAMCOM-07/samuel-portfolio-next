@@ -1,7 +1,15 @@
 import About from '@/components/About'
 import Card from '@/components/Card'
 import Faqs from '@/components/Faq'
+import { Metadata } from 'next';
 import React from 'react'
+
+
+export const metadata: Metadata = {
+  title: "Samuel Portfolio",
+  description: "Shonde Samuel Portfolio Website",
+};
+
 
 const AboutPage = () => {
   return (

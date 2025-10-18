@@ -33,7 +33,7 @@ const Projects = () => {
                   }
                   alt={project.name}
                   fill
-                  className="object-cover object-center rounded-lg aspect-square hover:scale-105 transition-all duration-300 "
+                  className="object-cover object-center rounded-lg aspect-square focus:scale-105 hover:scale-105 transition-all duration-300 "
                 />
               </div>
 
@@ -71,7 +71,7 @@ const Projects = () => {
           )
         }
       </div>
-      <ShowMoreButton href="/projects" text='See more project' />
+      <ShowMoreButton href="/projects" text='See all projects' />
     </div >
   );
 };

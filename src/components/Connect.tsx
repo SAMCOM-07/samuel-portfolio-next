@@ -38,7 +38,7 @@ const Connect = () => {
   ];
 
   return (
-    <div className="max-w-lg mb-8">
+    <div className="max-w-lg mb-8 mx-auto">
       <h1 className="text-lg font-bold">Let&#39;s Connect</h1>
       <div className="flex flex-col gap-3 mt-8">
         {data.map((d) => (
