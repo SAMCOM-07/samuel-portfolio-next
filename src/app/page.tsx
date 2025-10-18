@@ -15,7 +15,7 @@ export default function HomePage() {
       <Services />
       <Technologies />
       <Projects />
-      <div className="flex max-w-6xl mx-auto flex-col lg:flex-row items-center justify-center gap-4">
+      <div className="flex max-w-6xl mx-auto flex-col lg:flex-row items-center justify-center gap-4 slide-up-animation px-6">
         <Faqs />
         <Connect />
       </div>
