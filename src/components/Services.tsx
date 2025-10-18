@@ -1,5 +1,4 @@
 import { services } from '@/lib/data/data'
-import React from 'react'
 
 const Services = () => {
     return (

@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "./Card";
 import { stackData } from './../lib/data/data';
 import Image from "next/image";

@@ -7,7 +7,6 @@ import {
   X,
 } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 import ThemeToggle from "./ThemeToggle";
 import HamburgerMenu from "./HamburgerMenu";
 import { useAppContext } from "@/context/AppContext";
