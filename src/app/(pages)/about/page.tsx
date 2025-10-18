@@ -19,7 +19,7 @@ const AboutPage = () => {
       <About />
 
       {/* my tech journey */}
-      <section className='max-w-5xl mx-auto px-6'>
+      <section className='max-w-5xl mx-auto px-6 slide-up-animation'>
         <h1 className="mb-8 mt-24 text-center">💻 My Tech Journey</h1>
         <Card>
           <p className="p-4 flex flex-col gap-6">
@@ -40,7 +40,7 @@ const AboutPage = () => {
       </section>
 
       {/* my aim/mission */}
-      <section className='max-w-5xl mx-auto px-6'>
+      <section className='max-w-5xl mx-auto px-6 slide-up-animation'>
         <h1 className="mb-8 mt-24 text-center">🎯 My Aim / Mission</h1>
         <Card>
           <p className="p-4 flex flex-col gap-6">
