@@ -9,7 +9,7 @@ export default function ChatBot() {
     const [messages, setMessages] = useState<{ role: string; text: string }[]>([{ role: 'bot', text: `Hi 👋 I'm Sam's AI assistant! Ask me anything about him.` }]);
     const [input, setInput] = useState("");
 
-    const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
+    const sendMessage = async (e: React.MouseEvent<HTMLButtonElement>) => {
 
         e.preventDefault();
 
