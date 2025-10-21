@@ -21,7 +21,7 @@ const Connect = () => {
     {
       icon: <Mail size={18} aria-hidden="true" />,
       title: "Email",
-      href: "mailto:yourname@example.com",
+      href: "mailto:shondesamuel07@gmail.com",
       text: "Send me an email",
     },
     {
