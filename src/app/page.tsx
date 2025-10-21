@@ -5,6 +5,7 @@ import { Projects } from "@/components/Projects";
 import Technologies from "@/components/Technologies";
 import Services from "@/components/Services";
 import Connect from "@/components/Connect";
+import Chatbot from "@/components/Chatbot";
 
 export default function HomePage() {
 
@@ -18,6 +19,7 @@ export default function HomePage() {
       <div className="flex max-w-6xl mx-auto flex-col lg:flex-row items-center justify-center gap-4 slide-up-animation px-6">
         <Faqs />
         <Connect />
+        <Chatbot />
       </div>
     </div>
   );
