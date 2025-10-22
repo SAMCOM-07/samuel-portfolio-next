@@ -25,8 +25,6 @@ export default function ChatBot() {
 
         e.preventDefault();
 
-
-
         if (!input.trim()) return;
         const newMessage = { role: "user", text: input };
         setMessages([...messages, newMessage]);
@@ -66,11 +64,11 @@ export default function ChatBot() {
 
 
     return (
-        <div ref={chatbotRef}>
+        <div ref={chatbotRef} className="z-40">
             {/* Chat Button */}
             <motion.button
                 onClick={() => setIsChatOpen(prev => !prev)}
-                className={`fixed bottom-5 right-5 bg-purpple p-3 text-xl rounded-full z-40 shadow-[0_0_10px] shadow-purpple ${!isChatOpen && 'animate-pulse'}`}
+                className={`fixed bottom-5 right-5 bg-purpple p-3 text-xl rounded-full shadow-[0_0_10px] shadow-purpple ${!isChatOpen && 'animate-pulse'}`}
                 whileHover={{ scale: 1.1 }}
             >
                 <MessageCircle size={24} color="white" aria-label="Open chat with AI assistant" />
@@ -98,7 +96,7 @@ export default function ChatBot() {
                                 >
                                     {msg.text}
                                 </div>
-                                {isLoading && msg.role === 'user' && i === (messages.length - 1) && <div className="animate-pulse flex items-center">loading <span className="w-3 h-3 inline-block rounded-full ml-1 border-b-2 border-t-2 animate-spin"></span></div>}
+                                {isLoading && msg.role === 'user' && i === (messages.length - 1) && <div className="animate-pulse flex items-center mt-4 text-muted-foreground/70">loading <span className="w-3 h-3 inline-block rounded-full ml-1 border-b-2 border-t-2 animate-spin"></span></div>}
                             </div>
                         ))}
                         <div ref={messagesEndRef} />
@@ -109,7 +107,7 @@ export default function ChatBot() {
                             type="text"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
-                            placeholder="Ask something..."
+                            placeholder="Ask something . . ."
                             className="flex-1 border border-border outline-0 rounded-lg px-3 py-2 text-sm"
                         />
                         <button
