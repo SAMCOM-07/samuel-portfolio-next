@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 import { MessageCircle } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 
 
 export default function ChatBot() {
@@ -94,7 +95,20 @@ export default function ChatBot() {
                                         : "bg-accent self-start max-w-[85%]"
                                         }`}
                                 >
-                                    {msg.text}
+                                    <ReactMarkdown
+                                        components={{
+                                            a: ({ node, ...props }) => (
+                                                <a
+                                                    {...props}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-blue-500 hover:underline"
+                                                />
+                                            ),
+                                        }}
+                                    >
+                                        {msg.text}
+                                    </ReactMarkdown>
                                 </div>
                                 {isLoading && msg.role === 'user' && i === (messages.length - 1) && <div className="animate-pulse flex items-center mt-4 text-muted-foreground/70">loading <span className="w-3 h-3 inline-block rounded-full ml-1 border-b-2 border-t-2 animate-spin"></span></div>}
                             </div>

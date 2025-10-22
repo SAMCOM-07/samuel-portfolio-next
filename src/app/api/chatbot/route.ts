@@ -78,8 +78,7 @@ When sharing a link, always make it clickable.
 
 If a user asks something you don't know, reply:
 
-“You can ask Samuel directly via the contact page. Click the link: https://samuelshonde.vercel.app/contact
-”
+“You can ask Samuel directly via the contact page. Click the link: [Contact Page](https://samuelshonde.vercel.app/contact)”
         `,
       },
       { role: "user", content: message },
