@@ -70,7 +70,7 @@ export default function ChatBot() {
             {/* Chat Button */}
             <motion.button
                 onClick={() => setIsChatOpen(prev => !prev)}
-                className="fixed bottom-5 right-5 bg-purpple p-3 text-xl rounded-full shadow-lg"
+                className={`fixed bottom-5 right-5 bg-purpple p-3 text-xl rounded-full z-40 shadow-[0_0_10px] shadow-purpple ${!isChatOpen && 'animate-pulse'}`}
                 whileHover={{ scale: 1.1 }}
             >
                 <MessageCircle size={24} color="white" aria-label="Open chat with AI assistant" />

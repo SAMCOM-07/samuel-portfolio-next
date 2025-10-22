@@ -44,8 +44,8 @@ const Technologies = () => {
         </motion.div>
 
         {/* Faded edges for better look */}
-        <div className="absolute w-16 h-60 bg-background blur-md z-30 -left-6 -top-6"></div>
-        <div className="absolute w-16 h-60 bg-background blur-md z-30 -right-6 -top-6"></div>
+        <div className="absolute w-22 h-60 bg-background blur-md z-30 -left-12 -top-6"></div>
+        <div className="absolute w-22 h-60 bg-background blur-md z-30 -right-12 -top-6"></div>
       </div>
     </section>
   );
