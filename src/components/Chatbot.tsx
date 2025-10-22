@@ -85,7 +85,7 @@ export default function ChatBot() {
                 >
                     <h2 className="text-center text-xl font-bold text-purpple">How may I help you?</h2>
                     <hr className="text-border my-4" />
-                    <div className="scrollbar h-64 overflow-y-auto flex flex-col space-y-4">
+                    <div className="scrollbar h-72 overflow-y-auto flex flex-col space-y-4">
                         {messages && messages.length && messages?.map((msg, i) => (
                             <div key={i} className="flex flex-col">
                                 <div
