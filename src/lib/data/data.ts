@@ -134,8 +134,8 @@ export const projectsData = [
     description:
       "An ecommerce website template that provides a seamless shopping experience. It features product listings, filtering & sorting, a shopping cart, a checkout process, wishlist and order history. Built with Next.js and Tailwind CSS for optimal performance and responsiveness.",
     img: ["/projects-images/ecommerce.jpg"],
-    githubUrl: "",
-    liveUrl: "",
+    githubUrl: "https://github.com/SAMCOM-07/omnishop",
+    liveUrl: "https://omnishop-ng.vercel.app/",
     status: "In Progress 📍",
     stacks: [
       {

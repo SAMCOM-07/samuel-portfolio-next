@@ -53,9 +53,9 @@ export const About = ({ showMore }: { showMore?: string }) => {
               variants={fadeUp}
               className="text-muted-foreground font-medium leading-6"
             >
-              Hello, I&#39;m Samuel Shonde, a 500 Level Computer Engineering Student and a creative & detail-oriented Frontend Developer with a strong passion for crafting visually appealing and highly functional web experiences. I specialize in using{" "}
+              Hello, I&#39;m Shonde Samuel, a creative & detail-oriented Frontend Developer with a strong passion for crafting visually appealing and highly functional web experiences. I specialize in using{" "}
               <span className="text-purpple">
-                Next.js, React, and Tailwind CSS
+                Next.js, React, TypeScript and Tailwind CSS
               </span>{" "}
               to bring ideas to life on the web — from personal portfolios to dynamic business platforms.
             </motion.span>

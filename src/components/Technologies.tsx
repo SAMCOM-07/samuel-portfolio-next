@@ -18,17 +18,17 @@ const Technologies = () => {
           transition={{
             repeat: Infinity,
             ease: "linear",
-            duration: 10, // adjust speed here (lower = faster)
+            duration: 15, // adjust speed here (lower = faster)
           }}
         >
           {/* Duplicate the stackData to make a seamless loop */}
           {[...stackData, ...stackData].map((stack, index) => (
             <div
               key={index}
-              className="shadow-[0_0_5px] shadow-foreground h-fit w-fit rounded-md"
+              className=" h-fit w-fit rounded-md"
             >
               <Card>
-                <div className="w-[70px] h-[120px] overflow-hidden">
+                <div className="w-[80px] h-[120px] overflow-hidden">
                   <Image
                     src={stack.img}
                     alt={stack.name}

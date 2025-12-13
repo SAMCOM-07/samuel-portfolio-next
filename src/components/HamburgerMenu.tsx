@@ -14,7 +14,7 @@ const HamburgerMenu = () => {
       role="dialog"
       aria-modal="true"
       aria-label="Mobile navigation menu"
-      className="fade-up-animation absolute z-40 inset-0 top-16 bg-background/85 w-full h-screen backdrop-blur-lg md:hidden"
+      className="fade-up-animation absolute z-40 inset-0 top-13 bg-background/85 w-full h-screen backdrop-blur-lg md:hidden"
     >
       <div
         className="w-[90%] mx-auto rounded-md p-6 bg-background border border-muted mt-6 shadow-[0_0_10px] shadow-muted flex flex-col gap-4"
