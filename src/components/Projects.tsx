@@ -36,7 +36,7 @@ export const Projects = () => {
   const projectsDataSlice = projectsData.slice(0, 2);
 
   return (
-    <div className="w-full relative mt-22 pt-16 pb-6 conpad slide-up-animation">
+    <div className="w-full relative mt-18 pb-6 conpad slide-up-animation">
       <h1 className="text-center">Featured Projects</h1>
       <p className="text-center mx-auto text-muted-foreground mt-4 max-w-lg">
         A collection of projects that showcase my skills and passion for creating innovative digital solutions.
