@@ -30,6 +30,10 @@ export const stackData = [
     img: "/stack-images/shadcn-logo.png",
   },
   {
+    name: "Cloudinary",
+    img: "/stack-images/cloudinary-logo.png",
+  },
+  {
     name: "HTML5",
     img: "/stack-images/html-logo.png",
   },
@@ -79,6 +83,10 @@ export const projectsData = [
       {
         name: "TypeScript",
         img: "/stack-images/typescript-logo.png",
+      },
+      {
+        name: "Cloudinary",
+        img: "/stack-images/cloudinary-logo.png",
       },
     ],
   },

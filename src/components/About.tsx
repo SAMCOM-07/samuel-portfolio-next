@@ -225,6 +225,7 @@ export const AboutMe = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
+        className="mt-18"
       >
         <Faqs />
       </motion.div>
