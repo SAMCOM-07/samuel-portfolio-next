@@ -52,6 +52,38 @@ export const stackData = [
 export const projectsData = [
   {
     id: 1,
+    name: "Omnishop",
+    description:
+      "An ecommerce website template that provides a seamless shopping experience. It features product listings, filtering & sorting, a shopping cart, a checkout process, wishlist and order history. Built with Next.js and Tailwind CSS for optimal performance and responsiveness.",
+    img: ["/projects-images/omnishop.png"],
+    githubUrl: "https://github.com/SAMCOM-07/omnishop",
+    liveUrl: "https://omnishop-ng.vercel.app/",
+    status: "In Progress 📍",
+    stacks: [
+      {
+        name: "Next.js",
+        img: "/stack-images/next-logo.png",
+      },
+      {
+        name: "React.js",
+        img: "/stack-images/react-logo.png",
+      },
+      {
+        name: "Firebase",
+        img: "/stack-images/firebase-logo.png",
+      },
+      {
+        name: "TailwindCss",
+        img: "/stack-images/tailwind-logo.png",
+      },
+      {
+        name: "TypeScript",
+        img: "/stack-images/typescript-logo.png",
+      },
+    ],
+  },
+  {
+    id: 2,
     name: "Admin Dashboard",
     description:
       "This is a modern admin dashboard template built using Next.js and Shadcn UI. It features a sleek design, responsive layout, and a variety of components to help you get started quickly with your admin panel needs.",
@@ -86,7 +118,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: "Music Desk",
     description:
       "A music streaming web application that allows users to filter and play their favorite songs. Built with React and Tailwind CSS, it offers a sleek and responsive design for an optimal listening experience.",
@@ -109,7 +141,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     name: "Anon Website",
     description:
       "A landing page for Anon, a fictional product or service. The design is clean and modern, focusing on user engagement and conversion.",
@@ -125,38 +157,6 @@ export const projectsData = [
       {
         name: "TailwinCss",
         img: "/stack-images/tailwind-logo.png",
-      },
-    ],
-  },
-  {
-    id: 4,
-    name: "Ecommerce Website",
-    description:
-      "An ecommerce website template that provides a seamless shopping experience. It features product listings, filtering & sorting, a shopping cart, a checkout process, wishlist and order history. Built with Next.js and Tailwind CSS for optimal performance and responsiveness.",
-    img: ["/projects-images/ecommerce.jpg"],
-    githubUrl: "https://github.com/SAMCOM-07/omnishop",
-    liveUrl: "https://omnishop-ng.vercel.app/",
-    status: "In Progress 📍",
-    stacks: [
-      {
-        name: "Next.js",
-        img: "/stack-images/next-logo.png",
-      },
-      {
-        name: "React.js",
-        img: "/stack-images/react-logo.png",
-      },
-      {
-        name: "Firebase",
-        img: "/stack-images/firebase-logo.png",
-      },
-      {
-        name: "TailwindCss",
-        img: "/stack-images/tailwind-logo.png",
-      },
-      {
-        name: "TypeScript",
-        img: "/stack-images/typescript-logo.png",
       },
     ],
   },

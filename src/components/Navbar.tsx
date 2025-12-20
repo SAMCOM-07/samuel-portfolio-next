@@ -102,7 +102,7 @@ const Navbar = () => {
           </Link>
           <Link
             target="_blank"
-            href={"https://x.com/SammyShowed?t=CdJOVmklEH6ZYQi9sLimxA&s=09"}
+            href={"https://x.com/SammyShowed"}
             aria-label="Visit Samuel's Twitter profile"
           >
             <FaXTwitter

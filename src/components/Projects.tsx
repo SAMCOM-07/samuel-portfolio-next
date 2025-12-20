@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import ShowMoreButton from "./ShowMoreButton";
 import Link from "next/link";
-import { Eye, Github } from "lucide-react";
+import { LinkIcon, Github } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
 const projectVariants: Variants = {
@@ -59,8 +59,8 @@ export const Projects = () => {
                   current === "light"
                     ? project.img[0]
                     : current === "dark" && project.img.length > 1
-                    ? project.img[1]
-                    : project.img[0]
+                      ? project.img[1]
+                      : project.img[0]
                 }
                 alt={project.name}
                 fill
@@ -70,14 +70,13 @@ export const Projects = () => {
 
             {/* details */}
             <div>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between gap-2 items-center">
                 <h1 className="">{project.name}</h1>
                 <span
-                  className={`text-white font-semibold text-sm ${
-                    project.status.includes("Progress")
-                      ? "bg-blue-900"
-                      : "bg-green-900"
-                  } py-1 px-2 rounded-sm`}
+                  className={`text-white font-semibold text-sm ${project.status.includes("Progress")
+                    ? "bg-blue-900"
+                    : "bg-green-900"
+                    } py-1 px-2 rounded-sm`}
                 >
                   {project.status}
                 </span>
@@ -120,7 +119,7 @@ export const Projects = () => {
                   href={project.liveUrl}
                   className="px-3 py-2 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 transition-all duration-300"
                 >
-                  <Eye size={18} />
+                  <LinkIcon size={18} />
                   <span>Preview</span>
                 </Link>
                 <Link
@@ -129,7 +128,7 @@ export const Projects = () => {
                   className="px-3 py-2 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 transition-all duration-300"
                 >
                   <Github size={18} />
-                  <span>Source Code</span>
+                  <span>Repository</span>
                 </Link>
               </div>
             </div>
@@ -172,8 +171,8 @@ export const ProjectsPage = () => {
                     current === "light"
                       ? project.img[0]
                       : current === "dark" && project.img.length > 1
-                      ? project.img[1]
-                      : project.img[0]
+                        ? project.img[1]
+                        : project.img[0]
                   }
                   alt={project.name}
                   fill
@@ -186,11 +185,10 @@ export const ProjectsPage = () => {
                 <div className="flex justify-between items-center">
                   <h1 className="">{project.name}</h1>
                   <span
-                    className={`text-white font-semibold text-sm ${
-                      project.status.includes("Progress")
-                        ? "bg-blue-900"
-                        : "bg-green-900"
-                    } py-1 px-2 rounded-sm`}
+                    className={`text-white font-semibold text-sm ${project.status.includes("Progress")
+                      ? "bg-blue-900"
+                      : "bg-green-900"
+                      } py-1 px-2 rounded-sm`}
                   >
                     {project.status}
                   </span>
@@ -233,7 +231,7 @@ export const ProjectsPage = () => {
                     href={project.liveUrl}
                     className="px-3 py-2 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300"
                   >
-                    <Eye size={18} />
+                    <LinkIcon size={18} />
                     <span>Preview</span>
                   </Link>
                   <Link
@@ -242,7 +240,7 @@ export const ProjectsPage = () => {
                     className="px-3 py-2 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300"
                   >
                     <Github size={18} />
-                    <span>Source Code</span>
+                    <span>Repository</span>
                   </Link>
                 </div>
               </div>

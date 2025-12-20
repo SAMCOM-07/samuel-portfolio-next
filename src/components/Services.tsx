@@ -16,12 +16,12 @@ const Services = () => {
 
     // Each card animation
     const cardVariants: Variants = {
-        hidden: { opacity: 0, y: 80 }, // taller gap
+        hidden: { opacity: 0, y: 50 }, // taller gap
         show: {
             opacity: 1,
             y: 0,
             transition: {
-                duration: 0.8, // slightly slower for smooth rise
+                duration: 0.5, // slightly slower for smooth rise
                 ease: "easeOut",
             },
         },
