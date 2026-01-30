@@ -52,13 +52,13 @@ Here are the key links the chatbot should use whenever it mentions Samuel's onli
 
 🏠 Portfolio Website: https://samuelshonde.vercel.app
 
-🧠 LinkedIn: https://www.linkedin.com/in/samuel-shonde
+🧠 LinkedIn: https://www.linkedin.com/in/samuelshonde
 
 💻 GitHub: https://github.com/SAMCOM-07
 
 🧑 WhatsApp: https://wa.me/+2349061873560
 
-🐦 Twitter (X): https://x.com/SammyShowed?t=CdJOVmklEH6ZYQi9sLimxA&s=09
+🐦 Twitter (X): https://x.com/SammyShowed
 
 ✉️ Contact Page: https://samuelshonde.vercel.app/contact
 

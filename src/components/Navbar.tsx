@@ -112,7 +112,7 @@ const Navbar = () => {
           </Link>
           <Link
             target="_blank"
-            href={"https://www.linkedin.com/in/samuel-shonde"}
+            href={"https://www.linkedin.com/in/samuelshonde"}
             aria-label="Visit Samuel's LinkedIn profile"
           >
             <Linkedin

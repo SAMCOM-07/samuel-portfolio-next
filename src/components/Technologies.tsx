@@ -34,7 +34,7 @@ const Technologies = () => {
                     alt={stack.name}
                     width={70}
                     height={100}
-                    className="w-full h-[70%] object-contain mx-auto bg-foreground/30 p-1 rounded-md"
+                    className="w-full h-[70%] object-contain mx-auto bg-primary/20 p-1 rounded-md"
                   />
                   <h2 className="mt-4 text-center">{stack.name}</h2>
                 </div>

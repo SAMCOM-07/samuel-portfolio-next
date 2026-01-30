@@ -33,13 +33,13 @@ const Connect = () => {
     {
       icon: <Linkedin size={18} aria-hidden="true" />,
       title: "LinkedIn",
-      href: "https://www.linkedin.com/in/samuel-shonde",
+      href: "https://www.linkedin.com/in/samuelshonde",
       text: "Let's connect professionally",
     },
     {
       icon: <Twitter size={18} aria-hidden="true" />,
       title: "Twitter",
-      href: "https://x.com/SammyShowed?t=CdJOVmklEH6ZYQi9sLimxA&s=09",
+      href: "https://x.com/SammyShowed",
       text: "Follow me for updates",
     },
   ];

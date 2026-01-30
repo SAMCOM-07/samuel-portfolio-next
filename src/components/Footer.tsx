@@ -16,7 +16,7 @@ const Footer = () => {
       <Link target="_blank" href={"https://x.com/SammyShowed"}>
         <FaXTwitter className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" />
       </Link>
-      <Link target="_blank" href={"https://www.linkedin.com/in/samuel-shonde"}>
+      <Link target="_blank" href={"https://www.linkedin.com/in/samuelshonde"}>
         <Linkedin className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" />
       </Link>
       <Link target="_blank" href={"https://www.tiktok.com/@samuel_loveth07"}>
