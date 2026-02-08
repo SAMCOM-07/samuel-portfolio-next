@@ -25,11 +25,11 @@ export const metadata: Metadata = {
     template: "%s | Samuel Shonde",
   },
   description:
-    "Portfolio of Samuel Shonde — a frontend developer skilled in Next.js, React, TypeScript, and Tailwind CSS. I design and build modern, responsive, and performance-driven web experiences.",
+    "Samuel Shonde is a frontend developer skilled in Next.js, React, TypeScript, and Tailwind CSS. I design and build modern, responsive, and performance-driven web experiences.",
   keywords: [
     "Samuel Shonde",
     "Frontend Developer",
-    "Web Developer",
+    "Website Developer",
     "Next.js Developer",
     "React Developer",
     "TypeScript",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Samuel Shonde | Website Developer",
     description:
-      "I’m a frontend developer passionate about building visually appealing, performant, and user-friendly web experiences with React, Next.js, and Tailwind CSS.",
+      "I'm a frontend developer passionate about building visually appealing, performant, and user-friendly web experiences with React, Next.js, and Tailwind CSS.",
     url: "https://samuelshonde.vercel.app/",
     siteName: "Samuel Shonde Portfolio",
     // images: [
