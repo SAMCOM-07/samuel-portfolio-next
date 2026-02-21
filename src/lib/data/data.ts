@@ -4,56 +4,89 @@ export const stackData = [
   {
     name: "Next.js",
     img: "/stack-images/next-logo.png",
+    category: "frontend",
+    documentation: "https://nextjs.org/docs",
   },
   {
     name: "React.js",
     img: "/stack-images/react-logo.png",
+    category: "frontend",
+    documentation: "https://react.dev",
   },
   {
-    name: "TailwindCSS",
+    name: "Tailwind CSS",
     img: "/stack-images/tailwind-logo.png",
-  },
-  {
-    name: "Firebase",
-    img: "/stack-images/firebase-logo.png",
-  },
-  {
-    name: "JavaScript",
-    img: "/stack-images/javascript-logo.png",
-  },
-  {
-    name: "TypeScript",
-    img: "/stack-images/typescript-logo.png",
-  },
-  {
-    name: "Node.js",
-    img: "/stack-images/javascript-logo.png", // Using JS logo as placeholder for Node.js
-  },
-  {
-    name: "Shadcn UI",
-    img: "/stack-images/shadcn-logo.png",
-  },
-  {
-    name: "Cloudinary",
-    img: "/stack-images/cloudinary-logo.png",
+    category: "frontend",
+    documentation: "https://tailwindcss.com/docs",
   },
   {
     name: "HTML5",
     img: "/stack-images/html-logo.png",
+    category: "frontend",
+    documentation: "https://developer.mozilla.org/en-US/docs/Web/HTML",
   },
   {
     name: "CSS3",
     img: "/stack-images/css-logo.png",
+    category: "frontend",
+    documentation: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  },
+  {
+    name: "JavaScript",
+    img: "/stack-images/javascript-logo.png",
+    category: "frontend",
+    documentation: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
+    name: "TypeScript",
+    img: "/stack-images/typescript-logo.png",
+    category: "frontend",
+    documentation: "https://www.typescriptlang.org/docs",
+  },
+  {
+    name: "Node.js",
+    img: "/stack-images/node-logo.png",
+    category: "backend",
+    documentation: "https://nodejs.org/docs/latest/api",
+  },
+  {
+    name: "Firebase",
+    img: "/stack-images/firebase-logo.png",
+    category: "backend",
+    documentation: "https://firebase.google.com/docs",
+  },
+  {
+    name: "Cloudinary",
+    img: "/stack-images/cloudinary-logo.png",
+    category: "backend",
+    documentation: "https://cloudinary.com/documentation",
   },
   {
     name: "Git",
     img: "/stack-images/git-logo.png",
+    category: "tools",
+    documentation: "https://git-scm.com/docs",
   },
   {
     name: "GitHub",
     img: "/stack-images/github-logo.png",
+    category: "tools",
+    documentation: "https://docs.github.com",
+  },
+  {
+    name: "Shadcn/ui",
+    img: "/stack-images/shadcn-logo.png",
+    category: "frontend",
+    documentation: "https://ui.shadcn.com",
+  },
+  {
+    name: "Vite",
+    img: "/stack-images/vite-logo.png",
+    category: "tools",
+    documentation: "https://vite.dev",
   },
 ];
+
 
 
 // projects data

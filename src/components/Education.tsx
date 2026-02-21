@@ -13,11 +13,11 @@ const Education = () => {
       <h1 className='text-center'>Education</h1>
       <Card>
         <div className='p-4 space-y-4'>
-          <h2 className='text-lg lg:text-2xl font-semibold'>Bachelor of Engineering (B.Eng) - Computer Engineering</h2>
+          <h2 className='text-lg lg:text-2xl font-semibold'>Bachelor of Engineering (B.Eng) - <span className='text-base'>Computer Engineering</span></h2>
           <div className='flex items-center gap-4 md:text-xl justify-between'>
-            <span>Ekiti State University, Ado-Ekiti, Ekiti State, Nigeria.
+            <span className='text-sm'>Ekiti State University, Ado-Ekiti, Ekiti State, Nigeria.
             </span>
-            <span className='text-sm'>2021 - 2026</span>
+            <span className='text-sm text-nowrap'>2021 - 2026</span>
           </div>
         </div>
       </Card>

@@ -1,5 +1,5 @@
 import { useAppContext } from "@/context/AppContext";
-import { Github, Linkedin } from "lucide-react";
+import { Download, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaXTwitter } from "react-icons/fa6";
@@ -39,11 +39,12 @@ const HamburgerMenu = () => {
           );
         })}
         <Link
-          href={"/contact"}
-          aria-label="Go to contact page"
-          className="text-center bg-background border-2 w-full border-muted p-2 rounded-md hover:scale-105 transition-all"
+          href={"Shonde-Samuel-Resume.pdf"}
+          download
+          aria-label="Download Resume"
+          className="text-center bg-purpple w-full ring-muted p-2 rounded-md hover:ring-2 transition-all flex items-center justify-center gap-2 text-sm "
         >
-          Get In Touch
+          <Download size={20}/> <span>Download Resume</span>
         </Link>
         <div
           className="flex gap-2 self-center"

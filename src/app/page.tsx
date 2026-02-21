@@ -16,8 +16,8 @@ export default function HomePage() {
       <Projects />
       <About showMore="See more" />
       <Education />
-      <Services />
       <Technologies />
+      <Services />
       <div className="flex max-w-6xl mx-auto flex-col lg:flex-row items-center justify-center gap-4 slide-up-animation px-6 mt-12">
         <Faqs />
         <Connect />

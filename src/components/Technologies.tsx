@@ -1,51 +1,98 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Card from "./Card";
 import { stackData } from "@/lib/data/data";
 import Image from "next/image";
+import Link from "next/link";
 
 const Technologies = () => {
+  const categories = {
+    Frontend: stackData.filter(item => item.category === "frontend"),
+    Backend: stackData.filter(item => item.category === "backend"),
+    Tools: stackData.filter(item => item.category === "tools"),
+  };
+
+  // Parent container animation (controls stagger)
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1, // delay between each stack
+      },
+    },
+  };
+
+  // Child animation (bounce up)
+  const itemVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 40,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 15,
+      },
+    },
+  };
+
   return (
     <section className="conpad mt-22">
-      <h1 className="mb-8 text-center">Technologies & Tools</h1>
+      <h1 className="mb-8 text-center text-primary">
+        Technologies & Tools
+      </h1>
 
-      <div className="max-w-5xl mx-auto relative overflow-hidden">
-        {/* Main scroll wrapper */}
-        <motion.div
-          className="flex items-center gap-6 py-4 w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            repeat: Infinity,
-            ease: "linear",
-            duration: 15, // adjust speed here (lower = faster)
-          }}
-        >
-          {/* Duplicate the stackData to make a seamless loop */}
-          {[...stackData, ...stackData].map((stack, index) => (
-            <div
-              key={index}
-              className=" h-fit w-fit rounded-md"
+      <div className="max-w-5xl mx-auto">
+        {Object.entries(categories).map(([categoryName, items]) => (
+          <div key={categoryName} className="mb-12">
+            <h2 className="text-xl font-semibold text-secondary text-center mb-6">
+              {categoryName}
+            </h2>
+
+            {/* Motion container for stagger */}
+            <motion.div
+              className="flex flex-wrap justify-center gap-4"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
             >
-              <Card>
-                <div className="w-[80px] h-[120px] overflow-hidden">
-                  <Image
-                    src={stack.img}
-                    alt={stack.name}
-                    width={70}
-                    height={100}
-                    className="w-full h-[70%] object-contain mx-auto bg-primary/20 p-1 rounded-md"
-                  />
-                  <h2 className="mt-4 text-center">{stack.name}</h2>
-                </div>
-              </Card>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Faded edges for better look */}
-        <div className="absolute w-18 h-60 bg-background blur-md z-30 -left-12 -top-6"></div>
-        <div className="absolute w-18 h-60 bg-background blur-md z-30 -right-12 -top-6"></div>
+              {items.map((stack, index) => (
+                <motion.div
+                  key={stack.name}
+                  variants={itemVariants}
+                  className="h-fit w-fit"
+                  whileHover={{ scale: 1.08 }}
+                >
+                  <Link
+                    href={stack.documentation}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Card>
+                      <div className="w-[80px] h-[120px] overflow-hidden">
+                        <Image
+                          src={stack.img}
+                          alt={stack.name}
+                          width={70}
+                          height={100}
+                          className="w-full h-[70%] object-contain mx-auto bg-primary/20 p-1 rounded-md"
+                        />
+                        <h3 className="mt-4 text-center text-tertiary">
+                          {stack.name}
+                        </h3>
+                      </div>
+                    </Card>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        ))}
       </div>
     </section>
   );

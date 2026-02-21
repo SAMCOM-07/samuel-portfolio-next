@@ -65,7 +65,7 @@ export default function ChatBot() {
 
 
   return (
-    <div ref={chatbotRef} className="z-40">
+    <div ref={chatbotRef} className="z-50">
       {/* Chat Button */}
       <motion.button
         onClick={() => setIsChatOpen(prev => !prev)}
@@ -81,7 +81,7 @@ export default function ChatBot() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          className="fixed bottom-20 right-5 w-[20rem] bg-background rounded-2xl shadow-[0_0_5px] shadow-purpple p-4 border border-border"
+          className="z-50 fixed bottom-20 right-5 w-[20rem] bg-background rounded-2xl shadow-[0_0_5px] shadow-purpple p-4 border border-border"
         >
           <h2 className="text-center text-xl font-bold text-purpple">How may I help you?</h2>
           <hr className="text-border my-4" />

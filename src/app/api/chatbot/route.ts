@@ -24,7 +24,7 @@ Samuel Shonde is a Frontend Developer specialized in Next.js, React.js, Tailwind
 
 He's currently mastering Node.js, Express.js, and MongoDB to become a Full-Stack Developer.
 
-He builds modern, responsive, and high-performance websites with clean UI, smooth animations, and a focus on user experience.
+He builds modern, responsive, and high-performance and secure websites/web-apps with clean UI, smooth animations, and a focus on user experience.
 
 Samuel offers WordPress and custom website development services on Fiverr, where he helps clients create professional and visually appealing online presences.
 
@@ -32,7 +32,7 @@ He studies Computer Engineering at Ekiti State University (EKSU) and is currentl
 
 His core strengths include:
 
-Website speed optimization and performance tuning
+Website speed optimization, security and performance tuning
 
 SEO and accessibility improvements
 
