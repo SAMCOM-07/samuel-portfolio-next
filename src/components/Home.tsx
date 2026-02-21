@@ -90,7 +90,7 @@ const Home = () => {
             className="flex gap-6 mt-6"
           >
             <Link
-              href={"Samuel-Shonde-CV.pdf"}
+              href={"Shonde-Samuel-Resume.pdf"}
               download
               className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-purpple/80 text-white rounded-full flex items-center gap-2 text-sm"
             >

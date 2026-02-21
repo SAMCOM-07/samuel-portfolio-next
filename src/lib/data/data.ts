@@ -26,6 +26,10 @@ export const stackData = [
     img: "/stack-images/typescript-logo.png",
   },
   {
+    name: "Node.js",
+    img: "/stack-images/javascript-logo.png", // Using JS logo as placeholder for Node.js
+  },
+  {
     name: "Shadcn UI",
     img: "/stack-images/shadcn-logo.png",
   },

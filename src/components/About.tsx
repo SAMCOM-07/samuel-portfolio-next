@@ -219,6 +219,36 @@ export const AboutMe = () => {
         </motion.div>
       </motion.section>
 
+      {/* My Skills Section */}
+      <motion.section
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        className="max-w-5xl mx-auto px-6 mt-24"
+      >
+        <motion.h1 variants={fadeUp} className="mb-8 text-center">
+          🚀 My Skills
+        </motion.h1>
+        <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            { name: "Next.js", img: "/stack-images/next-logo.png" },
+            { name: "React.js", img: "/stack-images/react-logo.png" },
+            { name: "Node.js", img: "/stack-images/javascript-logo.png" },
+            { name: "TailwindCss", img: "/stack-images/tailwind-logo.png" },
+            { name: "TypeScript", img: "/stack-images/typescript-logo.png" },
+            { name: "Firebase", img: "/stack-images/firebase-logo.png" },
+          ].map((skill, index) => (
+            <Card key={index}>
+              <div className="flex items-center gap-4 p-4">
+                <img src={skill.img} alt={skill.name} className="w-10 h-10 object-contain" />
+                <span className="text-lg font-semibold">{skill.name}</span>
+              </div>
+            </Card>
+          ))}
+        </motion.div>
+      </motion.section>
+
       {/* FAQs */}
       <motion.div
         variants={fadeUp}
