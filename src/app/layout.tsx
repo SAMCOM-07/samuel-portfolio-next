@@ -73,6 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head><meta name="google-site-verification" content="TXGAApfYoQlYQxnV7s3s7trHwEWFbchma88PXHOatYQ" /></head>
       <body
         className={`${geistSans.className} ${geistMono.variable} antialiased scrollbar`}
       >
