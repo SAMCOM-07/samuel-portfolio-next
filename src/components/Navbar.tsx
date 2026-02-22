@@ -20,7 +20,8 @@ const Navbar = () => {
   return (
     <nav
       ref={dropdownRef}
-      aria-label="Main navigation"
+      role="navigation"
+      aria-label="Main hamburger menu"
       className="z-50 gap-4 py-4 bg-background/50 border-b border-b-muted sticky inset-0 backdrop-blur-sm"
     >
       <div className="conpad flex items-center justify-between slide-down-animation">
@@ -28,52 +29,53 @@ const Navbar = () => {
           {/* logo */}
           <Link
             href={"/"}
-            aria-label="Samuel's Portfolio - Home"
-            className="font-bold text-3xl focus:outline-none focus:ring-2 focus:ring-primary rounded"
+            aria-label="Go to homepage"
+            className="font-bold text-3xl"
           >
             S
           </Link>
 
           {/* nav links */}
-          <ul
-            className="hidden md:flex items-center gap-4 list-none"
-            role="list"
+          <nav
+            className="hidden md:flex items-center gap-4"
+            role="menubar"
+            aria-label="Desktop navigation links"
           >
             {navPages.map((page, index) => {
               const isActive = pathname === page.url;
 
               return (
-                <li key={index}>
+                <ul key={index} role="none">
                   <Link
                     href={page.url}
+                    role="menuitem"
                     aria-current={isActive ? "page" : undefined}
-                    aria-label={`Navigate to ${page.page} page`}
-                    className={`text-sm rounded-full px-3 py-2 hover focus active focus:outline-none focus:ring-2 focus:ring-primary transition-colors ${isActive
+                    aria-label={'Go to ${page.page} page'}
+                    className={`text-sm rounded-full px-3 py-2 hover focus active ${isActive
                         ? "bg-accent text-foreground"
                         : "text-muted-foreground"
                       }`}
                   >
                     {page.page}
                   </Link>
-                </li>
+                </ul>
               );
             })}
-          </ul>
+          </nav>
         </div>
 
         <div className="flex items-center gap-2">
           <span className="md:hidden">
-            <ThemeToggle />
+            <ThemeToggle aria-label="Toggle theme" />
           </span>
 
           {/* hamburger section */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
-            type="button"
-            className="md:hidden hover focus active rounded-md w-8 h-8 grid place-content-center focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+            className="md:hidden hover focus active rounded-md w-8 h-8 grid place-content-center"
           >
             {!isOpen ? <Menu size={18} aria-hidden="true" /> : <X size={18} aria-hidden="true" />}
           </button>
@@ -85,15 +87,13 @@ const Navbar = () => {
         <div
           className="md:flex gap-2 hidden"
           role="group"
-          aria-label="Social media links and theme toggle"
+          aria-label="Social media and theme controls"
         >
-          <ThemeToggle />
+          <ThemeToggle aria-label="Toggle theme" />
           <Link
             target="_blank"
-            rel="noopener noreferrer"
             href={"https://github.com/SAMCOM-07"}
-            aria-label="Visit Samuel's GitHub profile (opens in new tab)"
-            className="focus:outline-none focus:ring-2 focus:ring-primary rounded-sm transition-colors"
+            aria-label="Visit Samuel's GitHub profile"
           >
             <Github
               className="w-8 h-8 rounded-sm p-2 hover focus active"
@@ -102,10 +102,8 @@ const Navbar = () => {
           </Link>
           <Link
             target="_blank"
-            rel="noopener noreferrer"
             href={"https://x.com/SammyShowed"}
-            aria-label="Visit Samuel's Twitter profile (opens in new tab)"
-            className="focus:outline-none focus:ring-2 focus:ring-primary rounded-sm transition-colors"
+            aria-label="Visit Samuel's Twitter profile"
           >
             <FaXTwitter
               className="w-8 h-8 rounded-sm p-2 hover focus active"
@@ -114,10 +112,8 @@ const Navbar = () => {
           </Link>
           <Link
             target="_blank"
-            rel="noopener noreferrer"
             href={"https://www.linkedin.com/in/samuelshonde"}
-            aria-label="Visit Samuel's LinkedIn profile (opens in new tab)"
-            className="focus:outline-none focus:ring-2 focus:ring-primary rounded-sm transition-colors"
+            aria-label="Visit Samuel's LinkedIn profile"
           >
             <Linkedin
               className="w-8 h-8 rounded-sm p-2 hover focus active"
