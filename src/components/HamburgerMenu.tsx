@@ -42,7 +42,7 @@ const HamburgerMenu = () => {
           href={"Shonde-Samuel-Resume.pdf"}
           download
           aria-label="Download Resume"
-          className="text-center bg-purpple w-full ring-muted p-2 rounded-md hover:ring-2 transition-all flex items-center justify-center gap-2 text-sm "
+          className="text-center text-neutral-1 bg-purpple w-full ring-muted p-2 rounded-md hover:ring-2 transition-all flex items-center justify-center gap-2 text-sm "
         >
           <Download size={20}/> <span>Download Resume</span>
         </Link>
