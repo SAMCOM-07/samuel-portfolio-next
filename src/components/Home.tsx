@@ -27,7 +27,7 @@ const fadeUp: Variants = {
 const Home = () => {
   return (
     <>
-      <main className="h-screen -mt-16 overflow-hidden w-full grid place-content-center place-items-center text-center max-w-[90%] mx-auto px-6 z-40">
+      <main className="h-screen -mt-16 overflow-hidden w-full grid place-content-center place-items-center text-center max-w-[90%] mx-auto px-6 z-40" aria-label="Hero section">
         {/* background */}
         <div className="mainbg w-full -z-20 absolute inset-0 top-18" />
         {/* <div className="w-full h-full hidden dark:block overflow-hidden -z-20 absolute inset-0 top-18">
@@ -68,12 +68,14 @@ const Home = () => {
             Shonde Samuel
           </motion.h1>
 
-          <motion.span
+          <motion.p
             variants={fadeUp}
             className="font-bold text-5xl md:text-7xl mt-4"
+            role="heading"
+            aria-level={2}
           >
             Website Developer
-          </motion.span>
+          </motion.p>
 
           {/* description */}
           <motion.p
@@ -92,16 +94,18 @@ const Home = () => {
             <Link
               href={"Shonde-Samuel-Resume.pdf"}
               download
-              className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-purpple/80 text-white rounded-full flex items-center gap-2 text-sm"
+              aria-label="Download Samuel's resume PDF"
+              className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-purpple/80 text-white rounded-full flex items-center gap-2 text-sm focus:outline-none focus:ring-2 focus:ring-white"
             >
-              <Download size={18} />
+              <Download size={18} aria-hidden="true" />
               <span>My Resume</span>
             </Link>
             <Link
-              href={"/projects"}
-              className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-background/75 border border-border rounded-full flex items-center gap-2 text-sm"
+              href="/projects"
+              aria-label="View Samuel's projects"
+              className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-background/75 border border-border rounded-full flex items-center gap-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
             >
-              <Projector size={18} />
+              <Projector size={18} aria-hidden="true" />
               <span>My Projects</span>
             </Link>
           </motion.div>

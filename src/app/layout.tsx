@@ -21,16 +21,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Samuel Shonde | Frontend Developer",
-    template: "%s | Samuel Shonde",
+    default: "Samuel Shonde - Website Developer",
+    template: "%s - Samuel Shonde",
   },
   description:
-    "Samuel Shonde is a frontend developer skilled in Next.js, React, TypeScript, and Tailwind CSS. I design and build modern, responsive, and performance-driven web experiences.",
+    "Samuel Shonde is a dedicated frontend and backend developer specializing in Next.js, React, TypeScript, and Tailwind CSS. I create modern, responsive, and high-performance web solutions with a focus on user experience and clean code architecture.",
   keywords: [
     "Samuel Shonde",
+    "Shonde Samuel",
+    "Samcom",
     "Frontend Developer",
+    "Backend Developer",
     "Website Developer",
     "Next.js Developer",
+    "Node.js Developer",
     "React Developer",
     "TypeScript",
     "Tailwind CSS",
@@ -39,7 +43,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Samuel Shonde", url: "https://samuelshonde.vercel.app/" }],
   creator: "Samuel Shonde",
   openGraph: {
-    title: "Samuel Shonde | Website Developer",
+    title: "Samuel Shonde - Website Developer",
     description:
       "I'm a frontend developer passionate about building visually appealing, performant, and user-friendly web experiences with React, Next.js, and Tailwind CSS.",
     url: "https://samuelshonde.vercel.app/",
@@ -57,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Samuel Shonde | Website Developer",
+    title: "Samuel Shonde - Website Developer",
     description:
       "Explore the portfolio of Samuel Shonde — modern frontend developer creating engaging digital experiences with React, Next.js, and TypeScript.",
     creator: "@sammyshowed",
@@ -72,15 +76,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head><meta name="google-site-verification" content="TXGAApfYoQlYQxnV7s3s7trHwEWFbchma88PXHOatYQ" /></head>
       <body
         className={`${geistSans.className} ${geistMono.variable} antialiased scrollbar`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <AppContextProvider>
+            <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:outline-none focus:ring-2 focus:ring-white">
+              Skip to main content
+            </a>
             <Navbar />
-            {children}
+            <main id="main-content">
+              {children}
+            </main>
             <Footer />
           </AppContextProvider>
         </ThemeProvider>

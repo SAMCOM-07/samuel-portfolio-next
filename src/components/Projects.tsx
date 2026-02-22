@@ -36,15 +36,15 @@ export const Projects = () => {
   const projectsDataSlice = projectsData.slice(0, 2);
 
   return (
-    <div className="w-full relative mt-18 pb-6 conpad slide-up-animation">
-      <h1 className="text-center">Featured Projects</h1>
+    <section className="w-full relative mt-18 pb-6 conpad slide-up-animation" aria-labelledby="featured-projects-heading">
+      <h1 id="featured-projects-heading" className="text-center">Featured Projects</h1>
       <p className="text-center mx-auto text-muted-foreground mt-4 max-w-lg">
         A collection of projects that showcase my skills and passion for creating innovative digital solutions.
       </p>
 
       <div className="flex flex-col gap-32 container mx-auto mt-16 pb-6">
         {projectsDataSlice.map((project) => (
-          <motion.div
+          <motion.article
             key={project.id}
             className={`flex flex-col ${project.id % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"} items-start gap-6 lg:gap-12 border-2 border-border rounded-xl p-6`}
             variants={projectVariants}
@@ -62,7 +62,7 @@ export const Projects = () => {
                       ? project.img[1]
                       : project.img[0]
                 }
-                alt={project.name}
+                alt={`Screenshot of ${project.name} project`}
                 fill
                 className="object-cover object-center rounded-lg aspect-square focus:scale-105 hover:scale-105 transition-all duration-300"
               />
@@ -113,31 +113,35 @@ export const Projects = () => {
               </motion.div>
 
               {/* links button */}
-              <div className="flex items-center gap-4 mt-6 text-sm">
+              <div className="flex items-center gap-4 mt-6 text-sm" role="group" aria-label="Project links">
                 <Link
                   target="_blank"
+                  rel="noopener noreferrer"
                   href={project.liveUrl}
-                  className="px-3 py-2 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 transition-all duration-300"
+                  aria-label={`Preview ${project.name} project (opens in new tab)`}
+                  className="px-3 py-2 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white"
                 >
-                  <LinkIcon size={18} />
+                  <LinkIcon size={18} aria-hidden="true" />
                   <span>Preview</span>
                 </Link>
                 <Link
                   target="_blank"
+                  rel="noopener noreferrer"
                   href={project.githubUrl}
-                  className="px-3 py-2 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 transition-all duration-300"
+                  aria-label={`View ${project.name} repository on GitHub (opens in new tab)`}
+                  className="px-3 py-2 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary"
                 >
-                  <Github size={18} />
+                  <Github size={18} aria-hidden="true" />
                   <span>Repository</span>
                 </Link>
               </div>
             </div>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
 
       <ShowMoreButton href="/projects" text="See all projects" />
-    </div>
+    </section>
   );
 };
 
@@ -146,17 +150,17 @@ export const ProjectsPage = () => {
   const current = theme === "system" ? systemTheme : theme;
 
   return (
-    <section className="w-full relative py-16 conpad">
+    <section className="w-full relative py-16 conpad" aria-labelledby="all-projects-heading">
       <div className="projectbg w-full -z-20 absolute inset-0"></div>
       <div className="slide-up-animation">
-        <h1 className="text-center">Featured Projects</h1>
+        <h1 id="all-projects-heading" className="text-center">Featured Projects</h1>
         <p className="text-center mx-auto text-muted-foreground mt-4 max-w-lg">
           A collection of projects that showcase my skills and passion for creating innovative digital solutions.
         </p>
 
         <div className="flex flex-col gap-32 container mx-auto mt-16">
           {projectsData.map((project) => (
-            <motion.div
+            <motion.article
               key={project.id}
               className={`flex flex-col ${project.id % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"} items-start gap-6 lg:gap-12`}
               variants={projectVariants}
@@ -174,7 +178,7 @@ export const ProjectsPage = () => {
                         ? project.img[1]
                         : project.img[0]
                   }
-                  alt={project.name}
+                  alt={`Screenshot of ${project.name} project`}
                   fill
                   className="object-cover object-center rounded-lg aspect-square hover:scale-105 focus:scale-105 transition-all duration-300"
                 />
@@ -225,26 +229,30 @@ export const ProjectsPage = () => {
                 </motion.div>
 
                 {/* links button */}
-                <div className="flex items-center gap-4 mt-6 text-sm">
+                <div className="flex items-center gap-4 mt-6 text-sm" role="group" aria-label="Project links">
                   <Link
                     target="_blank"
+                    rel="noopener noreferrer"
                     href={project.liveUrl}
-                    className="px-3 py-2 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300"
+                    aria-label={`Preview ${project.name} project (opens in new tab)`}
+                    className="px-3 py-2 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white"
                   >
-                    <LinkIcon size={18} />
+                    <LinkIcon size={18} aria-hidden="true" />
                     <span>Preview</span>
                   </Link>
                   <Link
                     target="_blank"
+                    rel="noopener noreferrer"
                     href={project.githubUrl}
-                    className="px-3 py-2 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300"
+                    aria-label={`View ${project.name} repository on GitHub (opens in new tab)`}
+                    className="px-3 py-2 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary"
                   >
-                    <Github size={18} />
+                    <Github size={18} aria-hidden="true" />
                     <span>Repository</span>
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

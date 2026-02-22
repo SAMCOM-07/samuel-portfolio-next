@@ -65,8 +65,8 @@ const Connect = () => {
               href={d.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={'${d.title}: ${d.text}'}
-              className="flex items-center gap-4 p-6 rounded-md bg-transparent border border-border focus:shadow-[0_0_7px] active:shadow-[0_0_7px] hover:shadow-[0_0_7px] shadow-purpple focus:translate-x-3 active:translate-x-3 hover:translate-x-3 transition-transform duration-500 group"
+              aria-label={`${d.title}: ${d.text}`}
+              className="flex items-center gap-4 p-6 rounded-md bg-transparent border border-border focus:shadow-[0_0_7px] active:shadow-[0_0_7px] hover:shadow-[0_0_7px] shadow-purpple focus:translate-x-3 active:translate-x-3 hover:translate-x-3 transition-transform duration-500 group focus:outline-none focus:ring-2 focus:ring-primary"
             >
               <span
                 className="p-2 rounded-full bg-purpple group-hover:shadow-[0_0_10px] shadow-purpple group-hover:scale-105 transition-all duration-300 text-white"

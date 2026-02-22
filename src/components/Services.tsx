@@ -55,22 +55,26 @@ const Services = () => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-50px" }}
+                role="list"
+                aria-label="Services offered"
             >
                 {services.map((service) => (
-                    <motion.div
+                    <motion.article
                         key={service.id}
                         variants={cardVariants}
-                        className={`group border border-border rounded-lg p-6 bg-card/50 hover:bg-accent/50 focus:bg-accent/50 transition-all hover:scale-[1.02] focus:scale-[1.02] shadow-sm hover:shadow-md ${service.id === 1 || service.id === 4
+                        role="listitem"
+                        tabIndex={0}
+                        className={`group border border-border rounded-lg p-6 bg-card/50 hover:bg-accent/50 focus:bg-accent/50 transition-all hover:scale-[1.02] focus:scale-[1.02] shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary ${service.id === 1 || service.id === 4
                                 ? 'md:col-span-2'
                                 : 'col-span-1'
                             }`}
                     >
-                        <div className="text-4xl mb-4">{service.icon}</div>
+                        <div className="text-4xl mb-4" aria-hidden="true">{service.icon}</div>
                         <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
                         <p className="text-sm text-muted-foreground">
                             {service.description}
                         </p>
-                    </motion.div>
+                    </motion.article>
                 ))}
             </motion.div>
         </section>

@@ -65,29 +65,43 @@ export default function ChatBot() {
 
 
   return (
-    <div ref={chatbotRef} className="z-50">
+    <div ref={chatbotRef} className="z-50" role="region" aria-label="AI Chat Assistant">
       {/* Chat Button */}
       <motion.button
         onClick={() => setIsChatOpen(prev => !prev)}
-        className={`fixed bottom-5 right-5 bg-purpple p-3 text-xl rounded-full shadow-[0_0_10px] shadow-purpple ${!isChatOpen && 'animate-pulse'}`}
+        aria-label={isChatOpen ? "Close AI chat assistant" : "Open AI chat assistant"}
+        aria-expanded={isChatOpen}
+        aria-controls="chatbot-window"
+        type="button"
+        className={`fixed bottom-5 right-5 bg-purpple p-3 text-xl rounded-full shadow-[0_0_10px] shadow-purpple focus:outline-none focus:ring-2 focus:ring-white transition-colors ${!isChatOpen && 'animate-pulse'}`}
         whileHover={{ scale: 1.1 }}
       >
-        <MessageCircle size={24} color="white" aria-label="Open chat with AI assistant" />
+        <MessageCircle size={24} color="white" aria-hidden="true" />
       </motion.button>
 
       {/* Chat Window */}
       {isChatOpen && (
 
         <motion.div
+          id="chatbot-window"
+          role="dialog"
+          aria-labelledby="chatbot-heading"
+          aria-modal="false"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           className="z-50 fixed bottom-20 right-5 w-[20rem] bg-background rounded-2xl shadow-[0_0_5px] shadow-purpple p-4 border border-border"
         >
-          <h2 className="text-center text-xl font-bold text-purpple">How may I help you?</h2>
-          <hr className="text-border my-4" />
-          <div className="scrollbar h-72 overflow-y-auto flex flex-col space-y-4">
+          <h2 id="chatbot-heading" className="text-center text-xl font-bold text-purpple">How may I help you?</h2>
+          <hr className="text-border my-4" aria-hidden="true" />
+          <div 
+            className="scrollbar h-72 overflow-y-auto flex flex-col space-y-4"
+            role="log"
+            aria-live="polite"
+            aria-atomic="false"
+            aria-label="Chat messages"
+          >
             {messages && messages.length && messages?.map((msg, i) => (
-              <div key={i} className="flex flex-col">
+              <div key={i} className="flex flex-col" role="article" aria-label={msg.role === "user" ? "Your message" : "Assistant response"}>
                 <div
                   key={i}
                   className={`p-2 rounded-lg overflow-x-clip break-words text-sm ${msg.role === "user"
@@ -110,26 +124,30 @@ export default function ChatBot() {
                     {msg.text}
                   </ReactMarkdown>
                 </div>
-                {isLoading && msg.role === 'user' && i === (messages.length - 1) && <div className="animate-pulse flex items-center mt-4 text-muted-foreground/70">loading <span className="w-3 h-3 inline-block rounded-full ml-1 border-b-2 border-t-2 animate-spin"></span></div>}
+                {isLoading && msg.role === 'user' && i === (messages.length - 1) && <div className="animate-pulse flex items-center mt-4 text-muted-foreground/70" role="status" aria-live="polite">loading <span className="w-3 h-3 inline-block rounded-full ml-1 border-b-2 border-t-2 animate-spin" aria-hidden="true"></span></div>}
               </div>
             ))}
             <div ref={messagesEndRef} />
           </div>
 
-          <form className="mt-3 flex gap-2">
+          <form className="mt-3 flex gap-2" onSubmit={(e) => e.preventDefault()}>
             <input
               type="text"
+              id="chat-input"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask something . . ."
-              className="flex-1 border border-border outline-0 rounded-lg px-3 py-2 text-sm"
+              aria-label="Type your message"
+              className="flex-1 border border-border outline-0 rounded-lg px-3 py-2 text-sm focus:border-primary focus:ring-2 focus:ring-primary transition-colors"
             />
             <button
-              aria-label="send message"
+              type="submit"
               onClick={(e) => sendMessage(e)}
-              className="bg-purpple text-white px-3 py-2 rounded-lg text-sm hover:opacity-75 active:scale-85 transition-all duration-300"
+              aria-label="Send message"
+              disabled={!input.trim() || isLoading}
+              className="bg-purpple text-white px-3 py-2 rounded-lg text-sm hover:opacity-75 active:scale-85 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <Send size={16} />
+              <Send size={16} aria-hidden="true" />
             </button>
           </form>
         </motion.div>

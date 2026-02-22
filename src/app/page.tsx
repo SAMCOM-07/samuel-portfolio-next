@@ -18,10 +18,10 @@ export default function HomePage() {
       <Education />
       <Technologies />
       <Services />
-      <div className="flex max-w-6xl mx-auto flex-col lg:flex-row items-center justify-center gap-4 slide-up-animation px-6 mt-12">
+      <section className="flex max-w-6xl mx-auto flex-col lg:flex-row items-center justify-center gap-4 slide-up-animation px-6 mt-12" aria-label="FAQ and contact section">
         <Faqs />
         <Connect />
-      </div>
+      </section>
         <Chatbot />
     </div>
   );

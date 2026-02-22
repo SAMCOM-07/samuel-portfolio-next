@@ -41,15 +41,15 @@ const Technologies = () => {
   };
 
   return (
-    <section className="conpad mt-22">
-      <h1 className="mb-8 text-center text-primary">
+    <section className="conpad mt-22" aria-labelledby="technologies-heading">
+      <h1 id="technologies-heading" className="mb-8 text-center text-primary">
         Technologies & Tools
       </h1>
 
       <div className="max-w-5xl mx-auto">
         {Object.entries(categories).map(([categoryName, items]) => (
           <div key={categoryName} className="mb-12">
-            <h2 className="text-xl font-semibold text-secondary text-center mb-6">
+            <h2 id={`${categoryName.toLowerCase()}-heading`} className="text-xl font-semibold text-secondary text-center mb-6">
               {categoryName}
             </h2>
 
@@ -60,6 +60,8 @@ const Technologies = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
+              role="list"
+              aria-labelledby={`${categoryName.toLowerCase()}-heading`}
             >
               {items.map((stack, index) => (
                 <motion.div
@@ -67,11 +69,14 @@ const Technologies = () => {
                   variants={itemVariants}
                   className="h-fit w-fit"
                   whileHover={{ scale: 1.08 }}
+                  role="listitem"
                 >
                   <Link
                     href={stack.documentation}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Learn more about ${stack.name} (opens in new tab)`}
+                    className="focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
                   >
                     <Card>
                       <div className="w-[80px] h-[120px] overflow-hidden">

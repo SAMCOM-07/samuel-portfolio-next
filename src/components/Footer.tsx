@@ -6,29 +6,73 @@ import { FaWhatsapp, FaTiktok, FaXTwitter } from 'react-icons/fa6';
 const Footer = () => {
   
   return (
-    <div className='conpad py-12 border-t border-border flex flex-row items-center justify-center gap-3'>
-      <Link target="_blank" href={"mailto:shondesamuel07@gmail.com"}>
-        <Mail className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" />
-      </Link>
-      <Link target="_blank" href={"https://github.com/SAMCOM-07"}>
-        <Github className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" />
-      </Link>
-      <Link target="_blank" href={"https://x.com/SammyShowed"}>
-        <FaXTwitter className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" />
-      </Link>
-      <Link target="_blank" href={"https://www.linkedin.com/in/samuelshonde"}>
-        <Linkedin className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" />
-      </Link>
-      <Link target="_blank" href={"https://www.tiktok.com/@samuel_loveth07"}>
-        <FaTiktok className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" />
-      </Link>
-      <Link target="_blank" href={"https://wa.me/+2349061873560"}>
-        <FaWhatsapp className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" />
-      </Link>
-      <Link target="_blank" href={"tel:+2349061873560"}>
-        <Phone className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" />
-      </Link>
-    </div>
+    <footer className='conpad py-12 border-t border-border' role="contentinfo">
+      <nav className='flex flex-row items-center justify-center gap-3' role="navigation" aria-label="Social media links">
+        <Link 
+          target="_blank" 
+          rel="noopener noreferrer"
+          href={"mailto:shondesamuel07@gmail.com"}
+          aria-label="Send email to Samuel (opens email client)"
+          className="focus:outline-none focus:ring-2 focus:ring-primary rounded-sm transition-colors"
+        >
+          <Mail className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" aria-hidden="true" />
+        </Link>
+        <Link 
+          target="_blank" 
+          rel="noopener noreferrer"
+          href={"https://github.com/SAMCOM-07"}
+          aria-label="Visit Samuel's GitHub profile (opens in new tab)"
+          className="focus:outline-none focus:ring-2 focus:ring-primary rounded-sm transition-colors"
+        >
+          <Github className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" aria-hidden="true" />
+        </Link>
+        <Link 
+          target="_blank" 
+          rel="noopener noreferrer"
+          href={"https://x.com/SammyShowed"}
+          aria-label="Visit Samuel's Twitter profile (opens in new tab)"
+          className="focus:outline-none focus:ring-2 focus:ring-primary rounded-sm transition-colors"
+        >
+          <FaXTwitter className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" aria-hidden="true" />
+        </Link>
+        <Link 
+          target="_blank" 
+          rel="noopener noreferrer"
+          href={"https://www.linkedin.com/in/samuelshonde"}
+          aria-label="Visit Samuel's LinkedIn profile (opens in new tab)"
+          className="focus:outline-none focus:ring-2 focus:ring-primary rounded-sm transition-colors"
+        >
+          <Linkedin className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" aria-hidden="true" />
+        </Link>
+        <Link 
+          target="_blank" 
+          rel="noopener noreferrer"
+          href={"https://www.tiktok.com/@samuel_loveth07"}
+          aria-label="Visit Samuel's TikTok profile (opens in new tab)"
+          className="focus:outline-none focus:ring-2 focus:ring-primary rounded-sm transition-colors"
+        >
+          <FaTiktok className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" aria-hidden="true" />
+        </Link>
+        <Link 
+          target="_blank" 
+          rel="noopener noreferrer"
+          href={"https://wa.me/+2349061873560"}
+          aria-label="Chat with Samuel on WhatsApp (opens in new tab)"
+          className="focus:outline-none focus:ring-2 focus:ring-primary rounded-sm transition-colors"
+        >
+          <FaWhatsapp className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" aria-hidden="true" />
+        </Link>
+        <Link 
+          target="_blank" 
+          rel="noopener noreferrer"
+          href={"tel:+2349061873560"}
+          aria-label="Call Samuel at +234 906 187 3560"
+          className="focus:outline-none focus:ring-2 focus:ring-primary rounded-sm transition-colors"
+        >
+          <Phone className="w-9 h-9 rounded-sm p-2 hover focus active border border-border" aria-hidden="true" />
+        </Link>
+      </nav>
+    </footer>
   )
 }
 
