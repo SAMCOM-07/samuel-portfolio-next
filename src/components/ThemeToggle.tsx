@@ -3,13 +3,21 @@
 import { useTheme } from "next-themes"
 import { Sun, Moon, Laptop } from "lucide-react"
 import { useAppContext } from "@/context/AppContext"
+import { useEffect, useState } from "react"
 
 export default function ThemeToggle() {
   const { theme, setTheme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false)
 
   const { dropdownRef, open, setOpen } = useAppContext();
 
+  // Prevent hydration mismatch by only rendering theme UI after mount
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const current = theme === "system" ? systemTheme : theme
+  
   return (
     <div className="relative z-40" ref={dropdownRef}>
       {/* Toggle Button */}
@@ -17,9 +25,9 @@ export default function ThemeToggle() {
         onClick={() => setOpen(!open)}
         className="flex items-center gap-2 rounded-sm p-2 hover focus active"
       >
-        {current === "dark" && <Moon className="w-4 h-4" />}
-        {current === "light" && <Sun className="w-4 h-4" />}
-        {current === "system" && <Sun className="w-4 h-4" />}
+        {mounted && current === "dark" && <Moon className="w-4 h-4" />}
+        {mounted && current === "light" && <Sun className="w-4 h-4" />}
+        {mounted && current === "system" && <Sun className="w-4 h-4" />}
       </button>
 
       {/* Dropdown */}

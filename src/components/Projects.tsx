@@ -7,6 +7,7 @@ import ShowMoreButton from "./ShowMoreButton";
 import Link from "next/link";
 import { LinkIcon, Github } from "lucide-react";
 import { motion, Variants } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const projectVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -30,8 +31,16 @@ const stackVariants: Variants = {
   }),
 };
 
+
+// project display component for homepage
 export const Projects = () => {
   const { theme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const current = theme === "system" ? systemTheme : theme;
   const projectsDataSlice = projectsData.slice(0, 2);
 
@@ -56,9 +65,9 @@ export const Projects = () => {
             <div className="relative w-full h-[300px] overflow-hidden rounded-lg">
               <Image
                 src={
-                  current === "light"
+                  mounted && current === "light"
                     ? project.img[0]
-                    : current === "dark" && project.img.length > 1
+                    : mounted && current === "dark" && project.img.length > 1
                       ? project.img[1]
                       : project.img[0]
                 }
@@ -141,8 +150,16 @@ export const Projects = () => {
   );
 };
 
+
+// project display component for projects page
 export const ProjectsPage = () => {
   const { theme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const current = theme === "system" ? systemTheme : theme;
 
   return (
@@ -168,9 +185,9 @@ export const ProjectsPage = () => {
               <div className="relative w-full h-[300px] overflow-hidden rounded-lg">
                 <Image
                   src={
-                    current === "light"
+                    mounted && current === "light"
                       ? project.img[0]
-                      : current === "dark" && project.img.length > 1
+                      : mounted && current === "dark" && project.img.length > 1
                         ? project.img[1]
                         : project.img[0]
                   }
