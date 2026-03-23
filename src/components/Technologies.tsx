@@ -49,7 +49,7 @@ const Technologies = () => {
       <div className="max-w-5xl mx-auto">
         {Object.entries(categories).map(([categoryName, items]) => (
           <div key={categoryName} className="mb-12">
-            <h2 className="text-xl font-semibold text-secondary text-center mb-6">
+            <h2 className="text-xl font-semibold text-muted-foreground text-center mb-6">
               {categoryName}
             </h2>
 
@@ -61,7 +61,7 @@ const Technologies = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              {items.map((stack, index) => (
+              {items.map((stack) => (
                 <motion.div
                   key={stack.name}
                   variants={itemVariants}
@@ -80,9 +80,9 @@ const Technologies = () => {
                           alt={stack.name}
                           width={70}
                           height={100}
-                          className="w-full h-[70%] object-contain mx-auto bg-primary/20 p-1 rounded-md"
+                          className="w-full h-[70%] object-contain mx-auto bg-muted p-1 rounded-md"
                         />
-                        <h3 className="mt-4 text-center text-tertiary">
+                        <h3 className="mt-4 text-center text-sm">
                           {stack.name}
                         </h3>
                       </div>

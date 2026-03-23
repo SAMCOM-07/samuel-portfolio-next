@@ -107,13 +107,13 @@ export const Projects = () => {
                     key={stack.name}
                     variants={stackVariants}
                     custom={index}
-                    className="w-fit h-[35px] overflow-hidden bg-muted py-1 px-2 flex items-center gap-2 rounded-md"
+                    className="w-fit overflow-hidden bg-muted py-1.5 px-2 flex items-center gap-2 rounded-md"
                   >
                     <Image
                       src={stack.img}
                       alt={stack.name}
-                      width={25}
-                      height={25}
+                      width={20}
+                      height={20}
                       className="object-contain object-center"
                     />
                     <span className="text-sm">{stack.name}</span>
@@ -126,7 +126,7 @@ export const Projects = () => {
                 <Link
                   target="_blank"
                   href={project.liveUrl}
-                  className="px-3 py-2 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 transition-all duration-300"
+                  className="px-3 py-1.5 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 transition-all duration-300"
                 >
                   <LinkIcon size={18} />
                   <span>Preview</span>
@@ -134,7 +134,7 @@ export const Projects = () => {
                 <Link
                   target="_blank"
                   href={project.githubUrl}
-                  className="px-3 py-2 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 transition-all duration-300"
+                  className="px-3 py-1.5 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 transition-all duration-300"
                 >
                   <Github size={18} />
                   <span>Repository</span>
@@ -227,13 +227,13 @@ export const ProjectsPage = () => {
                       key={stack.name}
                       variants={stackVariants}
                       custom={index}
-                      className="w-fit h-[35px] overflow-hidden bg-muted py-1 px-2 flex items-center gap-2 rounded-md"
+                      className="w-fit overflow-hidden bg-muted py-1 px-2 flex items-center gap-2 rounded-md"
                     >
                       <Image
                         src={stack.img}
                         alt={stack.name}
-                        width={25}
-                        height={25}
+                        width={20}
+                        height={20}
                         className="object-contain object-center"
                       />
                       <span className="text-sm">{stack.name}</span>
@@ -246,7 +246,7 @@ export const ProjectsPage = () => {
                   <Link
                     target="_blank"
                     href={project.liveUrl}
-                    className="px-3 py-2 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300"
+                    className="px-3 py-1.5 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300"
                   >
                     <LinkIcon size={18} />
                     <span>Preview</span>
@@ -254,7 +254,7 @@ export const ProjectsPage = () => {
                   <Link
                     target="_blank"
                     href={project.githubUrl}
-                    className="px-3 py-2 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300"
+                    className="px-3 py-1.5 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300"
                   >
                     <Github size={18} />
                     <span>Repository</span>

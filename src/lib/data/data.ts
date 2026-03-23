@@ -133,8 +133,8 @@ export const projectsData = [
     description:
       "This is a modern admin dashboard template built using Next.js and Shadcn UI. It features a sleek design, responsive layout, and a variety of components to help you get started quickly with your admin panel needs.",
     img: [
-      "/projects-images/shadcn-dashboard-lightmode.jpg",
-      "/projects-images/shadcn-dashboard-dark-mode.jpg",
+      "/projects-images/shadcn-dashboard-lightmode.avif",
+      "/projects-images/shadcn-dashboard-dark-mode.avif",
     ],
     githubUrl: "https://github.com/SAMCOM-07/shadcn-dashboard",
     liveUrl: "https://shadcn-dashboard-hazel.vercel.app/",
@@ -168,8 +168,8 @@ export const projectsData = [
     description:
       "A music streaming web application that allows users to filter and play their favorite songs. Built with React and Tailwind CSS, it offers a sleek and responsive design for an optimal listening experience.",
     img: [
-      "/projects-images/music-app-lightmode.jpg",
-      "/projects-images/music-app-darkmode.jpg",
+      "/projects-images/music-app-lightmode.avif",
+      "/projects-images/music-app-darkmode.avif",
     ],
     githubUrl: "https://github.com/SAMCOM-07/music-app",
     liveUrl: "https://music-app-zeta-ebon.vercel.app/",
@@ -190,7 +190,7 @@ export const projectsData = [
     name: "Anon Website",
     description:
       "A landing page for Anon, a fictional product or service. The design is clean and modern, focusing on user engagement and conversion.",
-    img: ["/projects-images/anon.jpg"],
+    img: ["/projects-images/anon.avif"],
     githubUrl: "https://github.com/SAMCOM-07/anon",
     liveUrl: "https://anon-black.vercel.app/",
     status: "Completed ✅",
@@ -210,7 +210,7 @@ export const projectsData = [
     name: "Product Filtering",
     description:
       "A product filtering web application that allows users to filter products based on various criteria such as category, with cart functionalities. Built with HTML, CSS, and JavaScript, it provides a user-friendly interface for an enhanced shopping experience.",
-    img: ["/projects-images/product-filter.jpg"],
+    img: ["/projects-images/product-filter.avif"],
     githubUrl: "https://github.com/SAMCOM-07/product-filtering",
     liveUrl: "https://product-filtering-red.vercel.app/",
     status: "Completed ✅",
@@ -234,7 +234,7 @@ export const projectsData = [
     name: "User Record",
     description:
       "A user record management application that allows users to add, view, edit, and delete user records. Built with React.js and Tailwind CSS, it offers a clean and intuitive interface for managing user information efficiently.",
-    img: ["/projects-images/user-record.jpg"],
+    img: ["/projects-images/user-record.avif"],
     githubUrl: "https://github.com/SAMCOM-07/user-record",
     liveUrl: "https://user-record-amber.vercel.app/",
     status: "Completed ✅",
@@ -259,8 +259,8 @@ export const projectsData = [
     description:
       "A browser extension that enhances user productivity by providing quick access to useful tools and features. Built with HTML, CSS, and JavaScript, status can be filtered and changed.",
     img: [
-      "/projects-images/extension-light-mode.jpg",
-      "/projects-images/extension-dark-mode.jpg",
+      "/projects-images/extension-light-mode.avif",
+      "/projects-images/extension-dark-mode.avif",
     ],
     githubUrl: "https://github.com/SAMCOM-07/browser-extension",
     liveUrl: "https://browser-extension-nine.vercel.app/",
@@ -286,8 +286,8 @@ export const projectsData = [
     description:
       "A landing page for Fylo, a fictional cloud storage service. The design is modern and responsive, focusing on user engagement and conversion.",
     img: [
-      "/projects-images/fylo-light-mode.jpg",
-      "/projects-images/fylo-dark-mode.jpg",
+      "/projects-images/fylo-light-mode.avif",
+      "/projects-images/fylo-dark-mode.avif",
     ],
     githubUrl: "https://github.com/SAMCOM-07/fylo",
     liveUrl: "https://fylo-nu-seven.vercel.app/",
@@ -312,7 +312,7 @@ export const projectsData = [
     name: "Shortly",
     description:
       "A URL shortening service that allows users to shorten long URLs for easier sharing. Built with HTML, CSS, and JavaScript, it provides a simple and user-friendly interface for generating short links.",
-    img: ["/projects-images/shortly.jpg"],
+    img: ["/projects-images/shortly.avif"],
     githubUrl: "https://github.com/SAMCOM-07/Shortly",
     liveUrl: "https://shortly-mu-ten.vercel.app/",
     status: "Completed ✅",
