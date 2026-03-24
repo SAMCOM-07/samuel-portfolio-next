@@ -1,6 +1,53 @@
+// TypeScript Interfaces
+
+export interface Stack {
+  name: string;
+  img: string;
+  category: "frontend" | "backend" | "tools";
+  documentation: string;
+}
+
+export interface ProjectStack {
+  name: string;
+  img: string;
+}
+
+export interface ProjectDetails {
+  introduction: string;
+  purpose: string;
+  features: string[];
+  motivation: string;
+  howToContribute: string;
+}
+
+export interface Project {
+  id: number;
+  name: string;
+  description: string;
+  img: string[];
+  githubUrl: string;
+  liveUrl: string;
+  status: string;
+  stacks: ProjectStack[];
+  details: ProjectDetails;
+}
+
+export interface Faq {
+  id: number;
+  question: string;
+  answer: string;
+}
+
+export interface Service {
+  id: number;
+  title: string;
+  icon: string;
+  description: string;
+}
+
 // tech stacks
 
-export const stackData = [
+export const stackData: Stack[] = [
   {
     name: "Next.js",
     img: "/stack-images/next-logo.png",
@@ -88,7 +135,7 @@ export const stackData = [
 ];
 
 // projects data
-export const projectsData = [
+export const projectsData: Project[] = [
   {
     id: 1,
     name: "Omnishop",
@@ -530,12 +577,7 @@ export const projectsData = [
 ];
 
 // FAQs
-type FaqType = {
-  id: number;
-  question: string;
-  answer: string;
-};
-export const faqs: FaqType[] = [
+export const faqs: Faq[] = [
   {
     id: 1,
     question: "What technologies do you work with most often?",
@@ -576,7 +618,7 @@ export const faqs: FaqType[] = [
 
 // services data
 
-export const services = [
+export const services: Service[] = [
   {
     id: 1,
     title: "Frontend Development",

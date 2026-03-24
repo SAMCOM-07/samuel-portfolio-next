@@ -66,16 +66,17 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
   });
 
   return (
-    <div className="min-h-screen bg-background pt-6 pb-20 conpad">
+    <div className="min-h-screen bg-background pb-20 conpad relative">
       {/* Back Button */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
+        className="sticky top-16 bg-background py-6"
       >
         <Link
           href="/projects"
-          className="flex items-center gap-2 text-primary text-sm hover:underline mb-12 sticky top-16 left-6 bg-background py-6"
+          className="text-primary text-sm hover:underline"
         >
           ← Back to Projects
         </Link>
@@ -98,7 +99,7 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
           variants={fadeUp}
           className="flex justify-center gap-6 flex-wrap"
         >
-          <a
+          <Link
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -106,7 +107,7 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
           >
             <Github size={20} className="group-hover:rotate-6 transition-transform duration-300" />
             Repository
-          </a>
+          </Link>
           {project.liveUrl && (
             <Link
               href={project.liveUrl}
@@ -133,7 +134,7 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
           {/* Introduction */}
           {project.details?.introduction && (
             <motion.section variants={fadeUp}>
-              <h2 className="text-3xl font-bold pb-4 mb-6 border-b border-border">
+              <h2 className="text-3xl font-bold pb-2 mb-6 border-b border-border">
                 Introduction
               </h2>
               <div className="prose prose-invert max-w-none">
@@ -145,7 +146,7 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
           {/* Purpose */}
           {project.details?.purpose && (
             <motion.section variants={fadeUp}>
-              <h2 className="text-3xl font-bold pb-4 mb-6 border-b border-border">
+              <h2 className="text-3xl font-bold pb-2 mb-6 border-b border-border">
                 Purpose
               </h2>
               <div className="prose prose-invert max-w-none">
@@ -157,7 +158,7 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
           {/* Features */}
           {project.details?.features && project.details.features.length > 0 && (
             <motion.section variants={fadeUp}>
-              <h2 className="text-3xl font-bold pb-4 mb-6 border-b border-border">
+              <h2 className="text-3xl font-bold pb-2 mb-6 border-b border-border">
                 Key Features
               </h2>
               <ul className="space-y-3">
@@ -178,7 +179,7 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
           {/* Motivation */}
           {project.details?.motivation && (
             <motion.section variants={fadeUp}>
-              <h2 className="text-3xl font-bold pb-4 mb-6 border-b border-border">
+              <h2 className="text-3xl font-bold pb-2 mb-6 border-b border-border">
                 Motivation
               </h2>
               <div className="prose prose-invert max-w-none">
@@ -190,7 +191,7 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
           {/* How to Contribute */}
           {project.details?.howToContribute && (
             <motion.section variants={fadeUp}>
-              <h2 className="text-3xl font-bold pb-4 mb-6 border-b border-border">
+              <h2 className="text-3xl font-bold pb-2 mb-6 border-b border-border">
                 How to Contribute
               </h2>
               <div className="space-y-4">

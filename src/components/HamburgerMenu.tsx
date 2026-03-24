@@ -1,3 +1,5 @@
+'use client'
+
 import { useAppContext } from "@/context/AppContext";
 import { Download, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
