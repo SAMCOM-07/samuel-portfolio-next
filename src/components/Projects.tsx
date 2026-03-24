@@ -107,7 +107,7 @@ export const Projects = () => {
                     key={stack.name}
                     variants={stackVariants}
                     custom={index}
-                    className="w-fit overflow-hidden bg-muted py-1.5 px-2 flex items-center gap-2 rounded-md"
+                    className="w-fit overflow-hidden bg-muted py-1 px-2 flex items-center gap-2 rounded-md"
                   >
                     <Image
                       src={stack.img}
@@ -122,7 +122,7 @@ export const Projects = () => {
               </motion.div>
 
               {/* links button */}
-              <div className="flex items-center gap-4 mt-6 text-sm">
+              <div className="flex items-center gap-4 mt-6 text-sm flex-wrap">
                 <Link
                   target="_blank"
                   href={project.liveUrl}
@@ -138,6 +138,12 @@ export const Projects = () => {
                 >
                   <Github size={18} />
                   <span>Repository</span>
+                </Link>
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="px-3 py-1.5 rounded-full border border-primary text-primary flex items-center gap-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                >
+                  <span>Read More →</span>
                 </Link>
               </div>
             </div>
@@ -227,7 +233,7 @@ export const ProjectsPage = () => {
                       key={stack.name}
                       variants={stackVariants}
                       custom={index}
-                      className="w-fit overflow-hidden bg-muted py-1 px-2 flex items-center gap-2 rounded-md"
+                      className="w-fit overflow-hidden bg-muted py-1 px-2 flex items-center gap-2 rounded"
                     >
                       <Image
                         src={stack.img}
@@ -242,7 +248,7 @@ export const ProjectsPage = () => {
                 </motion.div>
 
                 {/* links button */}
-                <div className="flex items-center gap-4 mt-6 text-sm">
+                <div className="flex items-center gap-4 mt-6 text-sm flex-wrap">
                   <Link
                     target="_blank"
                     href={project.liveUrl}
@@ -258,6 +264,12 @@ export const ProjectsPage = () => {
                   >
                     <Github size={18} />
                     <span>Repository</span>
+                  </Link>
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className="px-3 py-1 rounded-full border border-primary text-primary flex items-center gap-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  >
+                    <span>Read More →</span>
                   </Link>
                 </div>
               </div>

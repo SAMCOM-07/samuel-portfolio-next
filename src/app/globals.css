@@ -37,14 +37,10 @@
   --color-gradient4: var(--gradient4);
   --color-gradient5: var(--gradient5);
   --color-purpple: var(--purpple);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
 }
 
 :root {
   /* Neutral light theme */
-  --radius: 0.625rem;
   --background: oklch(0.98 0 0);
   --foreground: oklch(0.15 0 0);
   --card: oklch(95.892% 0.00105 11.436);
@@ -74,7 +70,7 @@
 
 .dark {
   /* Neutral dark theme */
-  --background: oklch(0% 0 0);
+  --background: oklch(7.33% 0.03044 260.337);
   --foreground: oklch(0.98 0 0);
   --card: oklch(14.479% 0.00002 271.152);
   --card-foreground: oklch(0.98 0 0);
@@ -153,7 +149,7 @@ body {
   }
 
   .projectbg {
-    background-color: var(--color-card);
+    background-color: var(--color-background);
     background-blend-mode: overlay;
     background-image: linear-gradient(to top,
         var(--color-accent-foreground) 2px,
