@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Github, ExternalLink } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { notFound } from "next/navigation";
-import ProjectDetailsTechStack from "@/components/ProjectDetailsTechStack";
+import ProjectDetailsTechStack from "@/components/TechStack";
 import { motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -61,7 +61,7 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
     );
     return {
       ...stack,
-      documentation: stackInfo?.documentation,
+      documentation: stackInfo?.documentation as string,
     };
   });
 
@@ -236,7 +236,10 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
           {/* Tech Stack */}
           {projectStacksWithDocs && projectStacksWithDocs.length > 0 && (
             <motion.div variants={fadeUp}>
-              <ProjectDetailsTechStack stacks={projectStacksWithDocs} />
+              <h2 className="text-2xl font-bold pb-4 mb-6 border-b border-border">
+                Tech Stack
+              </h2>
+              <ProjectDetailsTechStack stacks={projectStacksWithDocs} align="left" />
             </motion.div>
           )}
         </div>

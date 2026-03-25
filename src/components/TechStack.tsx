@@ -11,11 +11,12 @@ interface StackItem {
   documentation?: string;
 }
 
-interface ProjectDetailsTechStackProps {
+interface TechStackProps {
   stacks: StackItem[];
+  align: "left" | "center" | "right";
 }
 
-export default function ProjectDetailsTechStack({ stacks }: ProjectDetailsTechStackProps) {
+export default function TechStack({ stacks, align }: TechStackProps) {
   // Parent container animation (controls stagger)
   const containerVariants = {
     hidden: {},
@@ -44,12 +45,8 @@ export default function ProjectDetailsTechStack({ stacks }: ProjectDetailsTechSt
   };
 
   return (
-    <section>
-      <h2 className="text-2xl font-bold pb-4 mb-6 border-b border-border">
-        Tech Stack
-      </h2>
       <motion.div
-        className="flex flex-wrap gap-4 max-w-2xl"
+        className={`flex flex-wrap gap-4 max-w-2xl mx-auto justify-${align}`}
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -102,6 +99,5 @@ export default function ProjectDetailsTechStack({ stacks }: ProjectDetailsTechSt
           </motion.div>
         ))}
       </motion.div>
-    </section>
   );
 }

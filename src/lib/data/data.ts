@@ -631,7 +631,7 @@ export const services: Service[] = [
     title: "UI Implementation",
     icon: "🎨",
     description:
-      "I bring beautiful designs to life with clean, scalable code — ensuring consistency, accessibility, and precision across all devices.",
+      "I bring beautiful designs to life with clean, scalable code, ensuring consistency, accessibility, and precision across all devices.",
   },
   {
     id: 3,
@@ -645,6 +645,6 @@ export const services: Service[] = [
     title: "Startup & Project Collaboration",
     icon: "🚀",
     description:
-      "I love collaborating with teams, agencies, and startups — helping transform ideas into real-world digital products.",
+      "I love collaborating with teams, agencies, and startups, helping transform ideas into real-world digital products.",
   },
 ];

@@ -3,8 +3,6 @@
 import { Download, Projector } from "lucide-react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
-import Bg1 from './../../public/images/bg3.jpg';
-import Image from "next/image";
 
 const containerVariants = {
   hidden: {},

@@ -42,7 +42,6 @@ export default function ChatBot() {
       setMessages((prev) => [...prev, { role: "bot", text: data.reply }]);
 
     } catch (error) {
-      console.log("Error sending message:", error);
       setIsLoading(false);
     } finally {
       setIsLoading(false);
@@ -90,7 +89,7 @@ export default function ChatBot() {
               <div key={i} className="flex flex-col">
                 <div
                   key={i}
-                  className={`p-2 rounded-lg overflow-x-clip break-words text-sm ${msg.role === "user"
+                  className={`p-2 rounded-lg overflow-x-clip break-words text-sm font-light ${msg.role === "user"
                     ? "bg-purpple text-white self-end max-w-[70%]"
                     : "bg-accent self-start max-w-[85%]"
                     }`}
