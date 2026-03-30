@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { FaXTwitter } from "react-icons/fa6";
 
 const HamburgerMenu = () => {
-  const { navPages, setIsOpen } = useAppContext();
+  const { navPages, setIsOpen, dropdownRef } = useAppContext();
   const pathname = usePathname();
 
   return (
@@ -18,6 +18,7 @@ const HamburgerMenu = () => {
       className="fade-up-animation absolute z-40 inset-0 top-13 bg-background/85 w-full h-screen backdrop-blur-lg md:hidden"
     >
       <div
+        ref={dropdownRef}
         className="w-[90%] mx-auto rounded-md p-6 bg-background border border-muted mt-6 shadow-[0_0_10px] shadow-muted flex flex-col gap-4"
         role="navigation"
         aria-label="Main navigation"

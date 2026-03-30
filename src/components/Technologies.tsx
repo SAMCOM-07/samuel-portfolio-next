@@ -12,12 +12,12 @@ const Technologies = () => {
 
 
   return (
-    <section className="conpad mt-22">
+    <section className="">
       <h1 className="mb-8 text-center text-primary">
         Technologies & Tools
       </h1>
 
-      <div className="max-w-5xl">
+      <div className="max-w-5xl mx-auto">
         {Object.entries(categories).map(([categoryName, items]) => (
           <div key={categoryName} className="mb-12">
             <h2 className="text-xl font-semibold text-muted-foreground text-center mb-6">
@@ -25,7 +25,7 @@ const Technologies = () => {
             </h2>
 
             {/* Motion container for stagger */}
-            <TechStack stacks={items} align='center'/>
+            <TechStack stacks={items} style='justify-center mx-auto'/>
           </div>
         ))}
       </div>

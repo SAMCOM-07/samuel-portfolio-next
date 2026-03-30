@@ -31,6 +31,8 @@ const Home = () => {
         {/* <div className="w-full h-full hidden dark:block overflow-hidden -z-20 absolute inset-0 top-18">
          <Image src={Bg1} alt="Background Image" className="bg-cover bg-center w-full h-[90%]"/>
        </div> */}
+
+
         {/* animated content */}
         <motion.div
           className="flex flex-col items-center"
@@ -41,7 +43,7 @@ const Home = () => {
           {/* First animation group */}
           <motion.div
             variants={fadeUp}
-            className="group relative grid w-max overflow-hidden rounded-full px-3 py-1 transition-colors duration-400"
+            className="relative grid w-max overflow-hidden rounded-full px-3 py-1 transition-colors duration-400"
           >
             {/* Rotating light ring */}
             <span className="absolute inset-0 rounded-full overflow-hidden">
@@ -49,12 +51,12 @@ const Home = () => {
             </span>
 
             {/* Background layer */}
-            <span className="absolute inset-0.5 rounded-full bg-background transition-colors duration-200 group-hover:bg-background/90"></span>
+            <span className="absolute inset-0.5 rounded-full bg-background"></span>
 
             {/* Text */}
-            <span className="z-40 flex items-center gap-2 text-sm font-medium">
+            <span className="z-40 flex items-center gap-2">
               <span className="block w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-              <h3 className="font-bold text-sm w-fit">Available for work</h3>
+              <h3 className="font-bold text-sm">Available for work</h3>
             </span>
           </motion.div>
 
@@ -92,7 +94,7 @@ const Home = () => {
               download
               className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-purpple/80 text-white rounded-full flex items-center gap-2 text-sm"
             >
-              <Download size={18} />
+              <Download size={18} className="animate-bounce translate-y-1" />
               <span>My Resume</span>
             </Link>
             <Link

@@ -1,5 +1,6 @@
-import { ProjectsPage } from '@/components/Projects'
+import { ProjectComponent } from '@/components/Projects'
 import { Metadata } from 'next';
+import { projectsData } from '@/lib/data/data';
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -10,9 +11,13 @@ export const metadata: Metadata = {
 
 const MyProjects = () => {
   return (
-    <div>
-      <ProjectsPage />
-    </div>
+    <section>
+        <h1 className="text-center mt-18">Featured Projects</h1>
+        <p className="text-center mx-auto text-muted-foreground mt-4 max-w-lg">
+          A collection of projects that showcase my skills and passion for creating innovative digital solutions.
+        </p>
+        <ProjectComponent data={projectsData} />
+      </section>
   )
 }
 

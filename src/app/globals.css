@@ -115,7 +115,7 @@ body {
 
 @layer utilities {
   h1 {
-    @apply [font-family:var(--font-poppins)] text-xl sm:text-3xl font-bold;
+    @apply [font-family:var(--font-poppins)] text-2xl font-bold;
   }
 }
 

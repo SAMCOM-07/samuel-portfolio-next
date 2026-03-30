@@ -4,7 +4,7 @@ import { projectsData, stackData } from "@/lib/data/data";
 import Link from "next/link";
 import { Github, ExternalLink } from "lucide-react";
 import ReactMarkdown from "react-markdown";
-import { notFound } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import ProjectDetailsTechStack from "@/components/TechStack";
 import { motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -34,6 +34,7 @@ const fadeUp: Variants = {
 };
 
 export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
+  const router = useRouter();
   const [projectId, setProjectId] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -56,6 +57,7 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
 
   // Get the full stack info with documentation
   const projectStacksWithDocs = project.stacks?.map((stack) => {
+    
     const stackInfo = stackData.find(
       (s) => s.name.toLowerCase() === stack.name.toLowerCase()
     );
@@ -64,6 +66,7 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
       documentation: stackInfo?.documentation as string,
     };
   });
+  
 
   return (
     <div className="min-h-screen bg-background pb-20 conpad relative">
@@ -74,12 +77,13 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
         transition={{ duration: 0.5 }}
         className="sticky top-16 bg-background py-6"
       >
-        <Link
-          href="/projects"
+        <button
+          onClick={() => router.back()
+          }
           className="text-primary text-sm hover:underline"
         >
-          ← Back to Projects
-        </Link>
+          ← Back
+        </button>
       </motion.div>
 
       {/* Project Header - Centered */}
@@ -239,11 +243,11 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
               <h2 className="text-2xl font-bold pb-4 mb-6 border-b border-border">
                 Tech Stack
               </h2>
-              <ProjectDetailsTechStack stacks={projectStacksWithDocs} align="left" />
+              <ProjectDetailsTechStack stacks={projectStacksWithDocs} style="justify-left" />
             </motion.div>
           )}
         </div>
       </motion.div>
-    </div>
+    </div >
   );
 }

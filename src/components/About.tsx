@@ -29,7 +29,7 @@ const fadeUp: Variants = {
 export const About = ({ showMore }: { showMore?: string }) => {
   return (
     <motion.div
-      className="px-6 mt-18 mx-auto max-w-5xl relative"
+      className="px-6 mx-auto max-w-5xl relative"
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
@@ -99,7 +99,9 @@ export const AboutMe = () => {
       animate="show"
     >
       {/* About Section */}
-      <About />
+      <section className="mt-18">
+        <About />
+      </section>
 
       {/* My Tech Journey */}
       <motion.section
@@ -222,7 +224,9 @@ export const AboutMe = () => {
       </motion.section>
 
       {/* My Skills Section */}
+      <div className="mx-auto conpad mt-22">
         <Technologies />
+      </div>
 
       {/* FAQs */}
       <motion.div

@@ -13,10 +13,10 @@ interface StackItem {
 
 interface TechStackProps {
   stacks: StackItem[];
-  align: "left" | "center" | "right";
+  style: string;
 }
 
-export default function TechStack({ stacks, align }: TechStackProps) {
+export default function TechStack({ stacks, style }: TechStackProps) {
   // Parent container animation (controls stagger)
   const containerVariants = {
     hidden: {},
@@ -46,7 +46,7 @@ export default function TechStack({ stacks, align }: TechStackProps) {
 
   return (
       <motion.div
-        className={`flex flex-wrap gap-4 max-w-2xl mx-auto justify-${align}`}
+        className={`flex flex-wrap gap-4 max-w-2xl ${style}`}
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

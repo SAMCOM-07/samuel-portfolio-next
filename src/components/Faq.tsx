@@ -22,10 +22,10 @@ const Faqs = () => {
                 <span className='font-bold text-start'>{faq.question}</span>
 
                 <span
-                  className={`transition-transform duration-300 ${selected === faq.id ? 'rotate-180 text-primary' : 'rotate-0'
+                  className={`transition-transform duration-500 ${selected === faq.id ? '-rotate-45 text-primary' : 'rotate-0'
                     }`}
                 >
-                  {selected === faq.id ? <Minus size={18} /> : <Plus size={18} />}
+                  <Plus size={18} />
                 </span>
               </button>
 

@@ -141,7 +141,7 @@ export const projectsData: Project[] = [
     name: "Omnishop",
     description:
       "An ecommerce website template that provides a seamless shopping experience. It features product listings, filtering & sorting, a shopping cart, a checkout process, wishlist and order history. Built with Next.js and Tailwind CSS for optimal performance and responsiveness.",
-    img: ["/projects-images/omnishop.png"],
+    img: ["/projects-images/omnishop.avif"],
     githubUrl: "https://github.com/SAMCOM-07/omnishop",
     liveUrl: "https://omnishop-ng.vercel.app/",
     status: "In Progress 📍",
@@ -600,7 +600,7 @@ export const faqs: Faq[] = [
     id: 4,
     question: "Are you open to full-time or freelance roles?",
     answer:
-      "Yes — I'm open to freelance collaborations, contract roles, and startup projects where I can contribute and grow.",
+      "Yes, I'm open to freelance collaborations, contract roles, and startup projects where I can contribute and grow.",
   },
   {
     id: 5,

@@ -1,9 +1,8 @@
 'use client';
 
-import { projectsData } from "./../lib/data/data";
+import { type Project, projectsData } from "./../lib/data/data";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import ShowMoreButton from "./ShowMoreButton";
 import Link from "next/link";
 import { LinkIcon, Github } from "lucide-react";
 import { motion, Variants } from "framer-motion";
@@ -33,7 +32,7 @@ const stackVariants: Variants = {
 
 
 // project display component for homepage
-export const Projects = () => {
+export const ProjectComponent = ({ data }: { data: Project[] }) => {
   const { theme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false)
 
@@ -42,20 +41,14 @@ export const Projects = () => {
   }, [])
 
   const current = theme === "system" ? systemTheme : theme;
-  const projectsDataSlice = projectsData.slice(0, 2);
 
   return (
     <div className="w-full relative mt-18 pb-6 conpad slide-up-animation">
-      <h1 className="text-center">Featured Projects</h1>
-      <p className="text-center mx-auto text-muted-foreground mt-4 max-w-lg">
-        A collection of projects that showcase my skills and passion for creating innovative digital solutions.
-      </p>
-
-      <div className="flex flex-col gap-32 container mx-auto mt-16 pb-6">
-        {projectsDataSlice.map((project) => (
+      <div className="grid lg:grid-cols-2 2xl:grid-cols-3 gap-16 2xl:gap-8 container mx-auto mt-16 pb-6">
+        {data.map((project) => (
           <motion.div
             key={project.id}
-            className={`flex flex-col ${project.id % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"} items-start gap-6 lg:gap-12 border-2 border-border rounded-xl p-6`}
+            className={`flex flex-col items-start gap-6 lg:gap-12 shadow-md shadow-border rounded-xl p-6`}
             variants={projectVariants}
             initial="hidden"
             whileInView="show"
@@ -80,9 +73,9 @@ export const Projects = () => {
             {/* details */}
             <div>
               <div className="flex justify-between gap-2 items-center">
-                <h1 className="">{project.name}</h1>
+                <h1 className="line-clamp-1">{project.name}</h1>
                 <span
-                  className={`text-white font-semibold text-sm ${project.status.includes("Progress")
+                  className={`text-white font-semibold text-sm text-nowrap ${project.status.includes("Progress")
                     ? "bg-blue-900"
                     : "bg-green-900"
                     } py-1 px-2 rounded-sm`}
@@ -91,7 +84,7 @@ export const Projects = () => {
                 </span>
               </div>
 
-              <p className="text-muted-foreground mt-4 text-sm lg:text-base">
+              <p className="text-muted-foreground mt-4 text-sm line-clamp-3">
                 {project.description}
               </p>
 
@@ -107,28 +100,30 @@ export const Projects = () => {
                     key={stack.name}
                     variants={stackVariants}
                     custom={index}
-                    className="w-fit overflow-hidden bg-muted py-1 px-2 flex items-center gap-2 rounded-md"
+                    className="overflow-hidden bg-muted py-1 px-1.5 flex items-center gap-1 rounded-md"
                   >
-                    <Image
-                      src={stack.img}
-                      alt={stack.name}
-                      width={20}
-                      height={20}
-                      className="object-contain object-center"
-                    />
-                    <span className="text-sm">{stack.name}</span>
+                    <div className="h-4 w-fit rounded-sm">
+                      <Image
+                        src={stack.img}
+                        alt={stack.name}
+                        width={40}
+                        height={40}
+                        className="w-full h-full object-center"
+                      />
+                    </div>
+                    <span className="text-xs">{stack.name}</span>
                   </motion.div>
                 ))}
               </motion.div>
 
               {/* links button */}
-              <div className="flex items-center gap-4 mt-6 text-sm flex-wrap">
+              <div className="flex items-center gap-4 mt-6 text-xs flex-wrap">
                 <Link
                   target="_blank"
                   href={project.liveUrl}
                   className="px-3 py-1.5 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 transition-all duration-300"
                 >
-                  <LinkIcon size={18} />
+                  <LinkIcon size={14} />
                   <span>Preview</span>
                 </Link>
                 <Link
@@ -136,12 +131,12 @@ export const Projects = () => {
                   href={project.githubUrl}
                   className="px-3 py-1.5 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 transition-all duration-300"
                 >
-                  <Github size={18} />
+                  <Github size={14} />
                   <span>Repository</span>
                 </Link>
                 <Link
                   href={`/projects/${project.id}`}
-                  className="px-3 py-1.5 rounded-full border border-primary text-primary flex items-center gap-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  className="px-3 py-1 rounded-full border border-primary text-primary justify-self-end gap-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 >
                   <span>Read More →</span>
                 </Link>
@@ -150,133 +145,6 @@ export const Projects = () => {
           </motion.div>
         ))}
       </div>
-
-      <ShowMoreButton href="/projects" text="See all projects" />
     </div>
-  );
-};
-
-
-// project display component for projects page
-export const ProjectsPage = () => {
-  const { theme, systemTheme } = useTheme();
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  const current = theme === "system" ? systemTheme : theme;
-
-  return (
-    <section className="w-full relative py-16 conpad">
-      <div className="projectbg w-full -z-20 absolute inset-0"></div>
-      <div className="slide-up-animation">
-        <h1 className="text-center">Featured Projects</h1>
-        <p className="text-center mx-auto text-muted-foreground mt-4 max-w-lg">
-          A collection of projects that showcase my skills and passion for creating innovative digital solutions.
-        </p>
-
-        <div className="flex flex-col gap-32 container mx-auto mt-16">
-          {projectsData.map((project) => (
-            <motion.div
-              key={project.id}
-              className={`flex flex-col ${project.id % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"} items-start gap-6 lg:gap-12`}
-              variants={projectVariants}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.3 }}
-            >
-              {/* image */}
-              <div className="relative w-full h-[300px] overflow-hidden rounded-lg">
-                <Image
-                  src={
-                    mounted && current === "light"
-                      ? project.img[0]
-                      : mounted && current === "dark" && project.img.length > 1
-                        ? project.img[1]
-                        : project.img[0]
-                  }
-                  alt={project.name}
-                  fill
-                  className="object-cover object-center rounded-lg aspect-square hover:scale-105 focus:scale-105 transition-all duration-300"
-                />
-              </div>
-
-              {/* details */}
-              <div>
-                <div className="flex justify-between items-center">
-                  <h1 className="">{project.name}</h1>
-                  <span
-                    className={`text-white font-semibold text-sm ${project.status.includes("Progress")
-                      ? "bg-blue-900"
-                      : "bg-green-900"
-                      } py-1 px-2 rounded-sm`}
-                  >
-                    {project.status}
-                  </span>
-                </div>
-
-                <p className="text-muted-foreground mt-4 text-sm lg:text-base">
-                  {project.description}
-                </p>
-
-                {/* technologies used */}
-                <motion.div
-                  className="flex items-center flex-wrap gap-2 mt-6"
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: false, amount: 0.3 }}
-                >
-                  {project.stacks?.map((stack, index) => (
-                    <motion.div
-                      key={stack.name}
-                      variants={stackVariants}
-                      custom={index}
-                      className="w-fit overflow-hidden bg-muted py-1 px-2 flex items-center gap-2 rounded"
-                    >
-                      <Image
-                        src={stack.img}
-                        alt={stack.name}
-                        width={20}
-                        height={20}
-                        className="object-contain object-center"
-                      />
-                      <span className="text-sm">{stack.name}</span>
-                    </motion.div>
-                  ))}
-                </motion.div>
-
-                {/* links button */}
-                <div className="flex items-center gap-4 mt-6 text-sm flex-wrap">
-                  <Link
-                    target="_blank"
-                    href={project.liveUrl}
-                    className="px-3 py-1.5 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300"
-                  >
-                    <LinkIcon size={18} />
-                    <span>Preview</span>
-                  </Link>
-                  <Link
-                    target="_blank"
-                    href={project.githubUrl}
-                    className="px-3 py-1.5 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 focus:hover:scale-105 active:hover:scale-105 transition-all duration-300"
-                  >
-                    <Github size={18} />
-                    <span>Repository</span>
-                  </Link>
-                  <Link
-                    href={`/projects/${project.id}`}
-                    className="px-3 py-1 rounded-full border border-primary text-primary flex items-center gap-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                  >
-                    <span>Read More →</span>
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
   );
 };
