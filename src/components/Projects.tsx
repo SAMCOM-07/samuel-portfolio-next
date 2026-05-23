@@ -1,10 +1,10 @@
 'use client';
 
-import { type Project, projectsData } from "./../lib/data/data";
+import { type Project } from "./../lib/data/data";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { LinkIcon, Github } from "lucide-react";
+import { LinkIcon, Github, ArrowRightIcon } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -75,7 +75,7 @@ export const ProjectComponent = ({ data }: { data: Project[] }) => {
               <div className="flex justify-between gap-2 items-center">
                 <h1 className="line-clamp-1">{project.name}</h1>
                 <span
-                  className={`text-white font-semibold text-sm text-nowrap ${project.status.includes("Progress")
+                  className={`text-white font-medium text-xs text-nowrap ${project.status.includes("Progress")
                     ? "bg-blue-900"
                     : "bg-green-900"
                     } py-1 px-2 rounded-sm`}
@@ -136,9 +136,9 @@ export const ProjectComponent = ({ data }: { data: Project[] }) => {
                 </Link>
                 <Link
                   href={`/projects/${project.id}`}
-                  className="px-3 py-1 rounded-full border border-primary text-primary justify-self-end gap-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  className="px-3 py-1 rounded-full border border-primary hover:text-primary justify-self-end gap-2 bg-primary text-primary-foreground hover:bg-primary-foreground transition-all duration-300"
                 >
-                  <span>Read More →</span>
+                  <span>Read More <ArrowRightIcon size={18} className="inline"/> </span>
                 </Link>
               </div>
             </div>

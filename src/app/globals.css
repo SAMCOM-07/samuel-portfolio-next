@@ -113,18 +113,18 @@ body {
   }
 } */
 
-@layer utilities {
+@layer base {
   h1 {
-    @apply [font-family:var(--font-poppins)] text-2xl font-bold;
+    @apply [font-family:var(--font-poppins)] text-xl font-semibold;
   }
 }
 
 @layer components {
   .hover {
-    @apply hover:bg-accent hover:text-accent-foreground transition-colors duration-500;
+    @apply hover:bg-accent/50 hover:text-accent-foreground transition-colors duration-500;
   }
   .focus {
-    @apply focus:bg-accent focus:text-accent-foreground transition-colors duration-500;
+    @apply focus:bg-accent/40 focus:text-accent-foreground transition-colors duration-500;
   }
   .active {
     @apply active:bg-accent active:text-accent-foreground transition-colors duration-500;

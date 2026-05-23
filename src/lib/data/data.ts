@@ -132,6 +132,30 @@ export const stackData: Stack[] = [
     category: "tools",
     documentation: "https://vite.dev",
   },
+  {
+    name: "Express",
+    img: "/stack-images/express-logo.png",
+    category: "backend",
+    documentation: "https://expressjs.com/en/4x/api.html",
+  },
+  {
+    name: "PostgreSQL",
+    img: "/stack-images/postgresql-logo.png",
+    category: "backend",
+    documentation: "https://www.postgresql.org/docs/",
+  },
+  {
+    name: "Zod",
+    img: "/stack-images/zod-logo.webp",
+    category: "tools",
+    documentation: "https://zod.dev",
+  },
+  {
+    name: "SQL",
+    img: "/stack-images/sql-logo.png",
+    category: "backend",
+    documentation: "https://www.w3schools.com/sql/",
+  },
 ];
 
 // projects data
@@ -196,6 +220,66 @@ export const projectsData: Project[] = [
   },
   {
     id: 2,
+    name: "Task Manager",
+    description:
+      "Built a full-stack Task Management Dashboard with smart AI-powered task assistance. Features include authentication, task CRUD operations, filtering, analytics, and AI-generated recommendations based on task details. Developed with React, TypeScript, Tailwind CSS, Express.js, PostgreSQL, JWT Authentication, and OpenAI/OpenRouter integration.",
+    img: ["/projects-images/task-manager-light.avif", "/projects-images/task-manager-dark.avif"],
+    githubUrl: "https://github.com/SAMCOM-07/task-manager",
+    liveUrl: "https://taskmanager-spa.vercel.app",
+    status: "Completed ✅",
+    stacks: [
+      {
+        name: "React.js",
+        img: "/stack-images/react-logo.png",
+      },
+      {
+        name: "TypeScript",
+        img: "/stack-images/typescript-logo.png",
+      },
+      {
+        name: "TailwindCss",
+        img: "/stack-images/tailwind-logo.png",
+      },
+      {
+        name: "Express",
+        img: "/stack-images/express-logo.png",
+      },
+      {
+        name: "PostgreSQL",
+        img: "/stack-images/postgresql-logo.png",
+      },
+      {
+        name: "Node.js",
+        img: "/stack-images/node-logo.png",
+      },
+    ],
+    details: {
+      introduction:
+        "Task Manager is a comprehensive, full-stack task management platform that leverages AI capabilities to enhance productivity. Featuring intelligent task analysis and recommendations, it combines modern frontend technologies with robust backend infrastructure to deliver a seamless task organization experience.",
+      purpose:
+        "The primary goal of Task Manager is to provide users with an intelligent, feature-rich task management solution that goes beyond simple to-do lists. It aims to help users organize their work, track progress, and receive AI-powered insights to improve productivity and task prioritization.",
+      features: [
+        "User authentication with JWT",
+        "Full task CRUD operations",
+        "Advanced filtering and search",
+        "Task analytics and insights",
+        "AI-powered task recommendations",
+        "Task categorization and tagging",
+        "Progress tracking and analytics",
+        "Responsive dashboard design",
+        "Dark and light theme support",
+        "Real-time updates",
+        "Secure data storage with PostgreSQL",
+        "RESTful API backend",
+      ],
+      motivation:
+        "I built Task Manager to showcase full-stack development capabilities and explore the integration of AI into practical applications. The project demonstrates how modern technologies can be combined to create intelligent, user-focused solutions that enhance productivity.",
+      howToContribute:
+        "Contributions are welcome! To contribute:\n\n1. Fork the repository on GitHub\n2. Clone your fork locally\n3. Create a feature branch: `git checkout -b feature/your-feature-name`\n4. Make your changes and commit: `git commit -m 'Add some feature'`\n5. Push to the branch: `git push origin feature/your-feature-name`\n6. Submit a Pull Request\n\nPlease ensure your code follows the existing style and includes appropriate tests.",
+    },
+  },
+  {
+    id: 3,
     name: "Admin Dashboard",
     description:
       "This is a modern admin dashboard template built using Next.js and Shadcn UI. It features a sleek design, responsive layout, and a variety of components to help you get started quickly with your admin panel needs.",
@@ -252,7 +336,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 3,
+    id: 4,
     name: "Music Desk",
     description:
       "A music streaming web application that allows users to filter and play their favorite songs. Built with React and Tailwind CSS, it offers a sleek and responsive design for an optimal listening experience.",
@@ -297,7 +381,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 4,
+    id: 5,
     name: "Anon Website",
     description:
       "A landing page for Anon, a fictional product or service. The design is clean and modern, focusing on user engagement and conversion.",
@@ -339,7 +423,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 5,
+    id: 6,
     name: "Product Filtering",
     description:
       "A product filtering web application that allows users to filter products based on various criteria such as category, with cart functionalities. Built with HTML, CSS, and JavaScript, it provides a user-friendly interface for an enhanced shopping experience.",
@@ -385,7 +469,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 6,
+    id: 7,
     name: "User Record",
     description:
       "A user record management application that allows users to add, view, edit, and delete user records. Built with React.js and Tailwind CSS, it offers a clean and intuitive interface for managing user information efficiently.",
@@ -431,7 +515,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 7,
+    id: 8,
     name: "Browser Extension",
     description:
       "A browser extension that enhances user productivity by providing quick access to useful tools and features. Built with HTML, CSS, and JavaScript, status can be filtered and changed.",
@@ -480,7 +564,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 8,
+    id: 9,
     name: "Fylo",
     description:
       "A landing page for Fylo, a fictional cloud storage service. The design is modern and responsive, focusing on user engagement and conversion.",
@@ -529,7 +613,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 9,
+    id: 10,
     name: "Shortly",
     description:
       "A URL shortening service that allows users to shorten long URLs for easier sharing. Built with HTML, CSS, and JavaScript, it provides a simple and user-friendly interface for generating short links.",

@@ -12,7 +12,7 @@ import ShowMoreButton from "@/components/ShowMoreButton";
 
 export default function HomePage() {
 
-  const projectsDataSlice = projectsData.slice(0, 6);
+  const projectsDataSlice = projectsData.slice(0, 3);
 
   return (
     <div className="pb-16">

@@ -50,10 +50,10 @@ const Navbar = () => {
                     href={page.url}
                     role="menuitem"
                     aria-current={isActive ? "page" : undefined}
-                    aria-label={'Go to ${page.page} page'}
+                    aria-label={`Go to ${page.page} page`}
                     className={`text-sm rounded-full px-3 py-2 hover focus active ${isActive
-                        ? "bg-accent text-foreground"
-                        : "text-muted-foreground"
+                      ? "bg-accent/60 text-foreground"
+                      : "text-muted-foreground"
                       }`}
                   >
                     {page.page}

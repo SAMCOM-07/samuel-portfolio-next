@@ -51,7 +51,7 @@ const Home = () => {
             </span>
 
             {/* Background layer */}
-            <span className="absolute inset-0.5 rounded-full bg-background"></span>
+            <span className="absolute inset-0.5 rounded-full bg-accent/85"></span>
 
             {/* Text */}
             <span className="z-40 flex items-center gap-2">
@@ -72,7 +72,7 @@ const Home = () => {
             variants={fadeUp}
             className="font-bold text-5xl md:text-7xl mt-4"
           >
-            Website Developer
+            Full-Stack Developer
           </motion.span>
 
           {/* description */}

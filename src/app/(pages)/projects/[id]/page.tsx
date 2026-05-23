@@ -2,7 +2,7 @@
 
 import { projectsData, stackData } from "@/lib/data/data";
 import Link from "next/link";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, ArrowLeft } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { notFound, useRouter } from "next/navigation";
 import ProjectDetailsTechStack from "@/components/TechStack";
@@ -57,7 +57,7 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
 
   // Get the full stack info with documentation
   const projectStacksWithDocs = project.stacks?.map((stack) => {
-    
+
     const stackInfo = stackData.find(
       (s) => s.name.toLowerCase() === stack.name.toLowerCase()
     );
@@ -66,7 +66,7 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
       documentation: stackInfo?.documentation as string,
     };
   });
-  
+
 
   return (
     <div className="min-h-screen bg-background pb-20 conpad relative">
@@ -80,9 +80,10 @@ export default function ProjectDetailsPage(props: ProjectDetailsPageProps) {
         <button
           onClick={() => router.back()
           }
-          className="text-primary text-sm hover:underline"
+          className="text-primary text-sm hover:underline group"
         >
-          ← Back
+          <ArrowLeft size={18} className="inline group-hover:-translate-x-1 transition-transform" />
+          Back
         </button>
       </motion.div>
 
