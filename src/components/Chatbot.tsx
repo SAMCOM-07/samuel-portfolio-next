@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 import { MessageCircle } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { FaSpinner } from "react-icons/fa";
 
 
 export default function ChatBot() {
@@ -90,8 +91,8 @@ export default function ChatBot() {
                 <div
                   key={i}
                   className={`p-2 rounded-lg overflow-x-clip break-words text-sm font-light ${msg.role === "user"
-                    ? "bg-purpple text-white self-end max-w-[70%]"
-                    : "bg-accent self-start max-w-[85%]"
+                    ? "bg-purpple text-white self-end max-w-[70%] rounded-tl-none"
+                    : "bg-accent self-start max-w-[85%] rounded-tr-none"
                     }`}
                 >
                   <ReactMarkdown
@@ -109,7 +110,7 @@ export default function ChatBot() {
                     {msg.text}
                   </ReactMarkdown>
                 </div>
-                {isLoading && msg.role === 'user' && i === (messages.length - 1) && <div className="animate-pulse flex items-center mt-4 text-muted-foreground/70">loading <span className="w-3 h-3 inline-block rounded-full ml-1 border-b-2 border-t-2 animate-spin"></span></div>}
+                {isLoading && msg.role === 'user' && i === (messages.length - 1) && <div className="animate-pulse flex items-center mt-4 text-muted-foreground/70 text-sm">thinking <FaSpinner size={14} className="ml-1 animate-spin" /></div>}
               </div>
             ))}
             <div ref={messagesEndRef} />

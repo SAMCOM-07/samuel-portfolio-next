@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { ThemeProvider } from "next-themes";
 import { AppContextProvider } from "@/context/AppContext";
+import Chatbot from "@/components/Chatbot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -90,6 +91,7 @@ export default function RootLayout({
             <main id="main-content">
               {children}
             </main>
+            <Chatbot />
             <Footer />
           </AppContextProvider>
         </ThemeProvider>

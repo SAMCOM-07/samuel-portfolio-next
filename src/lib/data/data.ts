@@ -156,6 +156,18 @@ export const stackData: Stack[] = [
     category: "backend",
     documentation: "https://www.w3schools.com/sql/",
   },
+  {
+    name: "Framer Motion",
+    img: "/stack-images/framer-motion-logo.png",
+    category: "frontend",
+    documentation: "https://www.framer.com/motion/",
+  },
+  {
+    name: "Vercel",
+    img: "/stack-images/vercel-logo.png",
+    category: "tools",
+    documentation: "https://vercel.com/docs",
+  },
 ];
 
 // projects data
@@ -226,7 +238,7 @@ export const projectsData: Project[] = [
     img: ["/projects-images/task-manager-light.avif", "/projects-images/task-manager-dark.avif"],
     githubUrl: "https://github.com/SAMCOM-07/task-manager",
     liveUrl: "https://taskmanager-spa.vercel.app",
-    status: "Completed ✅",
+    status: "In Progress 📍",
     stacks: [
       {
         name: "React.js",

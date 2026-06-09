@@ -5,7 +5,6 @@ import { ProjectComponent } from "@/components/Projects";
 import Technologies from "@/components/Technologies";
 import Services from "@/components/Services";
 import Connect from "@/components/Connect";
-import Chatbot from "@/components/Chatbot";
 import Education from "@/components/Education";
 import { projectsData } from "@/lib/data/data";
 import ShowMoreButton from "@/components/ShowMoreButton";
@@ -37,7 +36,6 @@ export default function HomePage() {
         <Faqs />
         <Connect />
       </section>
-      <Chatbot />
     </div>
   );
 }
