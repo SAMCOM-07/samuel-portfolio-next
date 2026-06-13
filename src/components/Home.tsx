@@ -56,21 +56,21 @@ const Home = () => {
             {/* Text */}
             <span className="z-40 flex items-center gap-2">
               <span className="block w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-              <h3 className="font-bold text-sm">Available for work</h3>
+              <h3 className="font-bold text-xs sm:text-sm ">Available for work</h3>
             </span>
           </motion.div>
 
           {/* name and title */}
           <motion.h1
             variants={fadeUp}
-            className="font-bold text-5xl md:text-7xl mt-6"
+            className="font-bold text-4xl sm:text-5xl md:text-7xl mt-6"
           >
             Shonde Samuel
           </motion.h1>
 
           <motion.span
             variants={fadeUp}
-            className="font-bold text-5xl md:text-7xl mt-4"
+            className="font-bold text-4xl sm:text-5xl md:text-7xl mt-4"
           >
             Full-Stack Developer
           </motion.span>
@@ -78,7 +78,7 @@ const Home = () => {
           {/* description */}
           <motion.p
             variants={fadeUp}
-            className="text-muted-foreground max-w-sm leading-5 mt-4"
+            className="text-muted-foreground text-sm sm:text-base max-w-sm leading-5 mt-4"
           >
             Crafting seamless digital experiences with modern technologies and
             a passion for elegant code.
@@ -92,14 +92,14 @@ const Home = () => {
             <Link
               href={"Shonde-Samuel-Resume.pdf"}
               download
-              className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-purpple/80 text-white rounded-full flex items-center gap-2 text-sm"
+              className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-purpple/80 text-white rounded-full flex items-center gap-2 text-xs sm:text-sm"
             >
               <Download size={18} className="animate-bounce translate-y-1" />
               <span>My Resume</span>
             </Link>
             <Link
               href={"/projects"}
-              className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-background/75 border border-border rounded-full flex items-center gap-2 text-sm"
+              className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-background/75 border border-border rounded-full flex items-center gap-2 text-xs sm:text-sm"
             >
               <Projector size={18} />
               <span>My Projects</span>

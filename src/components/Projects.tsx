@@ -117,14 +117,14 @@ export const ProjectComponent = ({ data }: { data: Project[] }) => {
               </motion.div>
 
               {/* links button */}
-              <div className="flex items-center gap-4 mt-6 text-xs flex-wrap">
+              <div className="flex items-center gap-2 mt-6 text-xs flex-wrap">
                 <Link
                   target="_blank"
                   href={project.liveUrl}
                   className="px-3 py-1.5 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 transition-all duration-300"
                 >
                   <LinkIcon size={14} />
-                  <span>Preview</span>
+                  <span>View</span>
                 </Link>
                 <Link
                   target="_blank"
@@ -132,7 +132,7 @@ export const ProjectComponent = ({ data }: { data: Project[] }) => {
                   className="px-3 py-1.5 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 transition-all duration-300"
                 >
                   <Github size={14} />
-                  <span>Repository</span>
+                  <span>Repo</span>
                 </Link>
                 <Link
                   href={`/projects/${project.id}`}
