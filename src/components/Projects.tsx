@@ -117,28 +117,31 @@ export const ProjectComponent = ({ data }: { data: Project[] }) => {
               </motion.div>
 
               {/* links button */}
-              <div className="flex items-center gap-2 mt-6 text-xs flex-wrap">
-                <Link
-                  target="_blank"
-                  href={project.liveUrl}
-                  className="px-3 py-1.5 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 transition-all duration-300"
-                >
-                  <LinkIcon size={14} />
-                  <span>View</span>
-                </Link>
-                <Link
-                  target="_blank"
-                  href={project.githubUrl}
-                  className="px-3 py-1.5 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 transition-all duration-300"
-                >
-                  <Github size={14} />
-                  <span>Repo</span>
-                </Link>
+              <div className="flex items-center gap-2 mt-6 text-xs flex-wrap justify-between">
+                <div className="flex items-center gap-2">
+                  <Link
+                    target="_blank"
+                    href={project.liveUrl}
+                    className="px-3 py-1.5 rounded-full bg-purpple text-white flex items-center gap-2 hover:opacity-70 transition-all duration-300"
+                  >
+                    <LinkIcon size={14} />
+                    <span>Preview</span>
+                  </Link>
+                  <Link
+                    target="_blank"
+                    href={project.githubUrl}
+                    className="px-3 py-1.5 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 transition-all duration-300"
+                  >
+                    <Github size={14} />
+                    <span className="hidden sm:inline">Repo</span>
+                    <span className="sm:hidden">Repository</span>
+                  </Link>
+                </div>
                 <Link
                   href={`/projects/${project.id}`}
-                  className="px-3 py-1 rounded-full border border-primary hover:text-primary justify-self-end gap-2 bg-primary text-primary-foreground hover:bg-primary-foreground transition-all duration-300"
+                  className="px-3 py-1 rounded-full border border-primary hover:text-primary gap-2 bg-primary text-primary-foreground hover:bg-primary-foreground transition-all duration-300"
                 >
-                  <span>Read More <ArrowRightIcon size={18} className="inline"/> </span>
+                  <span>Read More <ArrowRightIcon size={18} className="inline" /> </span>
                 </Link>
               </div>
             </div>
