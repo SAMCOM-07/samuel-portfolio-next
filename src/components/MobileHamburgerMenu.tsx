@@ -18,7 +18,7 @@ const MobileHamburgerMenu = () => {
 
 
   return (
-    <div className="md:hidden fixed bottom-5 left-1/2 -translate-x-1/2 z-50">
+    <div className="md:hidden fixed bottom-4.5 left-1/2 -translate-x-1/2 z-50">
       <div className="relative">
         {/* Glassmorphism container with gradient border */}
         <div className="flex items-center justify-center gap-2 px-2 py-2 rounded-full bg-gradient-to-br from-purpple/10 via-accent/5 to-purpple/5 backdrop-blur-xl border border-white/10 shadow-2xl shadow-purpple/20">
