@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import { ThemeProvider } from "next-themes";
 import { AppContextProvider } from "@/context/AppContext";
 import Chatbot from "@/components/Chatbot";
+import MobileHamburgerMenu from "@/components/MobileHamburgerMenu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,13 +42,13 @@ export const metadata: Metadata = {
     "Tailwind CSS",
     "Portfolio Website",
   ],
-  authors: [{ name: "Samuel Shonde", url: "https://samuelshonde.vercel.app/" }],
+  authors: [{ name: "Samuel Shonde", url: "https://samuel.mevads.dev/" }],
   creator: "Samuel Shonde",
   openGraph: {
     title: "Samuel Shonde - Website Developer",
     description:
       "I'm a frontend developer passionate about building visually appealing, performant, and user-friendly web experiences with React, Next.js, and Tailwind CSS.",
-    url: "https://samuelshonde.vercel.app/",
+    url: "https://samuel.mevads.dev/",
     siteName: "Samuel Shonde Portfolio",
     // images: [
     //   {
@@ -92,6 +93,10 @@ export default function RootLayout({
               {children}
             </main>
             <Chatbot />
+
+            {/* mobile hamburger menu */}
+            <MobileHamburgerMenu />
+
             <Footer />
           </AppContextProvider>
         </ThemeProvider>

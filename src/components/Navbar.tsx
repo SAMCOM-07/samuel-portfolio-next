@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
-import HamburgerMenu from "./HamburgerMenu";
+// import HamburgerMenu from "./HamburgerMenu";
 import { useAppContext } from "@/context/AppContext";
 import { usePathname } from "next/navigation";
 import { FaXTwitter } from "react-icons/fa6";
@@ -64,14 +64,17 @@ const Navbar = () => {
           </nav>
         </div>
 
-        <div className="flex items-center gap-2">
+
+        {/* theme toggle */}
+        <ThemeToggle aria-label="Toggle theme" />
+        {/* <div className="flex items-center gap-2">
           <span className="md:hidden">
             <ThemeToggle aria-label="Toggle theme" />
           </span>
 
-          {/* hamburger section */}
+          
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen(prev => !prev)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -79,12 +82,12 @@ const Navbar = () => {
           >
             {!isOpen ? <Menu size={18} aria-hidden="true" /> : <X size={18} aria-hidden="true" />}
           </button>
-        </div>
+        </div> */}
 
         {/* hamburger menu */}
-        {isOpen && <HamburgerMenu />}
+        {/* {isOpen ? <HamburgerMenu /> : null} */}
 
-        <div
+        {/* <div
           className="md:flex gap-2 hidden"
           role="group"
           aria-label="Social media and theme controls"
@@ -120,7 +123,7 @@ const Navbar = () => {
               aria-hidden="true"
             />
           </Link>
-        </div>
+        </div> */}
       </div>
     </nav>
   );

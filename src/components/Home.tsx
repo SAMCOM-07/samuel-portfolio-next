@@ -78,10 +78,10 @@ const Home = () => {
           {/* description */}
           <motion.p
             variants={fadeUp}
-            className="text-muted-foreground max-w-xs mt-4"
+            className="text-muted-foreground max-w-sm leading-5 mt-4"
           >
-            Passionate about building outstanding websites using the latest web
-            technologies.
+            Crafting seamless digital experiences with modern technologies and
+            a passion for elegant code.
           </motion.p>
 
           {/* buttons */}
