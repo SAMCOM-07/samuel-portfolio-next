@@ -133,8 +133,8 @@ export const ProjectComponent = ({ data }: { data: Project[] }) => {
                     className="px-3 py-1.5 rounded-full bg-muted flex items-center gap-2 hover:opacity-70 transition-all duration-300"
                   >
                     <Github size={14} />
-                    <span className="hidden sm:inline">Repo</span>
-                    <span className="sm:hidden">Repository</span>
+                    <span className="hidden sm:inline">Repository</span>
+                    <span className="sm:hidden">Repo</span>
                   </Link>
                 </div>
                 <Link
