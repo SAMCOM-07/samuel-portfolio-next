@@ -349,6 +349,49 @@ export const projectsData: Project[] = [
   },
   {
     id: 4,
+    name: "GitHub Profile Checker",
+    description:
+      "A comprehensive GitHub profile analytics platform that enables users to search and explore detailed GitHub profiles. Features real-time profile lookup, repository statistics, contribution analytics, social links integration, and interactive data visualization with pie charts. Built with React, Tailwind CSS, and GitHub API for seamless GitHub integration.",
+    img: ["/projects-images/github-profile-checker.avif"],
+    githubUrl: "https://github.com/SAMCOM-07/codveda-tasks/tree/main/level2/github-rest-api",
+    liveUrl: "https://githubprofilechecker.vercel.app/",
+    status: "Completed ✅",
+    stacks: [
+      {
+        name: "React.js",
+        img: "/stack-images/react-logo.png",
+      },
+      {
+        name: "TailwindCss",
+        img: "/stack-images/tailwind-logo.png",
+      }
+    ],
+    details: {
+      introduction:
+        "GitHub Profile Checker is a powerful tool designed for developers to explore and analyze GitHub profiles with ease. By leveraging the GitHub API, it provides comprehensive insights into user profiles, repositories, contributions, and social presence in a beautiful, interactive interface.",
+      purpose:
+        "The primary goal of GitHub Profile Checker is to provide a user-friendly platform for discovering GitHub users and analyzing their coding profiles. It helps developers research other developers, explore open-source contributions, and gain insights into repository statistics and contribution patterns.",
+      features: [
+        "Search and lookup any GitHub username",
+        "Display user profile information (name, avatar, bio, followers)",
+        "View repositories with detailed statistics",
+        "Show starred repositories and favorites",
+        "Contribution history and analytics",
+        "Social links integration (Twitter, website/portfolio)",
+        "Interactive pie charts for data visualization",
+        "Repository language distribution charts",
+        "Responsive design for all devices",
+        "GitHub API rate limit handling",
+        "Real-time data fetching and updates",
+      ],
+      motivation:
+        "I built GitHub Profile Checker to showcase GitHub API integration and data visualization capabilities. The project demonstrates proficiency in working with external APIs, handling asynchronous data fetching, and creating intuitive user interfaces for displaying complex data sets in an accessible manner.",
+      howToContribute:
+        "Contributions are welcome! To contribute:\n\n1. Fork the repository on GitHub\n2. Create a feature branch: `git checkout -b feature/your-feature-name`\n3. Make your changes and commit: `git commit -m 'Add some feature'`\n4. Push to the branch: `git push origin feature/your-feature-name`\n5. Submit a Pull Request\n\nPlease ensure your code follows the existing style and includes appropriate error handling.",
+    },
+  },
+  {
+    id: 5,
     name: "Music Desk",
     description:
       "A music streaming web application that allows users to filter and play their favorite songs. Built with React and Tailwind CSS, it offers a sleek and responsive design for an optimal listening experience.",
@@ -393,7 +436,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 5,
+    id: 6,
     name: "Anon Website",
     description:
       "A landing page for Anon, a fictional product or service. The design is clean and modern, focusing on user engagement and conversion.",
@@ -435,7 +478,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 6,
+    id: 7,
     name: "Product Filtering",
     description:
       "A product filtering web application that allows users to filter products based on various criteria such as category, with cart functionalities. Built with HTML, CSS, and JavaScript, it provides a user-friendly interface for an enhanced shopping experience.",
@@ -481,7 +524,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 7,
+    id: 8,
     name: "User Record",
     description:
       "A user record management application that allows users to add, view, edit, and delete user records. Built with React.js and Tailwind CSS, it offers a clean and intuitive interface for managing user information efficiently.",
@@ -527,7 +570,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 8,
+    id: 9,
     name: "Browser Extension",
     description:
       "A browser extension that enhances user productivity by providing quick access to useful tools and features. Built with HTML, CSS, and JavaScript, status can be filtered and changed.",
@@ -576,7 +619,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 9,
+    id: 10,
     name: "Fylo",
     description:
       "A landing page for Fylo, a fictional cloud storage service. The design is modern and responsive, focusing on user engagement and conversion.",
@@ -625,7 +668,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 10,
+    id: 11,
     name: "Shortly",
     description:
       "A URL shortening service that allows users to shorten long URLs for easier sharing. Built with HTML, CSS, and JavaScript, it provides a simple and user-friendly interface for generating short links.",

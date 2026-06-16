@@ -1,17 +1,9 @@
 "use client";
 
-import {
-  Github,
-  Linkedin,
-  Menu,
-  X,
-} from "lucide-react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
-// import HamburgerMenu from "./HamburgerMenu";
 import { useAppContext } from "@/context/AppContext";
 import { usePathname } from "next/navigation";
-import { FaXTwitter } from "react-icons/fa6";
 
 const Navbar = () => {
   const { navPages, isOpen, setIsOpen, dropdownRef } = useAppContext();
@@ -25,45 +17,41 @@ const Navbar = () => {
       className="z-50 gap-4 py-4 bg-background/50 border-b border-b-muted sticky inset-0 backdrop-blur-sm"
     >
       <div className="conpad flex items-center justify-between slide-down-animation">
-        <div className="flex items-center gap-6">
-          {/* logo */}
-          <Link
-            href={"/"}
-            aria-label="Go to homepage"
-            className="font-bold text-3xl"
-          >
-            S
-          </Link>
+        {/* logo */}
+        <Link
+          href={"/"}
+          aria-label="Go to homepage"
+          className="font-bold text-3xl"
+        >
+          S
+        </Link>
 
-          {/* nav links */}
-          <nav
-            className="hidden md:flex items-center gap-4"
-            role="menubar"
-            aria-label="Desktop navigation links"
-          >
-            {navPages.map((page, index) => {
-              const isActive = pathname === page.url;
+        {/* nav links */}
+        <ul
+          className="hidden md:flex items-center gap-2 bg-gradient-to-br from-purpple/10 via-accent/5 to-purpple/5 p-1.5 rounded-full border border-white/10 backdrop-blur-xl shadow-sm shadow-purpple/20 hover:border-white/20 transition-colors duration-300"
+          role="menubar"
+          aria-label="Desktop navigation links"
+        >
+          {navPages.map((page, index) => {
+            const isActive = pathname === page.url;
 
-              return (
-                <ul key={index} role="none">
-                  <Link
-                    href={page.url}
-                    role="menuitem"
-                    aria-current={isActive ? "page" : undefined}
-                    aria-label={`Go to ${page.page} page`}
-                    className={`text-sm rounded-full px-3 py-2 hover focus active ${isActive
-                      ? "bg-accent/60 text-foreground"
-                      : "text-muted-foreground"
-                      }`}
-                  >
-                    {page.page}
-                  </Link>
-                </ul>
-              );
-            })}
-          </nav>
-        </div>
-
+            return (
+              <li key={index} role="none" className={`text-sm rounded-full px-3 py-2 hover:ring ring-purpple/40 focus active transition-all duration-300 ${isActive
+                ? "text-purpple bg-purpple/15 ring ring-purpple/50"
+                : "text-muted-foreground"
+                }`}>
+                <Link
+                  href={page.url}
+                  role="menuitem"
+                  aria-current={isActive ? "page" : undefined}
+                  aria-label={`Go to ${page.page} page`}
+                >
+                  {page.page}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
 
         {/* theme toggle */}
         <ThemeToggle aria-label="Toggle theme" />

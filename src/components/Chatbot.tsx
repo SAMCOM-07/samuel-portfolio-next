@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Send } from "lucide-react";
+import { Send, Bot, User } from "lucide-react";
 import { MessageCircle } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { FaSpinner } from "react-icons/fa";
@@ -81,37 +81,87 @@ export default function ChatBot() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          className="z-50 fixed bottom-20 right-5 w-[20rem] bg-background rounded-2xl shadow-[0_0_5px] shadow-purpple p-4 border border-border"
+          className="z-50 fixed bottom-20 right-5 w-[22rem] bg-gradient-to-br from-background/95 to-background/80 rounded-3xl shadow-2xl shadow-purpple/30 p-5 border border-white/10 backdrop-blur-xl"
         >
-          <h2 className="text-center text-xl font-bold text-purpple">How may I help you?</h2>
-          <hr className="text-border my-4" />
-          <div className="scrollbar h-72 overflow-y-auto flex flex-col space-y-4">
+          <h2 className="text-center text-lg font-bold bg-gradient-to-r from-purpple to-accent bg-clip-text text-transparent">How may I help you?</h2>
+          <div className="h-px bg-gradient-to-r from-transparent via-purpple/30 to-transparent my-4" />
+          <div className="scrollbar h-72 overflow-y-auto overflow-x-hidden flex flex-col space-y-4">
             {messages && messages.length && messages?.map((msg, i) => (
-              <div key={i} className="flex flex-col">
-                <div
-                  key={i}
-                  className={`p-2 rounded-lg overflow-x-clip break-words text-sm font-light ${msg.role === "user"
-                    ? "bg-purpple text-white self-end max-w-[70%] rounded-tl-none"
-                    : "bg-accent self-start max-w-[85%] rounded-tr-none"
-                    }`}
-                >
-                  <ReactMarkdown
-                    components={{
-                      a: ({ node, ...props }) => (
-                        <a
-                          {...props}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-500 hover:underline"
-                        />
-                      ),
-                    }}
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+
+              >
+                <div className={`flex gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
+
+
+                  {/* Bot Icon */}
+                  {msg.role === "bot" && (
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-accent to-purpple/60 flex items-center justify-center flex-shrink-0 mt-1">
+                      <Bot size={16} className="text-background" />
+                    </div>
+                  )}
+
+                  {/* Message Bubble */}
+                  <div
+                    className={`max-w-[70%] px-4 py-3 rounded-2xl text-xs font-light leading-relaxed break-words backdrop-blur-md transition-all duration-300 ${msg.role === "user"
+                      ? "bg-gradient-to-br from-purpple/40 to-purpple/20 border border-purpple/30 text-foreground rounded-br-none shadow-lg shadow-purpple/20 hover:shadow-xl hover:shadow-purpple/30"
+                      : "bg-gradient-to-br from-white/10 via-accent/5 to-white/5 border border-white/20 text-foreground rounded-bl-none shadow-lg shadow-accent/10 hover:shadow-xl hover:shadow-accent/20 hover:border-white/30"
+                      }`}
                   >
-                    {msg.text}
-                  </ReactMarkdown>
+                    <ReactMarkdown
+                      components={{
+                        a: ({ node, ...props }) => (
+                          <a
+                            {...props}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-purpple hover:text-purpple/80 hover:underline font-semibold transition-colors"
+                          />
+                        ),
+                        p: ({ node, ...props }) => (
+                          <p {...props} className="mb-2 last:mb-0" />
+                        ),
+                        ul: ({ node, ...props }) => (
+                          <ul {...props} className="list-disc list-inside space-y-1 mb-2" />
+                        ),
+                        ol: ({ node, ...props }) => (
+                          <ol {...props} className="list-decimal list-inside space-y-1 mb-2" />
+                        ),
+                        li: ({ node, ...props }) => (
+                          <li {...props} className="mb-1" />
+                        ),
+                        code: ({ node, ...props }) => (
+                          <code {...props} className="bg-black/20 px-1.5 py-0.5 rounded text-xs font-mono" />
+                        ),
+                      }}
+                    >
+                      {msg.text}
+                    </ReactMarkdown>
+                  </div>
+
+                  {/* User Icon */}
+                  {msg.role === "user" && (
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-purpple to-purpple/60 flex items-center justify-center flex-shrink-0 mt-1">
+                      <User size={16} className="text-white" />
+                    </div>
+                  )}
                 </div>
-                {isLoading && msg.role === 'user' && i === (messages.length - 1) && <div className="animate-pulse flex items-center mt-4 text-muted-foreground/70 text-sm">thinking <FaSpinner size={14} className="ml-1 animate-spin" /></div>}
-              </div>
+
+                {/* Loading Indicator */}
+                {isLoading && msg.role === "user" && i === (messages.length - 1) && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="flex items-center gap-1 text-muted-foreground/70 text-xs mt-4 ml-2"
+                  >
+                    <span>thinking</span>
+                    <FaSpinner className="animate-spin" size={12} />
+                  </motion.div>
+                )}
+              </motion.div>
             ))}
             <div ref={messagesEndRef} />
           </div>
