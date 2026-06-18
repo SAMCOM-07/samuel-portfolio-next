@@ -81,7 +81,7 @@ export default function ChatBot() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          className="z-50 fixed bottom-20 right-5 w-[22rem] bg-gradient-to-br from-background/95 to-background/80 rounded-3xl shadow-2xl shadow-purpple/30 p-5 border border-white/10 backdrop-blur-xl"
+          className="z-50 fixed bottom-20 right-5 w-[22rem] bg-gradient-to-br from-background/95 to-background/80 rounded-3xl shadow-2xl shadow-purpple/30 p-5 border border-foreground/10 backdrop-blur-xl"
         >
           <h2 className="text-center text-lg font-bold bg-gradient-to-r from-purpple to-accent bg-clip-text text-transparent">How may I help you?</h2>
           <div className="h-px bg-gradient-to-r from-transparent via-purpple/30 to-transparent my-4" />
@@ -100,7 +100,7 @@ export default function ChatBot() {
                   {/* Bot Icon */}
                   {msg.role === "bot" && (
                     <div className="w-7 h-7 rounded-full bg-gradient-to-br from-accent to-purpple/60 flex items-center justify-center flex-shrink-0 mt-1">
-                      <Bot size={16} className="text-background" />
+                      <Bot size={16} className="text-white/70" />
                     </div>
                   )}
 

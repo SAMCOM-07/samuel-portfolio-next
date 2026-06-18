@@ -29,7 +29,7 @@ const fadeUp: Variants = {
 export const About = ({ showMore }: { showMore?: string }) => {
   return (
     <motion.div
-      className="px-6 mx-auto max-w-5xl relative"
+      className="px-6 mx-auto max-w-5xl relative text-justify"
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
@@ -59,14 +59,14 @@ export const About = ({ showMore }: { showMore?: string }) => {
               <span className="text-purpple">
                 Next.js, React, TypeScript and Tailwind CSS
               </span>{" "}
-              to bring ideas to life on the web — from personal portfolios to dynamic business platforms.
+              to bring ideas to life on the web, from personal portfolios to dynamic business platforms.
             </motion.span>
 
             <motion.span
               variants={fadeUp}
               className="text-muted-foreground font-medium leading-6"
             >
-              My development philosophy revolves around building solutions that are user-centered, scalable, and performance-driven. I believe that every website should not only look great but also serve a purpose — whether that&#39;s helping a brand grow, improving user engagement, or simplifying processes through technology.
+              My development philosophy revolves around building solutions that are user-centered, scalable, and performance-driven. I believe that every website should not only look great but also serve a purpose, whether that&#39;s helping a brand grow, improving user engagement, or simplifying processes through technology.
             </motion.span>
 
             <motion.span
@@ -93,7 +93,7 @@ export const About = ({ showMore }: { showMore?: string }) => {
 export const AboutMe = () => {
   return (
     <motion.div
-      className="mb-16 mx-auto"
+      className="mb-16 mx-auto text-justify"
       variants={containerVariants}
       initial="hidden"
       animate="show"
@@ -139,7 +139,7 @@ export const AboutMe = () => {
                 As my interest grew, I transitioned into more advanced
                 technologies, learning HTML, CSS, and JavaScript, and later
                 moving into React and Next.js. These frameworks opened up
-                endless possibilities for me — from building static pages to
+                endless possibilities for me, from building static pages to
                 developing full-scale, interactive web applications.
               </motion.span>
 
@@ -190,7 +190,7 @@ export const AboutMe = () => {
                 variants={fadeUp}
                 className="text-muted-foreground font-medium leading-6"
               >
-                My mission as a developer goes beyond just writing code — it&#39;s
+                My mission as a developer goes beyond just writing code, it&#39;s
                 about creating meaningful solutions that have real impact. I aim
                 to grow into a well-rounded Software Developer with expertise in
                 both frontend and backend technologies, capable of building
