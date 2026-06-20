@@ -65,7 +65,7 @@ export default function ChatBot() {
 
 
   return (
-    <div ref={chatbotRef} className="z-50">
+    <div ref={chatbotRef} className="z-50 slide-up-animation">
       {/* Chat Button */}
       <motion.button
         onClick={() => setIsChatOpen(prev => !prev)}

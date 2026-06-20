@@ -235,7 +235,10 @@ export const projectsData: Project[] = [
     name: "Task Manager",
     description:
       "Built a full-stack Task Management Dashboard with smart AI-powered task assistance. Features include authentication, task CRUD operations, filtering, analytics, and AI-generated recommendations based on task details. Developed with React, TypeScript, Tailwind CSS, Express.js, PostgreSQL, JWT Authentication, and OpenAI/OpenRouter integration.",
-    img: ["/projects-images/task-manager-light.avif", "/projects-images/task-manager-dark.avif"],
+    img: [
+      "/projects-images/task-manager-light.avif",
+      "/projects-images/task-manager-dark.avif",
+    ],
     githubUrl: "https://github.com/SAMCOM-07/task-manager",
     liveUrl: "https://taskmanager-spa.vercel.app",
     status: "In Progress 📍",
@@ -353,7 +356,8 @@ export const projectsData: Project[] = [
     description:
       "A comprehensive GitHub profile analytics platform that enables users to search and explore detailed GitHub profiles. Features real-time profile lookup, repository statistics, contribution analytics, social links integration, and interactive data visualization with pie charts. Built with React, Tailwind CSS, and GitHub API for seamless GitHub integration.",
     img: ["/projects-images/github-profile-checker.avif"],
-    githubUrl: "https://github.com/SAMCOM-07/codveda-tasks/tree/main/level2/github-rest-api",
+    githubUrl:
+      "https://github.com/SAMCOM-07/codveda-tasks/tree/main/level2/github-rest-api",
     liveUrl: "https://githubprofilechecker.vercel.app/",
     status: "Completed ✅",
     stacks: [
@@ -364,7 +368,7 @@ export const projectsData: Project[] = [
       {
         name: "TailwindCss",
         img: "/stack-images/tailwind-logo.png",
-      }
+      },
     ],
     details: {
       introduction:
@@ -721,7 +725,7 @@ export const faqs: Faq[] = [
     id: 1,
     question: "What technologies do you work with most often?",
     answer:
-      "I mainly use Next.js, React, Tailwind CSS, and TypeScript, along with tools like Git, Firebase, and Framer Motion for animations.",
+      "I mainly use Next.js, React, Tailwind CSS, TypeScript, Node.js, Express.js, and PostgreSql along with tools like Git, and Framer Motion for animations.",
   },
   {
     id: 2,
@@ -739,7 +743,7 @@ export const faqs: Faq[] = [
     id: 4,
     question: "Are you open to full-time or freelance roles?",
     answer:
-      "Yes, I'm open to freelance collaborations, contract roles, and startup projects where I can contribute and grow.",
+      "Yes, I'm open to freelance, collaborations, contract roles, and startup projects where I can contribute and grow.",
   },
   {
     id: 5,
@@ -760,10 +764,10 @@ export const faqs: Faq[] = [
 export const services: Service[] = [
   {
     id: 1,
-    title: "Frontend Development",
+    title: "Full-Stack Development",
     icon: "💻",
     description:
-      "I craft responsive, high-performance interfaces using modern frameworks like Next.js, React, and Tailwind CSS to deliver fast and engaging user experiences.",
+      "I build scalable, high-performance applications using modern PERN stack technologies to deliver fast, secured and engaging user experiences.",
   },
   {
     id: 2,

@@ -16,7 +16,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className='conpad py-12 border-t border-border flex flex-row items-center justify-center gap-3'>
+    <div className='conpad pt-12 border-t border-border flex flex-row items-center justify-center gap-3 pb-24 md:pb-12'>
       {socialLinks.map((link) => {
         const IconComponent = link.icon;
         return (
