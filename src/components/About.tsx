@@ -55,7 +55,7 @@ export const About = ({ showMore }: { showMore?: string }) => {
               variants={fadeUp}
               className="text-muted-foreground font-medium leading-6"
             >
-              Hello, I&#39;m Shonde Samuel, a creative & detail-oriented Frontend Developer with a strong passion for crafting visually appealing and highly functional web experiences. I specialize in using{" "}
+              Hello, I&#39;m Shonde Samuel, a Full-Stack Developer with a strong passion for crafting visually appealing, secured and highly functional web experiences. I specialize in using{" "}
               <span className="text-purpple">
                 Next.js, React, TypeScript and Tailwind CSS
               </span>{" "}
@@ -193,7 +193,7 @@ export const AboutMe = () => {
                 My mission as a developer goes beyond just writing code, it&#39;s
                 about creating meaningful solutions that have real impact. I aim
                 to grow into a well-rounded Software Developer with expertise in
-                both frontend and backend technologies, capable of building
+                both Full-Stack and backend technologies, capable of building
                 complete systems and leading innovative projects.
               </motion.span>
 
