@@ -29,7 +29,7 @@ const Navbar = () => {
             height={100}
             src={'/samuel-logo.avif'}
             alt="Logo"
-            className="w-12 h-12 rounded-full" aria-hidden="true" />
+            className="w-8 h-8 rounded-full" aria-hidden="true" />
         </Link>
 
         {/* nav links */}
