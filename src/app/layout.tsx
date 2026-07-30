@@ -22,15 +22,21 @@ const geistMono = Geist_Mono({
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://samuel.mevads.dev"),
+
   title: {
     default: "Samuel Shonde - Website Developer",
     template: "%s - Samuel Shonde",
   },
   description:
-    "Samuel Shonde is a dedicated frontend and backend developer specializing in Next.js, React, TypeScript, and Tailwind CSS. I create modern, responsive, and high-performance web solutions with a focus on user experience and clean code architecture.",
+    "Samuel Shonde is a dedicated Full Stack Developer specializing in Next.js, React, TypeScript, and Tailwind CSS. I create modern, responsive, and high-performance web solutions with a focus on user experience and clean code architecture.",
   keywords: [
     "Samuel Shonde",
     "Shonde Samuel",
+    "Software Engineer",
+    "Web Developer",
+    "Software Developer",
+    "Full Stack Developer",
     "Samcom",
     "Frontend Developer",
     "Backend Developer",
@@ -50,14 +56,14 @@ export const metadata: Metadata = {
       "I'm a frontend developer passionate about building visually appealing, performant, and user-friendly web experiences with React, Next.js, and Tailwind CSS.",
     url: "https://samuel.mevads.dev/",
     siteName: "Samuel Shonde Portfolio",
-    // images: [
-    //   {
-    //     url: "/",
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "Samuel Shonde Portfolio",
-    //   },
-    // ],
+    images: [
+      {
+        url: "/samuel-logo.avif",
+        width: 1200,
+        height: 630,
+        alt: "Samuel Shonde Portfolio",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -67,7 +73,7 @@ export const metadata: Metadata = {
     description:
       "Explore the portfolio of Samuel Shonde — modern frontend developer creating engaging digital experiences with React, Next.js, and TypeScript.",
     creator: "@sammyshowed",
-    // images: ["/og-image.png"],
+    images: ["/samuel-logo.avif"],
   },
 };
 
@@ -79,7 +85,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head><meta name="google-site-verification" content="TXGAApfYoQlYQxnV7s3s7trHwEWFbchma88PXHOatYQ" /></head>
+      <head><meta name="google-site-verification" content="eZVRIvht6oFzvPIJWz_W2c7i-DyF3mbcmwAAkdWfluE" /></head>
       <body
         className={`${geistSans.className} ${geistMono.variable} antialiased scrollbar`}
       >

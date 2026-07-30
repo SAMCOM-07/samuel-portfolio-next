@@ -1,9 +1,6 @@
-# *
+# Allow all search engines to crawl the website
 User-agent: *
 Allow: /
 
-# Host
-Host: https://samuelshonde.vercel.app
-
-# Sitemaps
-Sitemap: https://samuelshonde.vercel.app/sitemap.xml
+# Sitemap
+Sitemap: https://samuel.mevads.dev/sitemap.xml

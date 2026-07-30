@@ -108,7 +108,7 @@ export const ProjectComponent = ({ data }: { data: Project[] }) => {
                         alt={stack.name}
                         width={40}
                         height={40}
-                        className="w-full h-full object-center"
+                        className="w-full h-full shrink-0 object-center"
                       />
                     </div>
                     <span className="text-xs">{stack.name}</span>

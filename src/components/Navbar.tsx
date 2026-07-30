@@ -4,6 +4,7 @@ import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import { useAppContext } from "@/context/AppContext";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
   const { navPages, isOpen, setIsOpen, dropdownRef } = useAppContext();
@@ -23,7 +24,12 @@ const Navbar = () => {
           aria-label="Go to homepage"
           className="font-bold text-3xl"
         >
-          S
+          <Image
+            width={100}
+            height={100}
+            src={'/samuel-logo.avif'}
+            alt="Logo"
+            className="w-12 h-12 rounded-full" aria-hidden="true" />
         </Link>
 
         {/* nav links */}

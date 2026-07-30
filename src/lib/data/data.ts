@@ -352,6 +352,57 @@ export const projectsData: Project[] = [
   },
   {
     id: 4,
+    name: "Savora",
+    description:
+      "Savora is a restaurant website where visitors can explore the menu and make reservations. It features a polished design, smooth navigation, and a reservation experience tailored for dining guests.",
+    img: [
+      "/projects-images/savora.avif",
+    ],
+    githubUrl: "https://github.com/SAMCOM-07/savora-next",
+    liveUrl: "https://savora-next.vercel.app/",
+    status: "In Progress 📍",
+    stacks: [
+      {
+        name: "Next.js",
+        img: "/stack-images/next-logo.png",
+      },
+      {
+        name: "React.js",
+        img: "/stack-images/react-logo.png",
+      },
+      {
+        name: "Framer Motion",
+        img: "/stack-images/framer-motion-logo.png",
+      },
+      {
+        name: "TailwindCss",
+        img: "/stack-images/tailwind-logo.png",
+      },
+      {
+        name: "TypeScript",
+        img: "/stack-images/typescript-logo.png",
+      },
+    ],
+    details: {
+      introduction:
+        "Savora is a modern restaurant website designed to showcase the dining experience and help guests explore the menu with ease. The platform combines elegant visuals with intuitive navigation to create a welcoming online presence.",
+      purpose:
+        "The project aims to give restaurants a polished web experience where visitors can discover dishes, browse the menu, and book reservations without leaving the site.",
+      features: [
+        "Menu section with featured dishes and restaurant highlights",
+        "Reservation form for booking a table",
+        "Responsive layout for desktop and mobile users",
+        "Modern UI with smooth animations and polished styling",
+        "About, contact, and dining experience sections",
+      ],
+      motivation:
+        "I built Savora to create a restaurant website that feels warm, modern, and user-friendly, with the main goal of making it easy for guests to browse the menu and reserve a table.",
+      howToContribute:
+        "Contributions are welcome! If you'd like to improve the design, menu experience, or reservation flow, fork the repository, create a feature branch, and open a pull request with your changes.",
+    },
+  },
+  {
+    id: 5,
     name: "GitHub Profile Checker",
     description:
       "A comprehensive GitHub profile analytics platform that enables users to search and explore detailed GitHub profiles. Features real-time profile lookup, repository statistics, contribution analytics, social links integration, and interactive data visualization with pie charts. Built with React, Tailwind CSS, and GitHub API for seamless GitHub integration.",
@@ -395,7 +446,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 5,
+    id: 6,
     name: "Music Desk",
     description:
       "A music streaming web application that allows users to filter and play their favorite songs. Built with React and Tailwind CSS, it offers a sleek and responsive design for an optimal listening experience.",
@@ -440,7 +491,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 6,
+    id: 7,
     name: "Anon Website",
     description:
       "A landing page for Anon, a fictional product or service. The design is clean and modern, focusing on user engagement and conversion.",
@@ -482,7 +533,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 7,
+    id: 8,
     name: "Product Filtering",
     description:
       "A product filtering web application that allows users to filter products based on various criteria such as category, with cart functionalities. Built with HTML, CSS, and JavaScript, it provides a user-friendly interface for an enhanced shopping experience.",
@@ -528,7 +579,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 8,
+    id: 9,
     name: "User Record",
     description:
       "A user record management application that allows users to add, view, edit, and delete user records. Built with React.js and Tailwind CSS, it offers a clean and intuitive interface for managing user information efficiently.",
@@ -574,7 +625,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 9,
+    id: 10,
     name: "Browser Extension",
     description:
       "A browser extension that enhances user productivity by providing quick access to useful tools and features. Built with HTML, CSS, and JavaScript, status can be filtered and changed.",
@@ -623,7 +674,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 10,
+    id: 11,
     name: "Fylo",
     description:
       "A landing page for Fylo, a fictional cloud storage service. The design is modern and responsive, focusing on user engagement and conversion.",
@@ -672,7 +723,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: 11,
+    id: 12,
     name: "Shortly",
     description:
       "A URL shortening service that allows users to shorten long URLs for easier sharing. Built with HTML, CSS, and JavaScript, it provides a simple and user-friendly interface for generating short links.",
