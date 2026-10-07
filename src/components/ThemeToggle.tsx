@@ -17,7 +17,7 @@ export default function ThemeToggle() {
   }, [])
 
   const current = theme === "system" ? systemTheme : theme
-  
+
   return (
     <div className="relative z-40" ref={dropdownRef}>
       {/* Toggle Button */}

@@ -1,113 +1,115 @@
 'use client';
 
-import { Download, Projector } from "lucide-react";
+import React from 'react';
+import { Download, FolderGit2, ArrowRight, Terminal, MapPin, Sparkles, Code2 } from "lucide-react";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+import HeroConsole from "./HeroConsole";
 
-const containerVariants = {
-  hidden: {},
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
   show: {
+    opacity: 1,
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.12,
     },
   },
 };
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
 const Home = () => {
   return (
-    <>
-      <main className="h-screen -mt-16 overflow-hidden w-full grid place-content-center place-items-center text-center max-w-[90%] mx-auto px-6 z-40">
-        {/* background */}
-        <div className="mainbg w-full -z-20 absolute inset-0 top-18" />
-        {/* <div className="w-full h-full hidden dark:block overflow-hidden -z-20 absolute inset-0 top-18">
-         <Image src={Bg1} alt="Background Image" className="bg-cover bg-center w-full h-[90%]"/>
-       </div> */}
+    <section className="relative min-h-[92vh] flex flex-col justify-center items-center text-center pt-8 pb-16 conpad overflow-hidden">
+      {/* Background Architectural Grid & Subtle Radial Glow */}
+      <div className="absolute inset-0 hero-grid-bg pointer-events-none -z-10 opacity-70" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-brand/10 dark:bg-brand/15 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-
-        {/* animated content */}
+      {/* Main Animated Content */}
+      <motion.div
+        className="flex flex-col items-center max-w-4xl mx-auto w-full"
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+      >
+        {/* Availability & Location Pill */}
         <motion.div
-          className="flex flex-col items-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
+          variants={fadeUp}
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary/80 border border-border/80 text-xs font-mono text-foreground backdrop-blur-md shadow-xs mb-6 hover:border-brand/40 transition-colors"
         >
-          {/* First animation group */}
-          <motion.div
-            variants={fadeUp}
-            className="relative grid w-max overflow-hidden rounded-full px-3 py-1 transition-colors duration-400"
-          >
-            {/* Rotating light ring */}
-            <span className="absolute inset-0 rounded-full overflow-hidden">
-              <span className="absolute inset-0 before:absolute before:inset-0 before:w-[200%] before:aspect-square before:bg-[conic-gradient(from_0deg,transparent_0deg,var(--foreground)_45deg,transparent_360deg)] before:content-[''] before:translate-x-[-25%] before:translate-y-[-25%] before:animate-spin-slow"></span>
-            </span>
-
-            {/* Background layer */}
-            <span className="absolute inset-0.5 rounded-full bg-accent/85"></span>
-
-            {/* Text */}
-            <span className="z-40 flex items-center gap-2">
-              <span className="block w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-              <h3 className="font-bold text-sm">Available for work</h3>
-            </span>
-          </motion.div>
-
-          {/* name and title */}
-          <motion.h1
-            variants={fadeUp}
-            className="font-bold text-5xl md:text-7xl mt-6"
-          >
-            Shonde Samuel
-          </motion.h1>
-
-          <motion.span
-            variants={fadeUp}
-            className="font-bold text-5xl md:text-7xl mt-4"
-          >
-            Full-Stack Developer
-          </motion.span>
-
-          {/* description */}
-          <motion.p
-            variants={fadeUp}
-            className="text-muted-foreground max-w-sm leading-5 mt-4"
-          >
-            Crafting seamless digital experiences with modern technologies and
-            a passion for elegant code.
-          </motion.p>
-
-          {/* buttons */}
-          <motion.div
-            variants={fadeUp}
-            className="flex gap-6 mt-6"
-          >
-            <Link
-              href={"Shonde-Samuel-Ifeoluwa-Resume.pdf"}
-              download
-              className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-purpple/80 text-white rounded-full flex items-center gap-2 text-sm"
-            >
-              <Download size={18} className="animate-bounce translate-y-1" />
-              <span>My Resume</span>
-            </Link>
-            <Link
-              href={"/projects"}
-              className="hover:-translate-y-1 transition-transform duration-500 px-4 py-2 bg-background/75 border border-border rounded-full flex items-center gap-2 text-sm"
-            >
-              <Projector size={18} />
-              <span>My Projects</span>
-            </Link>
-          </motion.div>
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span className="font-semibold text-foreground">Available for Engineering Roles</span>
+          <span className="text-border">|</span>
+          <span className="text-muted-foreground flex items-center gap-1 sm:inline-flex">
+            <MapPin size={11} className="text-brand" /> Lagos (UTC+1)
+          </span>
         </motion.div>
-      </main>
-    </>
+
+        {/* Primary Headline & Identity */}
+        <motion.h1
+          variants={fadeUp}
+          className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.08]"
+        >
+          Engineering scalable web apps &{' '}
+          <span className="brand-gradient-text">distributed systems.</span>
+        </motion.h1>
+
+        {/* Narrative & Value Proposition */}
+        <motion.p
+          variants={fadeUp}
+          className="text-muted-foreground max-w-2xl text-base sm:text-lg leading-relaxed mt-5"
+        >
+          I&#39;m <strong className="text-foreground font-semibold">Samuel Shonde</strong> — a Full-Stack Software Engineer specializing in <span className="text-foreground font-medium">Next.js, TypeScript, React, Node.js, and PostgreSQL</span>. Focused on architectural precision, clean design systems, and sub-100ms user interfaces.
+        </motion.p>
+
+        {/* Primary Action Buttons */}
+        <motion.div
+          variants={fadeUp}
+          className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-8 mb-12"
+        >
+          <Link
+            href="/projects"
+            className="px-6 py-3 rounded-full bg-foreground text-background font-semibold text-xs sm:text-sm hover:opacity-90 active:scale-95 transition-all shadow-md flex items-center gap-2 group"
+          >
+            <span>Explore Featured Work</span>
+            <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+
+          <Link
+            href="/Shonde-Samuel-Ifeoluwa-Resume.pdf"
+            target="_blank"
+            download
+            className="px-5 py-3 rounded-full bg-secondary/80 hover:bg-secondary text-foreground font-semibold text-xs sm:text-sm border border-border/80 active:scale-95 transition-all flex items-center gap-2 shadow-xs"
+          >
+            <Download size={15} className="text-brand" />
+            <span>Download Resume</span>
+          </Link>
+
+          <Link
+            href="/contact"
+            className="px-5 py-3 rounded-full bg-card hover:bg-secondary/60 text-muted-foreground hover:text-foreground font-semibold text-xs sm:text-sm border border-border/60 active:scale-95 transition-all flex items-center gap-2"
+          >
+            <Sparkles size={15} className="text-purple-400" />
+            <span>Get in Touch</span>
+          </Link>
+        </motion.div>
+
+        {/* Interactive Developer Terminal */}
+        <motion.div variants={fadeUp} className="w-full">
+          <HeroConsole />
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
 

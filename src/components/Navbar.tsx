@@ -5,121 +5,117 @@ import ThemeToggle from "./ThemeToggle";
 import { useAppContext } from "@/context/AppContext";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { Github, Linkedin, MessageSquare, ArrowUpRight } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Navbar = () => {
-  const { navPages, isOpen, setIsOpen, dropdownRef } = useAppContext();
+  const { navPages } = useAppContext();
   const pathname = usePathname();
 
   return (
-    <nav
-      ref={dropdownRef}
-      role="navigation"
-      aria-label="Main hamburger menu"
-      className="z-50 gap-4 py-4 bg-background/50 border-b border-b-muted sticky inset-0 backdrop-blur-sm"
-    >
-      <div className="conpad flex items-center justify-between slide-down-animation">
-        {/* logo */}
+    <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/80 backdrop-blur-md transition-all duration-200">
+      <div className="conpad h-16 flex items-center justify-between">
+        {/* Brand / Logo */}
         <Link
-          href={"/"}
-          aria-label="Go to homepage"
-          className="font-bold text-3xl"
+          href="/"
+          aria-label="Samuel Shonde Homepage"
+          className="flex items-center gap-3 group focus:outline-none"
         >
-          <Image
-            width={100}
-            height={100}
-            src={'/samuel-logo.avif'}
-            alt="Logo"
-            className="w-8 h-8" aria-hidden="true" />
+          <div className="relative w-8 h-8 rounded-lg overflow-hidden ring-1 ring-border/80 group-hover:ring-brand/60 transition-all duration-200">
+            <Image
+              src="/samuel-logo.avif"
+              alt="Samuel Shonde Logo"
+              width={32}
+              height={32}
+              priority
+              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-200"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-bold text-sm tracking-tight text-foreground group-hover:text-brand transition-colors">
+              Samuel Shonde
+            </span>
+            <span className="text-[11px] text-muted-foreground hidden sm:inline leading-none font-medium">
+              Software Engineer
+            </span>
+          </div>
         </Link>
 
-        {/* nav links */}
-        <ul
-          className="hidden md:flex items-center gap-2 bg-gradient-to-br from-purpple/10 via-accent/5 to-purpple/5 p-1.5 rounded-full border border-white/10 backdrop-blur-xl shadow-sm shadow-purpple/20 hover:border-white/20 transition-colors duration-300"
-          role="menubar"
-          aria-label="Desktop navigation links"
+        {/* Desktop Navigation Links */}
+        <nav
+          className="hidden md:flex items-center gap-1 bg-secondary/70 px-2 py-1 rounded-full border border-border/70 shadow-xs"
+          role="navigation"
+          aria-label="Desktop navigation"
         >
-          {navPages.map((page, index) => {
+          {navPages.map((page) => {
             const isActive = pathname === page.url;
 
             return (
-              <li key={index} role="none" className={`text-sm rounded-full px-3 py-2 hover:ring ring-purpple/40 focus active transition-all duration-300 ${isActive
-                ? "text-purpple bg-purpple/15 ring ring-purpple/50"
-                : "text-muted-foreground"
-                }`}>
-                <Link
-                  href={page.url}
-                  role="menuitem"
-                  aria-current={isActive ? "page" : undefined}
-                  aria-label={`Go to ${page.page} page`}
-                >
-                  {page.page}
-                </Link>
-              </li>
+              <Link
+                key={page.url}
+                href={page.url}
+                aria-current={isActive ? "page" : undefined}
+                className={`text-xs font-semibold px-3.5 py-1.5 rounded-full transition-all duration-150 ${
+                  isActive
+                    ? "bg-card text-foreground shadow-xs border border-border/80"
+                    : "text-muted-foreground hover:text-foreground hover:bg-background/60"
+                }`}
+              >
+                {page.page}
+              </Link>
             );
           })}
-        </ul>
+        </nav>
 
-        {/* theme toggle */}
-        <ThemeToggle aria-label="Toggle theme" />
-        {/* <div className="flex items-center gap-2">
-          <span className="md:hidden">
-            <ThemeToggle aria-label="Toggle theme" />
-          </span>
+        {/* Right Actions: CTA + Socials + Theme Toggle */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Social Links */}
+          <div className="hidden lg:flex items-center gap-1 text-muted-foreground">
+            <Link
+              href="https://github.com/SAMCOM-07"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Samuel's GitHub"
+              className="w-8 h-8 rounded-lg flex items-center justify-center hover:text-foreground hover:bg-secondary transition-colors"
+            >
+              <Github size={15} />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/samuelshonde"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Samuel's LinkedIn"
+              className="w-8 h-8 rounded-lg flex items-center justify-center hover:text-foreground hover:bg-secondary transition-colors"
+            >
+              <Linkedin size={15} />
+            </Link>
+            <Link
+              href="https://x.com/SammyShowed"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Samuel's Twitter / X"
+              className="w-8 h-8 rounded-lg flex items-center justify-center hover:text-foreground hover:bg-secondary transition-colors"
+            >
+              <FaXTwitter size={14} />
+            </Link>
+          </div>
 
-          
-          <button
-            onClick={() => setIsOpen(prev => !prev)}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isOpen}
-            aria-controls="mobile-menu"
-            className="md:hidden hover focus active rounded-md w-8 h-8 grid place-content-center"
-          >
-            {!isOpen ? <Menu size={18} aria-hidden="true" /> : <X size={18} aria-hidden="true" />}
-          </button>
-        </div> */}
+          <div className="h-4 w-px bg-border/60 hidden lg:block" />
 
-        {/* hamburger menu */}
-        {/* {isOpen ? <HamburgerMenu /> : null} */}
-
-        {/* <div
-          className="md:flex gap-2 hidden"
-          role="group"
-          aria-label="Social media and theme controls"
-        >
-          <ThemeToggle aria-label="Toggle theme" />
+          {/* Let's Talk CTA */}
           <Link
-            target="_blank"
-            href={"https://github.com/SAMCOM-07"}
-            aria-label="Visit Samuel's GitHub profile"
+            href="/contact"
+            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white shadow-md shadow-purple-900/30 hover:shadow-purple-500/20 active:scale-95 transition-all"
           >
-            <Github
-              className="w-8 h-8 rounded-sm p-2 hover focus active"
-              aria-hidden="true"
-            />
+            <span>Let&#39;s Talk</span>
+            <ArrowUpRight size={13} />
           </Link>
-          <Link
-            target="_blank"
-            href={"https://x.com/SammyShowed"}
-            aria-label="Visit Samuel's Twitter profile"
-          >
-            <FaXTwitter
-              className="w-8 h-8 rounded-sm p-2 hover focus active"
-              aria-hidden="true"
-            />
-          </Link>
-          <Link
-            target="_blank"
-            href={"https://www.linkedin.com/in/samuelshonde"}
-            aria-label="Visit Samuel's LinkedIn profile"
-          >
-            <Linkedin
-              className="w-8 h-8 rounded-sm p-2 hover focus active"
-              aria-hidden="true"
-            />
-          </Link>
-        </div> */}
+
+          {/* Theme Toggle */}
+          <ThemeToggle />
+        </div>
       </div>
-    </nav>
+    </header>
   );
 };
 

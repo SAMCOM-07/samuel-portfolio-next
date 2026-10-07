@@ -1,243 +1,192 @@
 'use client';
 
-import Card from "./Card";
-import Faqs from "./Faq";
-import ShowMoreButton from "./ShowMoreButton";
-import { motion, Variants } from "framer-motion";
-import Technologies from "./Technologies";
+import React from 'react';
+import Card from './Card';
+import Faqs from './Faq';
+import ShowMoreButton from './ShowMoreButton';
+import { motion, type Variants } from 'framer-motion';
+import Technologies from './Technologies';
+import Experience from './Experience';
+import Education from './Education';
+import EngineeringPrinciples from './EngineeringPrinciples';
+import {
+  User,
+  Compass,
+  Target,
+  Code2,
+  Cpu,
+  ShieldCheck,
+  Terminal,
+  Sparkles,
+  GitBranch,
+} from 'lucide-react';
 
-const containerVariants = {
-  hidden: {},
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
   show: {
+    opacity: 1,
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.1,
     },
   },
 };
 
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
-
-// About Section Component (used on Home and About page)
+// About Summary Component (used on Home and top of About page)
 export const About = ({ showMore }: { showMore?: string }) => {
   return (
     <motion.div
-      className="px-6 mx-auto max-w-5xl relative text-justify"
+      className="max-w-5xl mx-auto px-4 sm:px-6"
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
     >
-      {/* background blurs */}
-      <div className="blurpurple"></div>
-      <div className="blurblue"></div>
+      <div className="text-center mb-10">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-xs font-semibold text-brand mb-3">
+          <User size={13} />
+          <span>About Samuel</span>
+        </div>
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+          Engineering scalable web systems with precision
+        </h2>
+        <p className="text-muted-foreground mt-3 max-w-xl mx-auto text-sm sm:text-base">
+          Merging thoughtful product architecture with robust frontend and backend engineering.
+        </p>
+      </div>
 
-      {/* Heading */}
-      <motion.h1 variants={fadeUp} className="mb-8 text-center">
-        About Me
-      </motion.h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Main Narrative Card */}
+        <div className="md:col-span-2">
+          <Card className="h-full flex flex-col justify-between">
+            <div className="space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <p>
+                Hello! I&#39;m <strong className="text-foreground font-semibold">Samuel Shonde</strong>, a Full-Stack Software Engineer based in Nigeria. I specialize in building resilient, high-performance web applications using <strong className="text-foreground font-semibold">Next.js (App Router), React 19, TypeScript, Node.js, Express, and PostgreSQL</strong>.
+              </p>
+              <p>
+                My approach to software engineering centers on maintainability and speed: writing modular type-safe code, optimizing Core Web Vitals, and designing intuitive user experiences that simplify complex operational workflows.
+              </p>
+              <p>
+                Currently developing production admin dashboards and enterprise interfaces at <strong className="text-foreground font-semibold">Hoste</strong>, I collaborate across cross-functional engineering and design teams to take features from whiteboard concepts to production deployments.
+              </p>
+            </div>
 
-      {/* Card section */}
-      <motion.div variants={fadeUp}>
-        <Card>
-          <motion.p
-            variants={containerVariants}
-            className="p-4 flex flex-col gap-6"
-          >
-            <motion.span
-              variants={fadeUp}
-              className="text-muted-foreground font-medium leading-6"
-            >
-              Hello, I&#39;m Shonde Samuel, a Full-Stack Developer with a strong passion for crafting visually appealing, secured and highly functional web experiences. I specialize in using{" "}
-              <span className="text-purpple">
-                Next.js, React, TypeScript and Tailwind CSS
-              </span>{" "}
-              to bring ideas to life on the web, from personal portfolios to dynamic business platforms.
-            </motion.span>
+            {showMore && (
+              <div className="mt-6 pt-4 border-t border-border/50">
+                <ShowMoreButton text={showMore} href="/about" className="!my-0 !text-left" />
+              </div>
+            )}
+          </Card>
+        </div>
 
-            <motion.span
-              variants={fadeUp}
-              className="text-muted-foreground font-medium leading-6"
-            >
-              My development philosophy revolves around building solutions that are user-centered, scalable, and performance-driven. I believe that every website should not only look great but also serve a purpose, whether that&#39;s helping a brand grow, improving user engagement, or simplifying processes through technology.
-            </motion.span>
+        {/* Core Pillars */}
+        <div className="flex flex-col gap-4">
+          <div className="p-4 rounded-2xl bg-card border border-border/80 flex items-start gap-3.5 shadow-xs hover:border-brand/40 transition-colors">
+            <div className="p-2.5 rounded-xl bg-purple-500/10 text-purple-400 shrink-0">
+              <Code2 size={18} />
+            </div>
+            <div>
+              <h4 className="font-bold text-sm text-foreground">Type-Safe Architecture</h4>
+              <p className="text-xs text-muted-foreground mt-1">
+                Modular, strictly typed Next.js and TypeScript ecosystems with zero implicit types.
+              </p>
+            </div>
+          </div>
 
-            <motion.span
-              variants={fadeUp}
-              className="text-muted-foreground font-medium leading-6"
-            >
-              I&#39;m a developer who enjoys challenges, values continuous learning, and strives to stay updated with the latest trends in web technologies. My goal with every project is to blend creativity with technical precision to produce clean, impactful digital experiences.
-            </motion.span>
-          </motion.p>
+          <div className="p-4 rounded-2xl bg-card border border-border/80 flex items-start gap-3.5 shadow-xs hover:border-brand/40 transition-colors">
+            <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 shrink-0">
+              <Cpu size={18} />
+            </div>
+            <div>
+              <h4 className="font-bold text-sm text-foreground">Speed & Core Vitals</h4>
+              <p className="text-xs text-muted-foreground mt-1">
+                Sub-100ms TTFB, optimized bundle splitting, server-side caching, and SEO excellence.
+              </p>
+            </div>
+          </div>
 
-          {showMore ? (
-            <motion.div variants={fadeUp}>
-              <ShowMoreButton text={showMore} href="/about" />
-            </motion.div>
-          ) : null}
-        </Card>
-      </motion.div>
+          <div className="p-4 rounded-2xl bg-card border border-border/80 flex items-start gap-3.5 shadow-xs hover:border-brand/40 transition-colors">
+            <div className="p-2.5 rounded-xl bg-purple-500/10 text-purple-400 shrink-0">
+              <ShieldCheck size={18} />
+            </div>
+            <div>
+              <h4 className="font-bold text-sm text-foreground">Production Resilience</h4>
+              <p className="text-xs text-muted-foreground mt-1">
+                Robust RESTful API design, database schemas, and structured error handling.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 };
 
-
-// About Page Component
+// Full About Page Component
 export const AboutMe = () => {
   return (
-    <motion.div
-      className="mb-16 mx-auto text-justify"
-      variants={containerVariants}
-      initial="hidden"
-      animate="show"
-    >
-      {/* About Section */}
-      <section className="mt-18">
+    <div className="pb-20 conpad">
+      {/* Intro Hero Section */}
+      <section className="pt-10 md:pt-14">
         <About />
       </section>
 
-      {/* My Tech Journey */}
+      {/* Engineering Principles Bento */}
+      <div className="mt-8">
+        <EngineeringPrinciples />
+      </div>
+
+      {/* Experience Section */}
+      <div className="mt-8">
+        <Experience />
+      </div>
+
+      {/* Tech Journey Section */}
       <motion.section
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-        className="max-w-5xl mx-auto px-6"
+        viewport={{ once: true, amount: 0.15 }}
+        className="max-w-5xl mx-auto mt-16 px-4 sm:px-6"
       >
-        <motion.h1 variants={fadeUp} className="mb-8 mt-24 text-center">
-          💻 My Tech Journey
-        </motion.h1>
-        <motion.div variants={fadeUp}>
-          <Card>
-            <motion.p
-              variants={containerVariants}
-              className="p-4 flex flex-col gap-6"
-            >
-              <motion.span
-                variants={fadeUp}
-                className="text-muted-foreground font-medium leading-6"
-              >
-                My journey into tech began with a deep curiosity about how
-                technology shapes the modern world. I&#39;ve always been
-                fascinated by how a simple idea could evolve into something
-                people use every day. This curiosity led me to explore website
-                development, starting first with WordPress, where I built small
-                websites and blogs for clients and personal practice.
-              </motion.span>
+        <div className="flex items-center gap-3 mb-6">
+          <div className="p-2.5 rounded-xl bg-brand/10 text-brand border border-brand/20">
+            <Compass size={20} />
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold tracking-tight text-foreground">My Engineering Journey</h3>
+            <p className="text-xs text-muted-foreground">From self-taught experimentation to engineering enterprise systems</p>
+          </div>
+        </div>
 
-              <motion.span
-                variants={fadeUp}
-                className="text-muted-foreground font-medium leading-6"
-              >
-                As my interest grew, I transitioned into more advanced
-                technologies, learning HTML, CSS, and JavaScript, and later
-                moving into React and Next.js. These frameworks opened up
-                endless possibilities for me, from building static pages to
-                developing full-scale, interactive web applications.
-              </motion.span>
-
-              <motion.span
-                variants={fadeUp}
-                className="text-muted-foreground font-medium leading-6"
-              >
-                Over time, I&#39;ve worked on multiple real-world and personal
-                projects, each one improving my understanding of design systems,
-                UI/UX, responsive layouts, accessibility, and code optimization.
-                I&#39;ve also developed strong skills in collaboration, version
-                control (Git/GitHub), and project deployment using platforms
-                like Vercel and Netlify.
-              </motion.span>
-
-              <motion.span
-                variants={fadeUp}
-                className="text-muted-foreground font-medium leading-6"
-              >
-                My tech journey is still ongoing, and I&#39;m excited about the
-                endless opportunities in software development, especially in
-                building tools that help businesses and individuals succeed
-                online.
-              </motion.span>
-            </motion.p>
-          </Card>
-        </motion.div>
+        <Card>
+          <div className="space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p>
+              My journey into software engineering was sparked by an obsession with how digital products function beneath the surface. Starting with web fundamentals and WordPress customization for local businesses, I quickly recognized the transformative power of modern JavaScript and typed engineering architectures.
+            </p>
+            <p>
+              Pursuing a <strong className="text-foreground font-semibold">Bachelor of Engineering in Computer Engineering at Ekiti State University</strong> provided a rigorous foundation in computational theory, data structures, algorithms, and system architecture.
+            </p>
+            <p>
+              Over the past 3+ years, I&#39;ve sharpened my engineering craft across freelance client deliveries and production startup environments like <strong className="text-foreground font-semibold">Hoste</strong> — shipping over a dozen full-stack platforms, enterprise dashboards, and developer utilities.
+            </p>
+          </div>
+        </Card>
       </motion.section>
 
-      {/* My Aim / Mission */}
-      <motion.section
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-        className="max-w-5xl mx-auto px-6"
-      >
-        <motion.h1 variants={fadeUp} className="mb-8 mt-24 text-center">
-          🎯 My Aim / Mission
-        </motion.h1>
-        <motion.div variants={fadeUp}>
-          <Card>
-            <motion.p
-              variants={containerVariants}
-              className="p-4 flex flex-col gap-6"
-            >
-              <motion.span
-                variants={fadeUp}
-                className="text-muted-foreground font-medium leading-6"
-              >
-                My mission as a developer goes beyond just writing code, it&#39;s
-                about creating meaningful solutions that have real impact. I aim
-                to grow into a well-rounded Software Developer with expertise in
-                both Full-Stack and backend technologies, capable of building
-                complete systems and leading innovative projects.
-              </motion.span>
+      {/* Academic Credentials */}
+      <div className="mt-8">
+        <Education />
+      </div>
 
-              <motion.span
-                variants={fadeUp}
-                className="text-muted-foreground font-medium leading-6"
-              >
-                I envision myself working in collaborative startup environments
-                and cooperative organizations, where ideas are shared freely,
-                creativity is encouraged, and growth is constant. I also plan to
-                build and manage my own startup, focusing on developing tools,
-                platforms, or services that simplify lives and empower others
-                through technology.
-              </motion.span>
-
-              <motion.span
-                variants={fadeUp}
-                className="text-muted-foreground font-medium leading-6"
-              >
-                In the long run, I want to be recognized not just for technical
-                skills, but for problem-solving, creativity, and leadership. My
-                journey is driven by passion, purpose, and the desire to make
-                technology a force for good in every project I touch.
-              </motion.span>
-            </motion.p>
-          </Card>
-        </motion.div>
-      </motion.section>
-
-      {/* My Skills Section */}
-      <div className="mx-auto conpad mt-22">
+      {/* Skills & Stack */}
+      <div className="mt-8">
         <Technologies />
       </div>
 
       {/* FAQs */}
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-        className="mt-18"
-      >
+      <div className="mt-8">
         <Faqs />
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };

@@ -12,7 +12,7 @@ const MobileHamburgerMenu = () => {
     { name: "Projects", link: "/projects", icon: Projector },
     { name: "Contact", link: "/contact", icon: MessageCircleMore },
   ]
-  
+
 
   const pathname = usePathname();
 

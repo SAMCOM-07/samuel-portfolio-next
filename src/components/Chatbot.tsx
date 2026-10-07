@@ -1,54 +1,96 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { Send, Bot, User } from "lucide-react";
-import { MessageCircle } from "lucide-react";
-import ReactMarkdown from "react-markdown";
-import { FaSpinner } from "react-icons/fa";
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Send, Bot, User, MessageCircle, X, Sparkles, RotateCcw } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import { FaSpinner } from 'react-icons/fa';
 
+interface Message {
+  role: 'bot' | 'user';
+  text: string;
+}
+
+const quickPrompts = [
+  "What is Samuel's tech stack?",
+  "Tell me about Samuel's experience at Hoste",
+  "Show me featured projects like Omnishop",
+  "How can I contact or hire Samuel?",
+];
 
 export default function ChatBot() {
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const [messages, setMessages] = useState<{ role: string; text: string }[]>([{ role: 'bot', text: `Hi 👋 I'm Sam's AI assistant! Ask me anything about him.` }]);
-  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      role: 'bot',
+      text: "Hi there! 👋 I'm Samuel's portfolio assistant. Feel free to ask about his **software engineering experience at Hoste**, **core stack (Next.js, TypeScript, PostgreSQL)**, or **featured projects**!",
+    },
+  ]);
+  const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const chatbotRef = useRef<HTMLDivElement>(null);
-
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Scroll to bottom when messages update
+  // Scroll to bottom on updates
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages, isLoading]);
 
-  //   send message function
-  const sendMessage = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSend = async (textToSend: string) => {
+    const userText = textToSend.trim();
+    if (!userText || isLoading) return;
 
-    e.preventDefault();
-
-    if (!input.trim()) return;
-    const newMessage = { role: "user", text: input };
-    setMessages([...messages, newMessage]);
-    setInput("");
+    const newMessage: Message = { role: 'user', text: userText };
+    setMessages((prev) => [...prev, newMessage]);
+    setInput('');
+    setIsLoading(true);
 
     try {
-      setIsLoading(true);
-      const res = await fetch("/api/chatbot", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input }),
+      const res = await fetch('/api/chatbot', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userText }),
       });
-      const data = await res.json();
-      setMessages((prev) => [...prev, { role: "bot", text: data.reply }]);
 
-    } catch (error) {
-      setIsLoading(false);
+      if (!res.ok) {
+        throw new Error(`HTTP error ${res.status}`);
+      }
+
+      const data = await res.json();
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: 'bot',
+          text: data.reply || "Thanks for your question! Feel free to reach out via the Contact page or email.",
+        },
+      ]);
+    } catch (err) {
+      console.error('Chat error:', err);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: 'bot',
+          text: "I'm having a brief connection hiccup. You can email Samuel directly at [shondesamuel07@gmail.com](mailto:shondesamuel07@gmail.com) or check out the [Contact page](/contact)!",
+        },
+      ]);
     } finally {
       setIsLoading(false);
     }
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleSend(input);
+  };
+
+  const handleReset = () => {
+    setMessages([
+      {
+        role: 'bot',
+        text: "Conversation reset. What would you like to explore about Samuel's engineering craft, projects, or background?",
+      },
+    ]);
+  };
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -56,85 +98,112 @@ export default function ChatBot() {
         chatbotRef.current &&
         !chatbotRef.current.contains(event.target as Node)
       ) {
-        setIsChatOpen(false);
+        // Optional: comment out if users want chat to persist while clicking around
       }
     }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-
   return (
-    <div ref={chatbotRef} className="z-50 slide-up-animation">
-      {/* Chat Button */}
+    <div ref={chatbotRef} className="z-50 relative">
+      {/* Floating Chat Launcher Button */}
       <motion.button
-        onClick={() => setIsChatOpen(prev => !prev)}
-        className={`fixed bottom-5 right-5 bg-purpple p-3 text-xl rounded-full shadow-[0_0_10px] shadow-purpple ${!isChatOpen && 'animate-pulse'}`}
-        whileHover={{ scale: 1.1 }}
+        type="button"
+        onClick={() => setIsChatOpen((prev) => !prev)}
+        aria-label={isChatOpen ? 'Close chat assistant' : 'Open AI assistant'}
+        className={`fixed bottom-20 md:bottom-6 right-5 md:right-6 w-12 h-12 rounded-full bg-gradient-to-tr from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white shadow-xl shadow-purple-900/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-200 z-50 ${
+          !isChatOpen ? 'badge-glow' : ''
+        }`}
+        whileHover={{ scale: 1.08 }}
       >
-        <MessageCircle size={24} color="white" aria-label="Open chat with AI assistant" />
+        {isChatOpen ? <X size={20} /> : <MessageCircle size={22} />}
       </motion.button>
 
       {/* Chat Window */}
-      {isChatOpen && (
+      <AnimatePresence>
+        {isChatOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="fixed bottom-36 md:bottom-22 right-4 sm:right-6 w-[92vw] sm:w-[400px] max-h-[560px] h-[78vh] flex flex-col rounded-3xl bg-card border border-border shadow-2xl backdrop-blur-2xl z-50 overflow-hidden"
+          >
+            {/* Header */}
+            <div className="p-4 border-b border-border/60 bg-secondary/50 flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center border border-purple-500/30 shadow-xs">
+                  <Sparkles size={16} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-sm text-foreground">Samuel&#39;s AI Assistant</h3>
+                  <span className="flex items-center gap-1.5 text-[11px] text-muted-foreground font-mono">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    Online · Next.js / Knowledge Engine
+                  </span>
+                </div>
+              </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="z-50 fixed bottom-20 right-5 w-[22rem] bg-gradient-to-br from-background/95 to-background/80 rounded-3xl shadow-2xl shadow-purpple/30 p-5 border border-foreground/10 backdrop-blur-xl"
-        >
-          <h2 className="text-center text-lg font-bold bg-gradient-to-r from-purpple to-accent bg-clip-text text-transparent">How may I help you?</h2>
-          <div className="h-px bg-gradient-to-r from-transparent via-purpple/30 to-transparent my-4" />
-          <div className="scrollbar h-72 overflow-y-auto overflow-x-hidden flex flex-col space-y-4">
-            {messages && messages.length && messages?.map((msg, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
+              <div className="flex items-center gap-1">
+                <button
+                  type="button"
+                  onClick={handleReset}
+                  title="Reset conversation"
+                  className="w-7 h-7 rounded-lg hover:bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <RotateCcw size={13} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setIsChatOpen(false)}
+                  aria-label="Close chat window"
+                  className="w-7 h-7 rounded-lg hover:bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <X size={15} />
+                </button>
+              </div>
+            </div>
 
-              >
-                <div className={`flex gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
-
-
-                  {/* Bot Icon */}
-                  {msg.role === "bot" && (
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-accent to-purpple/60 flex items-center justify-center flex-shrink-0 mt-1">
-                      <Bot size={16} className="text-white/70" />
+            {/* Messages Scroll Area */}
+            <div className="flex-1 p-4 overflow-y-auto space-y-3.5 scrollbar text-xs sm:text-sm">
+              {messages.map((msg, idx) => (
+                <div
+                  key={idx}
+                  className={`flex gap-2.5 ${
+                    msg.role === 'user' ? 'justify-end' : 'justify-start'
+                  }`}
+                >
+                  {msg.role === 'bot' && (
+                    <div className="w-6 h-6 rounded-lg bg-purple-500/15 text-purple-400 flex items-center justify-center shrink-0 mt-0.5 border border-purple-500/30">
+                      <Bot size={13} />
                     </div>
                   )}
 
-                  {/* Message Bubble */}
                   <div
-                    className={`max-w-[70%] px-4 py-3 rounded-2xl text-xs font-light leading-relaxed break-words backdrop-blur-md transition-all duration-300 ${msg.role === "user"
-                      ? "bg-gradient-to-br from-purpple/40 to-purpple/20 border border-purpple/30 text-foreground rounded-br-none shadow-lg shadow-purpple/20 hover:shadow-xl hover:shadow-purpple/30"
-                      : "bg-gradient-to-br from-white/10 via-accent/5 to-white/5 border border-white/20 text-foreground rounded-bl-none shadow-lg shadow-accent/10 hover:shadow-xl hover:shadow-accent/20 hover:border-white/30"
-                      }`}
+                    className={`max-w-[85%] px-3.5 py-2.5 rounded-2xl leading-relaxed text-xs sm:text-sm ${
+                      msg.role === 'user'
+                        ? 'bg-purple-600 text-white font-medium rounded-br-none shadow-xs'
+                        : 'bg-secondary/70 border border-border/60 text-foreground rounded-bl-none prose dark:prose-invert max-w-none'
+                    }`}
                   >
                     <ReactMarkdown
                       components={{
-                        a: ({ node, ...props }) => (
+                        a: ({ ...props }) => (
                           <a
                             {...props}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-purpple hover:text-purpple/80 hover:underline font-semibold transition-colors"
+                            className="text-purple-400 font-semibold hover:underline"
                           />
                         ),
-                        p: ({ node, ...props }) => (
-                          <p {...props} className="mb-2 last:mb-0" />
+                        p: ({ ...props }) => <p {...props} className="mb-1.5 last:mb-0" />,
+                        ul: ({ ...props }) => (
+                          <ul {...props} className="list-disc list-inside space-y-1 my-1" />
                         ),
-                        ul: ({ node, ...props }) => (
-                          <ul {...props} className="list-disc list-inside space-y-1 mb-2" />
+                        ol: ({ ...props }) => (
+                          <ol {...props} className="list-decimal list-inside space-y-1 my-1" />
                         ),
-                        ol: ({ node, ...props }) => (
-                          <ol {...props} className="list-decimal list-inside space-y-1 mb-2" />
-                        ),
-                        li: ({ node, ...props }) => (
-                          <li {...props} className="mb-1" />
-                        ),
-                        code: ({ node, ...props }) => (
-                          <code {...props} className="bg-black/20 px-1.5 py-0.5 rounded text-xs font-mono" />
+                        h3: ({ ...props }) => (
+                          <h3 {...props} className="font-bold text-xs sm:text-sm text-foreground mt-2 mb-1" />
                         ),
                       }}
                     >
@@ -142,48 +211,64 @@ export default function ChatBot() {
                     </ReactMarkdown>
                   </div>
 
-                  {/* User Icon */}
-                  {msg.role === "user" && (
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-purpple to-purpple/60 flex items-center justify-center flex-shrink-0 mt-1">
-                      <User size={16} className="text-white" />
+                  {msg.role === 'user' && (
+                    <div className="w-6 h-6 rounded-lg bg-foreground text-background flex items-center justify-center shrink-0 mt-0.5">
+                      <User size={13} />
                     </div>
                   )}
                 </div>
+              ))}
 
-                {/* Loading Indicator */}
-                {isLoading && msg.role === "user" && i === (messages.length - 1) && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="flex items-center gap-1 text-muted-foreground/70 text-xs mt-4 ml-2"
+              {isLoading && (
+                <div className="flex items-center gap-2 text-xs text-muted-foreground ml-8">
+                  <FaSpinner className="animate-spin text-purple-400" size={13} />
+                  <span>Formulating answer...</span>
+                </div>
+              )}
+              <div ref={messagesEndRef} />
+            </div>
+
+            {/* Quick Prompt Suggestions */}
+            {messages.length <= 2 && (
+              <div className="px-3 py-2 bg-secondary/30 border-t border-border/40 flex items-center gap-1.5 overflow-x-auto scrollbar text-[11px]">
+                <span className="text-muted-foreground text-[10px] font-mono shrink-0">Ask:</span>
+                {quickPrompts.map((prompt) => (
+                  <button
+                    key={prompt}
+                    type="button"
+                    onClick={() => handleSend(prompt)}
+                    className="px-2.5 py-1 rounded-full bg-secondary/80 hover:bg-purple-500/20 hover:text-purple-300 hover:border-purple-500/40 text-muted-foreground border border-border/50 transition-colors whitespace-nowrap active:scale-95 shrink-0"
                   >
-                    <span>thinking</span>
-                    <FaSpinner className="animate-spin" size={12} />
-                  </motion.div>
-                )}
-              </motion.div>
-            ))}
-            <div ref={messagesEndRef} />
-          </div>
+                    {prompt}
+                  </button>
+                ))}
+              </div>
+            )}
 
-          <form className="mt-3 flex gap-2">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask something . . ."
-              className="flex-1 border border-border outline-0 rounded-lg px-3 py-2 text-sm"
-            />
-            <button
-              aria-label="send message"
-              onClick={(e) => sendMessage(e)}
-              className="bg-purpple text-white px-3 py-2 rounded-lg text-sm hover:opacity-75 active:scale-85 transition-all duration-300"
+            {/* Input Bar */}
+            <form
+              onSubmit={handleSubmit}
+              className="p-3 border-t border-border/60 bg-secondary/40 flex items-center gap-2"
             >
-              <Send size={16} />
-            </button>
-          </form>
-        </motion.div>
-      )}
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Ask about tech stack, Hoste, projects..."
+                className="flex-1 px-3.5 py-2 rounded-xl bg-card border border-border text-xs sm:text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-purple-500/40"
+              />
+              <button
+                type="submit"
+                disabled={isLoading || !input.trim()}
+                aria-label="Send message"
+                className="p-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white shadow-xs disabled:opacity-50 transition-all active:scale-95"
+              >
+                <Send size={14} />
+              </button>
+            </form>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

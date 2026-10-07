@@ -45,6 +45,18 @@ export interface Service {
   description: string;
 }
 
+export interface Experience {
+  id: number;
+  role: string;
+  company: string;
+  companyUrl?: string;
+  location: string;
+  period: string;
+  current: boolean;
+  description: string[];
+  skills: string[];
+}
+
 // tech stacks
 
 export const stackData: Stack[] = [
@@ -840,5 +852,40 @@ export const services: Service[] = [
     icon: "🚀",
     description:
       "I love collaborating with teams, agencies, and startups, helping transform ideas into real-world digital products.",
+  },
+];
+
+// experience data
+export const experiences: Experience[] = [
+  {
+    id: 1,
+    role: "Frontend Developer",
+    company: "Hoste",
+    companyUrl: "https://hoste.com",
+    location: "Remote",
+    period: "2024 - Present",
+    current: true,
+    description: [
+      "Architecting and building responsive admin dashboard interfaces with Next.js, React, and TypeScript.",
+      "Collaborating closely with backend engineers to integrate RESTful APIs and handle complex state management.",
+      "Partnering with the UI/UX design team to translate Figma prototypes into accessible, pixel-perfect, and high-performance components.",
+      "Optimizing client-side rendering speed, reducing load times, and enhancing real-time data table visualizations.",
+    ],
+    skills: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "API Integration", "UI/UX Design Systems"],
+  },
+  {
+    id: 2,
+    role: "Freelance Full-Stack Developer",
+    company: "Self-Employed / Fiverr",
+    companyUrl: "https://samuel.mevads.dev",
+    location: "Remote",
+    period: "2022 - Present",
+    current: true,
+    description: [
+      "Delivered custom web applications and full-stack solutions for global clients across various industries.",
+      "Engineered SEO-optimized landing pages, e-commerce storefronts, and dynamic web portals.",
+      "Provided end-to-end delivery including database setup, payment gateway integrations, and Vercel/Netlify deployments.",
+    ],
+    skills: ["Full-Stack Development", "Next.js", "Node.js", "Tailwind CSS", "PostgreSQL", "WordPress"],
   },
 ];

@@ -1,6 +1,9 @@
-# Allow all search engines to crawl the website
+# *
 User-agent: *
 Allow: /
 
-# Sitemap
+# Host
+Host: https://samuel.mevads.dev
+
+# Sitemaps
 Sitemap: https://samuel.mevads.dev/sitemap.xml

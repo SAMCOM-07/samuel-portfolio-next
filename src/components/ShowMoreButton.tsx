@@ -1,26 +1,29 @@
-'use client'
+'use client';
 
-import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
-const ShowMoreButton = ({ text, href }: {
-  text: string
-  href: string
-}) => {
+interface ShowMoreButtonProps {
+  text: string;
+  href: string;
+  className?: string;
+}
+
+const ShowMoreButton = ({ text, href, className = '' }: ShowMoreButtonProps) => {
   return (
-    <div>
+    <div className={`text-center my-6 ${className}`}>
       <Link
         href={href}
-        className="my-2 text-primary text-center hover:underline flex items-center justify-center gap-1 font-medium group bg-secondary py-1 px-3 rounded-lg w-fit mx-auto"
+        className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-border/80 bg-card hover:bg-secondary text-foreground hover:border-brand/40 transition-all duration-200 group shadow-xs hover:shadow-sm"
       >
-        {text}
+        <span>{text}</span>
         <ArrowRight
-          size={18}
-          className="group-hover:translate-x-1 transition-transform duration-300"
+          size={15}
+          className="text-brand group-hover:translate-x-1 transition-transform duration-200"
         />
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default ShowMoreButton
+export default ShowMoreButton;
